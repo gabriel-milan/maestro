@@ -5,7 +5,9 @@ import os
 import glob
 from paramiko.ssh_exception import AuthenticationException
 from time import time
- 
+import requests
+from werkzeug.security import generate_password_hash
+
 class ZeusCLI(Cmd):
 
   #
@@ -84,9 +86,14 @@ Type '?' for a list of commands
   #
   def do_authenticate (self, inp):
     self.__username = input(' Login: ')
-    self.__password = getpass(' Password: ')
+    self.__password = generate_password_hash(getpass(' Password: '))
     self.__hasCredentials = True
     print ("Credentials saved!")
+    data = {
+      'username':self.__username,
+      'password':self.__password
+    }
+    requests.post(url='http://localhost:5000/login', data=data)
     print ()
 
   #
