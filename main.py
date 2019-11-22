@@ -6,7 +6,9 @@ import glob
 from paramiko.ssh_exception import AuthenticationException
 from time import time
 import requests
-from werkzeug.security import generate_password_hash
+from hashlib import sha256
+import argparse
+import shlex
 
 class ZeusCLI(Cmd):
 
@@ -47,6 +49,17 @@ Type '?' for a list of commands
   """
   
   #
+  # Auxiliar functions
+  #
+  def hashPw (self, password):
+    m = sha256()
+    m.update(password.encode('utf-8'))
+    return m.hexdigest()
+
+  def msg_error (self, message):
+    print ("-- ERROR: {}".format(message))
+
+  #
   # Documentation
   #
   def help_exit (self):
@@ -86,15 +99,87 @@ Type '?' for a list of commands
   #
   def do_authenticate (self, inp):
     self.__username = input(' Login: ')
-    self.__password = generate_password_hash(getpass(' Password: '))
+    self.__password = self.hashPw(getpass(' Password: '))
     self.__hasCredentials = True
-    print ("Credentials saved!")
+    print ("Trying to connect...")
     data = {
       'username':self.__username,
       'password':self.__password
     }
-    requests.post(url='http://localhost:5000/login', data=data)
+    try:
+      r = requests.post(url='http://localhost:5020/login', data=data)
+      print (r.text)
+    except requests.exceptions.ConnectionError:
+      self.msg_error ("Failed to connect to LPS Cluster.")
     print ()
+
+  #
+  # Create task
+  #
+  def do_create (self, inp):
+    arg_cli = shlex.split(inp)
+    
+    parser = argparse.ArgumentParser(prog='create')
+    parser.add_argument('-c','--configFile', action='store',
+                    dest='configFile', required = True,
+                    help = "The job config file that will be used to configure the job (sort and init).")
+    parser.add_argument('-o','--outputFile', action='store',
+                    dest='outputFile', required = True,
+                    help = "The output tuning name.")
+    parser.add_argument('-d','--dataFile', action='store',
+                    dest='dataFile', required = True,
+                    help = "The data/target file used to train the model.")
+    parser.add_argument('--exec', action='store', dest='execCommand', required=True,
+                    help = "The exec command")
+    parser.add_argument('--containerImage', action='store', dest='containerImage', required=True,
+                    help = "The container image that points to docker hub. The container must be public.")
+    parser.add_argument('-t','--task', action='store', dest='task', required=True,
+                    help = "The task name to append into the DB.")
+    parser.add_argument('--sd','--secondaryData', action='store', dest='secondaryData', required=False,  default="{}",
+                    help = "The secondary datasets to append in the --exec command. This should be:" +
+                    "--secondaryData='{'REF':'path/to/my/extra/data',...}'")
+    parser.add_argument('--gpu', action='store_true', dest='gpu', required=False, default=False,
+                    help = "Send these jobs to GPU slots")
+    parser.add_argument('--et', action='store', dest='et', required=False,default=None,
+                    help = "The ET region (ringer staff)")
+    parser.add_argument('--eta', action='store', dest='eta', required=False,default=None,
+                    help = "The ETA region (ringer staff)")
+    parser.add_argument('--dry_run', action='store_true', dest='dry_run', required=False, default=False,
+                    help = "Use this as debugger.")
+    parser.add_argument('--bypass', action='store_true', dest='bypass_test_job', required=False, default=False,
+                    help = "Bypass the job test.")
+    parser.add_argument('--cluster', action='store', dest='cluster', required=False, default='LPS',
+                    help = "The name of your cluster (LPS/CERN/SDUMONT/LOBOC)")
+    parser.add_argument('--storagePath', action='store', dest='storagePath', required=False, default='/mnt/cluster-volume',
+                    help = "The path to the storage in the cluster.")
+
+    try:
+      args = parser.parse_args(arg_cli)
+      data = {
+        'configFile'      : args.configFile,
+        'outputFile'      : args.outputFile,
+        'dataFile'        : args.dataFile,
+        'execCommand'     : args.execCommand,
+        'containerImage'  : args.containerImage,
+        'task'            : args.task,
+        'secondaryData'   : args.secondaryData,
+        'gpu'             : args.gpu,
+        'et'              : args.et,
+        'eta'             : args.eta,
+        'dry_run'         : args.dry_run,
+        'bypass_test_job' : args.bypass_test_job,
+        'cluster'         : args.cluster,
+        'storagePath'     : args.storagePath
+      }
+
+      try:
+        r = requests.post(url='http://localhost:5020/create', data=data)
+        print (r.text)
+      except requests.exceptions.ConnectionError:
+        self.msg_error ("Failed to connect to LPS Cluster.")
+      print ()
+    except:
+      parser.print_help()
 
   #
   # Copying a file
@@ -130,23 +215,23 @@ Type '?' for a list of commands
           if os.path.isfile(os.path.join('.', i)) and i.startswith(inp[:-1]):
             file_list.append (i)
         if (not file_list):
-          print ("-- ERROR: File does not exist.")
+          self.msg_error ("File does not exist.")
       else:
         if (not os.path.exists(inp)):
-          print ("-- ERROR: File does not exist.")
+          self.msg_error ("File does not exist.")
         else:
           file_list.append(inp)
       
-      # Copies
-      try:
-        with pysftp.Connection ('146.164.147.170', username=self.__username, password=self.__password) as sftp:
-          with sftp.cd('/mnt/cluster-volume/{}'.format(self.__username)):
-            for filename in file_list:
-              self.__currentTransfer = filename
-              print ("-- Copying file {}... \t".format(filename), end='')
-              sftp.put(filename, callback=printTotals)
-      except AuthenticationException:
-        print ("-- ERROR: Authentication failed.")
+      for filename in file_list:
+        fin = open(filename, 'rb')
+        files = {'file':fin}
+        try:
+          r = requests.post(url='http://localhost:5020/upload', files=files)
+          print (r.text)
+        except:
+          print ("Failed to upload file.")
+        finally:
+          fin.close()
 
     else:
       print ("Please authenticate yourself.")
