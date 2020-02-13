@@ -9,7 +9,7 @@ import requests
 from hashlib import sha256
 import argparse
 import shlex
-from minor_gaugi import Color
+from util import Color
 
 class ZeusCLI(Cmd):
 
@@ -32,12 +32,12 @@ class ZeusCLI(Cmd):
   # Intro message
   #
   intro = """
-    __    ____  _____    ________           __           
+    __    ____  _____    ________           __
    / /   / __ \/ ___/   / ____/ /_  _______/ /____  _____
   / /   / /_/ /\__ \   / /   / / / / / ___/ __/ _ \/ ___/
- / /___/ ____/___/ /  / /___/ / /_/ (__  ) /_/  __/ /    
-/_____/_/    /____/   \____/_/\__,_/____/\__/\___/_/     
-              
+ / /___/ ____/___/ /  / /___/ / /_/ (__  ) /_/  __/ /
+/_____/_/    /____/   \____/_/\__,_/____/\__/\___/_/
+
 Welcome to the LPS Cluster!
 
 If you need anything, please contact:
@@ -48,7 +48,7 @@ If you need anything, please contact:
 
 Type '?' for a list of commands
   """
-  
+
   #
   # Auxiliar functions
   #
@@ -169,7 +169,7 @@ Type '?' for a list of commands
   #
   def do_create (self, inp):
     arg_cli = shlex.split(inp)
-    
+
     parser = argparse.ArgumentParser(prog='create')
     parser.add_argument('-c','--configFile', action='store',
                     dest='configFile', required = True,
@@ -272,7 +272,7 @@ Type '?' for a list of commands
           self.msg_error ("File does not exist.")
         else:
           file_list.append(inp)
-      
+
       for filename in file_list:
         fin = open(filename, 'rb')
         files = {'file':fin}
@@ -305,7 +305,7 @@ Type '?' for a list of commands
         break
       except KeyboardInterrupt:
         print("^C")
-        
+
   def default(self, inp):
     if inp == 'x' or inp == 'q':
       return self.do_exit(inp)
