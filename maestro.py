@@ -4,6 +4,9 @@ import sys
 import argparse
 from Gaugi import Logger
 
+# Overall TODO:
+# * Add parser option for authentication
+
 #
 # Dataset parser
 #
