@@ -2,7 +2,7 @@
 
 # Macros
 BIN_DIR="$HOME/.bin"
-SCRIPT_NAME="$BIN_DIR/zeus_cli"
+SCRIPT_NAME="$BIN_DIR/maestro"
 HEADER="#!"$(which python3)
 
 echo "Setting up the script..."
@@ -24,4 +24,4 @@ fi
 echo $HEADER | cat - $SCRIPT_NAME > temp && mv temp $SCRIPT_NAME
 chmod a+x $SCRIPT_NAME
 
-echo "All done! Run it by typing 'zeus_cli'"
+echo "All done! Run it by typing 'maestro'"

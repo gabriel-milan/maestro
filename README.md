@@ -1,15 +1,15 @@
-# Cluster CLI
+# Maestro
 
 ## Getting started
 
 * Clone this repository
 ```
-git clone https://github.com/gabriel-milan/cluster_cli
+git clone https://github.com/gabriel-milan/maestro
 ```
 
 * Go to the cloned directory:
 ```
-cd cluster_cli/
+cd maestro/
 ```
 
 * Run the setup script
@@ -19,5 +19,5 @@ source setup.sh
 
 * Run it!
 ```
-zeus_cli
+maestro --help
 ```

@@ -1,318 +1,239 @@
-from cmd import Cmd
-from getpass import getpass
-import pysftp
-import os
-import glob
-from paramiko.ssh_exception import AuthenticationException
-from time import time
-import requests
-from hashlib import sha256
+#!/usr/bin/env python3
+
+import sys
 import argparse
-import shlex
-from util import Color
+from Gaugi import Logger
 
-class ZeusCLI(Cmd):
+#
+# Dataset parser
+#
+class DatasetParser(Logger):
 
-  #
-  # Init
-  #
-  def __init__ (self):
-    Cmd.__init__(self)
-    self.__username = ''
-    self.__password = ''
-    self.__hasCredentials = False
-    self.__currentTransfer = ''
+  def __init__(self, args=None):
 
-  #
-  # Prompt text
-  #
-  prompt = 'ZeusCLI -> '
+    Logger.__init__(self)
+    if args:
 
-  #
-  # Intro message
-  #
-  intro = """
-    __    ____  _____    ________           __
-   / /   / __ \/ ___/   / ____/ /_  _______/ /____  _____
-  / /   / /_/ /\__ \   / /   / / / / / ___/ __/ _ \/ ___/
- / /___/ ____/___/ /  / /___/ / /_/ (__  ) /_/  __/ /
-/_____/_/    /____/   \____/_/\__,_/____/\__/\___/_/
+      # Upload
+      upload_parser = argparse.ArgumentParser(description = 'Dataset upload CLI.' , add_help = False)
+      upload_parser.add_argument('-d', '--dataset', action='store', dest='datasetname', required=True,
+                                  help = "The dataset name that will be registered on the database (e.g: user.jodafons...)")
+      upload_parser.add_argument('-p','--path', action='store', dest='path', required=True,
+                                  help = "The path to the dataset file")
+      
+      # Download
+      download_parser = argparse.ArgumentParser(description = 'Dataset donwload CLI', add_help = False)
+      download_parser.add_argument('-d', '--dataset', action='store', dest='datasetname', required=True,
+                                   help = "The dataset name to be downloaded")
 
-Welcome to the LPS Cluster!
+      # Delete                             
+      delete_parser = argparse.ArgumentParser(description = 'Dataset delete CLI', add_help = False)
+      delete_parser.add_argument('-d', '--dataset', action='store', dest='datasetname', required=True,
+                                   help = "The dataset name to be removed")
 
-If you need anything, please contact:
-- Carlos Eduardo Covas <kaducovas@gmail.com>
-- Gabriel Gazola Milan <gabriel.milan@lps.ufrj.br>
-- João Victor da Fonseca Pinto <jodafons@lps.ufrj.br>
-- Micael Veríssimo <micaelvero@hotmail.com>
+      # List                             
+      list_parser = argparse.ArgumentParser(description = 'Dataset listing', add_help = False)
+      list_parser.add_argument('-u', '--user', action='store', dest='username', required=True,
+                                   help = "List all datasets for a selected user")
 
-Type '?' for a list of commands
-  """
+      parent = argparse.ArgumentParser(description = '',add_help = False)
+      subparser = parent.add_subparsers(dest='option')
 
-  #
-  # Auxiliar functions
-  #
-  def hashPw (self, password):
-    m = sha256()
-    m.update(password.encode('utf-8'))
-    return m.hexdigest()
+      subparser.add_parser('upload', parents=[upload_parser])
+      subparser.add_parser('download', parents=[download_parser])
+      subparser.add_parser('delete', parents=[delete_parser])
+      subparser.add_parser('list', parents=[list_parser])
+      args.add_parser( 'castor', parents=[parent] )
 
-  def msg_error (self, message):
-    print ("-- ERROR: {}".format(message))
+  def compile( self, args ):
+    if args.mode == 'castor':
+      if args.option == 'upload':
+        self.upload(args.datasetname, args.path)
+      elif args.option == 'download':
+        self.download(args.datasetname)
+      elif args.option == 'delete':
+        self.delete(args.datasetname)
+      elif args.option == 'list':
+        self.list(args.username)
 
-  #
-  # Documentation
-  #
-  def help_exit (self):
-    print ("Exits the application")
-  def help_authenticate (self):
-    print ("Gets your credentials for the LPS Cluster")
-  def help_copy_file (self):
-    print ("Copies a file to the LPS Cluster NAS")
-    print ("Usage: copy_file <filename>")
+  def list( self, username ):
 
-  #
-  # Autocompletes
-  #
-  def __append_slash_if_dir (self, p):
-      if p and os.path.isdir(p) and p[-1] != os.sep:
-          return p + os.sep
-      else:
-          return p
+    # TODO:
+    # - Make request here using username, in order to list all datasets related
+    print ("Make request!")
 
-  def complete_copy_file (self, text, line, begidx, endidx):
-    before_arg = line.rfind(" ", 0, begidx)
-    if before_arg == -1:
-      return
-    fixed = line[before_arg+1:begidx]
-    arg = line[before_arg+1:endidx]
-    pattern = arg + '*'
-    completions = []
-    for path in glob.glob(pattern):
-      path = self.__append_slash_if_dir(path)
-      completions.append(path.replace(fixed, "", 1))
-    mline = line.partition (' ')[2]
-    offs = len(mline) - len(text)
-    return [s[offs:] for s in completions if s.startswith(mline)]
+  def delete( self, datasetname ):
 
-  #
-  # Getting credentials
-  #
-  def do_authenticate (self, inp):
-    self.__username = input(' Login: ')
-    self.__password = self.hashPw(getpass(' Password: '))
-    self.__hasCredentials = True
-    print ("Trying to connect...")
-    data = {
-      'username':self.__username,
-      'password':self.__password
-    }
-    try:
-      r = requests.post(url='http://localhost:5020/login', data=data)
-      print (r.text)
-    except requests.exceptions.ConnectionError:
-      self.msg_error ("Failed to connect to LPS Cluster.")
-    print ()
+    if datasetname.split('.')[0] != 'user':
+      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
+    username = datasetname.split('.')[1]
 
-  #
-  # Lists all tasks
-  #
-  def do_list (self, inp):
+    # TODO:
+    # - Make request here using username and dataset, in order to check if both exist and then delete the dataset
+    print ("Make request!")
 
-    # Requesting task list for the cluster
-    try:
-      r = requests.get(url='http://localhost:5020/tasks')
-      print (r.text)
-      # # define the line template
-      # line="+------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+----------+------------+"
-      # print(line)
-      # print ( "|     "+Color.CGREEN2+"username"+Color.CEND+
-      # "     |                                     "+Color.CGREEN2+"taskname"+Color.CEND+
-      # "                                     | "+Color.CGREEN2+"assigned"+Color.CEND+
-      # " | "+Color.CGREEN2+"testing"+Color.CEND+
-      # "  | "+Color.CGREEN2+"running"+Color.CEND+
-      # "  | "+Color.CRED2+"failed"+Color.CEND+
-      # "   |  "+Color.CGREEN2+"done"+Color.CEND+
-      # "    | "+Color.CGREEN2+"status"+Color.CEND+"     |" )
-      # print(line)
-      # for task in tasks:
-      #   if len(task.taskName)>80:
-      #     #taskname = task.taskName[0:75]
-      #     taskname = task.taskName[0:40]+' ... '+ task.taskName[-30:]
-      #   else:
-      #     taskname = task.taskName
-      #   print ( ("| {0:<16} | {1:<80} | {2:<8} | {3:<8} | {4:<8} | {5:<8} | {6:<8} | {7:<15}"+Color.CEND+" |" ).format( task.username, taskname, task.assigned, task.testing,
-      #       task.running, task.failed, task.done, getStatus(task.status)))
-      # print(line)
-    except:
-      self.msg_error ("Failed to connect to LPS Cluster.")
+  def download( self, datasetname ):
 
-    def getStatus(status):
-      if status == 'registered':
-        return Color.CWHITE2+"REGISTERED"
-      elif status == 'assigned':
-        return Color.CWHITE2+"ASSIGNED"
-      elif status == 'testing':
-        return Color.CGREEN2+"TESTING"
-      elif status == 'running':
-        return Color.CGREEN2+"RUNNING"
-      elif status == 'done':
-        return Color.CGREEN2+"DONE"
-      elif status == 'failed':
-        return Color.CRED2+"FAILED"
-      elif status == 'finalized':
-        return Color.CRED2+"FINALIZED"
+    if datasetname.split('.')[0] != 'user':
+      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
+    username = datasetname.split('.')[1]
+
+    # TODO:
+    # - Make request here using username and dataset, in order to check if both exist and then download the dataset
+    print ("Make request!")
+
+  def upload( self , datasetname, path ):
+
+    if datasetname.split('.')[0] != 'user':
+      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
+    username = datasetname.split('.')[1]
+
+    # TODO:
+    # - Make request here using username and dataset, in order to check if both exist and then upload a new dataset
+    print ("Make request!")
+
+#
+# Task parser
+#
+class TaskParser(Logger):
 
 
-  #
-  # Create task
-  #
-  def do_create (self, inp):
-    arg_cli = shlex.split(inp)
+  def __init__(self , args=None):
+    Logger.__init__(self)
+    if args:
+      # Create
+      create_parser = argparse.ArgumentParser(description = '', add_help = False)
+      create_parser.add_argument('-c','--configFile', action='store',
+                          dest='configFile', required = True,
+                          help = "The job config file that will be used to configure the job (sort and init).")
+      create_parser.add_argument('-d','--dataFile', action='store',
+                          dest='dataFile', required = True,
+                          help = "The data/target file used to train the model.")
+      create_parser.add_argument('--exec', action='store', dest='execCommand', required=True,
+                          help = "The exec command")
+      create_parser.add_argument('--containerImage', action='store', dest='containerImage', required=True,
+                          help = "The container image point to docker hub. The image must be public.")
+      create_parser.add_argument('-t','--task', action='store', dest='taskname', required=True,
+                          help = "The task name to append in the database.")
+      create_parser.add_argument('--sd','--secondaryDS', action='store', dest='secondaryDS', required=False,  default="{}",
+                          help = "The secondary datasets to append in the --exec command. This should be:" +
+                          "--secondaryData='{'REF':'path/to/my/extra/data',...}'")
+      create_parser.add_argument('--gpu', action='store_true', dest='gpu', required=False, default=False,
+                          help = "Send these jobs to GPU slots")
+      create_parser.add_argument('--et', action='store', dest='et', required=False,default=None,
+                          help = "The ET region (for ringer users)")
+      create_parser.add_argument('--eta', action='store', dest='eta', required=False,default=None,
+                          help = "The ETA region (for ringer users)")
+      create_parser.add_argument('--dry_run', action='store_true', dest='dry_run', required=False, default=False,
+                          help = "Use this as debugger.")
 
-    parser = argparse.ArgumentParser(prog='create')
-    parser.add_argument('-c','--configFile', action='store',
-                    dest='configFile', required = True,
-                    help = "The job config file that will be used to configure the job (sort and init).")
-    parser.add_argument('-o','--outputFile', action='store',
-                    dest='outputFile', required = True,
-                    help = "The output tuning name.")
-    parser.add_argument('-d','--dataFile', action='store',
-                    dest='dataFile', required = True,
-                    help = "The data/target file used to train the model.")
-    parser.add_argument('--exec', action='store', dest='execCommand', required=True,
-                    help = "The exec command")
-    parser.add_argument('--containerImage', action='store', dest='containerImage', required=True,
-                    help = "The container image that points to docker hub. The container must be public.")
-    parser.add_argument('-t','--task', action='store', dest='task', required=True,
-                    help = "The task name to append into the DB.")
-    parser.add_argument('--sd','--secondaryData', action='store', dest='secondaryData', required=False,  default="{}",
-                    help = "The secondary datasets to append in the --exec command. This should be:" +
-                    "--secondaryData='{'REF':'path/to/my/extra/data',...}'")
-    parser.add_argument('--gpu', action='store_true', dest='gpu', required=False, default=False,
-                    help = "Send these jobs to GPU slots")
-    parser.add_argument('--et', action='store', dest='et', required=False,default=None,
-                    help = "The ET region (ringer staff)")
-    parser.add_argument('--eta', action='store', dest='eta', required=False,default=None,
-                    help = "The ETA region (ringer staff)")
-    parser.add_argument('--dry_run', action='store_true', dest='dry_run', required=False, default=False,
-                    help = "Use this as debugger.")
-    parser.add_argument('--bypass', action='store_true', dest='bypass_test_job', required=False, default=False,
-                    help = "Bypass the job test.")
-    parser.add_argument('--cluster', action='store', dest='cluster', required=False, default='LPS',
-                    help = "The name of your cluster (LPS/CERN/SDUMONT/LOBOC)")
-    parser.add_argument('--storagePath', action='store', dest='storagePath', required=False, default='/mnt/cluster-volume',
-                    help = "The path to the storage in the cluster.")
+      # Retry
+      retry_parser = argparse.ArgumentParser(description = '', add_help = False)
+      retry_parser.add_argument('-t','--task', action='store', dest='taskname', required=True,
+                    help = "The name of the task you want to retry")
+      
+      # Delete
+      delete_parser = argparse.ArgumentParser(description = '', add_help = False)
+      delete_parser.add_argument('-t','--task', action='store', dest='taskname', required=True,
+                    help = "The name of the task you want to remove")
+      
+      # List
+      list_parser = argparse.ArgumentParser(description = '', add_help = False)
+      list_parser.add_argument('-u','--user', action='store', dest='username', required=True,
+                    help = "The username")
 
-    try:
-      args = parser.parse_args(arg_cli)
-      data = {
-        'configFile'      : args.configFile,
-        'outputFile'      : args.outputFile,
-        'dataFile'        : args.dataFile,
-        'execCommand'     : args.execCommand,
-        'containerImage'  : args.containerImage,
-        'task'            : args.task,
-        'secondaryData'   : args.secondaryData,
-        'gpu'             : args.gpu,
-        'et'              : args.et,
-        'eta'             : args.eta,
-        'dry_run'         : args.dry_run,
-        'bypass_test_job' : args.bypass_test_job,
-        'cluster'         : args.cluster,
-        'storagePath'     : args.storagePath
-      }
+      # Kill
+      kill_parser = argparse.ArgumentParser(description = '', add_help = False)
+      kill_parser.add_argument('-u','--user', action='store', dest='username', required=True,
+                    help = "The username.")
+      kill_parser.add_argument('-t','--task', action='store', dest='taskname', required=False,
+                    help = "The name of the task you want to kill")
+      kill_parser.add_argument('-a','--all', action='store_true', dest='kill_all', required=False, default=False,
+                    help = "Remove all tasks from given username")
 
-      try:
-        r = requests.post(url='http://localhost:5020/create', data=data)
-        print (r.text)
-      except requests.exceptions.ConnectionError:
-        self.msg_error ("Failed to connect to LPS Cluster.")
-      print ()
-    except:
-      parser.print_help()
+      parent = argparse.ArgumentParser(description = '', add_help = False)
+      subparser = parent.add_subparsers(dest='option')
 
-  #
-  # Copying a file
-  #
-  def do_copy_file (self, inp):
+      subparser.add_parser('create', parents=[create_parser])
+      subparser.add_parser('retry', parents=[retry_parser])
+      subparser.add_parser('delete', parents=[delete_parser])
+      subparser.add_parser('list', parents=[list_parser])
+      subparser.add_parser('kill', parents=[kill_parser])
+      args.add_parser( 'task', parents=[parent] )
 
-    self.__lastTimestamp = 0
-    self.__lastTransferred = 0
+  def compile( self, args ):
+    if args.mode == 'task':
+      if args.option == 'create':
+        self.create(args.taskname, args.dataFile, args.configFile, args.secondaryDS,
+                    args.execCommand,args.containerImage,args.et,args.eta,args.gpu,
+                    args.bypass_test_job, args.dry_run)
+      elif args.option == 'retry':
+        self.retry(args.taskname)
+      elif args.option == 'delete':
+        self.delete(args.taskname)
+      elif args.option == 'list':
+        self.list(args.username)
+      elif args.option == 'kill':
+        self.kill(args.username, 'all' if args.kill_all else args.taskname)
 
-    def humanReadableFileSize (n_bytes):
-      thresh = 1024
-      if (n_bytes < thresh):
-        return "{} B".format(n_bytes)
-      units = ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-      u = -1
-      while (n_bytes >= thresh and u < (len(units) - 1)):
-        n_bytes /= thresh
-        u += 1
-      return  '{:.2f} {}'.format(n_bytes, units[u])
+  def create( self, taskname, dataFile,
+                    configFile, secondaryDS,
+                    execCommand, containerImage, et=None, eta=None, gpu=False,
+                    dry_run=False):
 
-    def printTotals(transferred, toBeTransferred):
-      print ("-- Copying file {}... \t {}/{}: {:.1f}% ({}/s)".format(self.__currentTransfer, humanReadableFileSize(transferred), humanReadableFileSize(toBeTransferred), (transferred/toBeTransferred) * 100, humanReadableFileSize((transferred - self.__lastTransferred) / (time() - self.__lastTimestamp))))
-      self.__lastTimestamp = time()
-      self.__lastTransferred = transferred
+    if taskname.split('.')[0] != 'user':
+      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
+    username = taskname.split('.')[1]
 
-    # Checks credentials
-    if (self.__hasCredentials):
+    # TODO:
+    # - Make request here using everything, in order to check policies and launching a new task
+    print ("Make request!")
 
-      # Parsing input
-      file_list = []
-      if (inp.endswith("*")):
-        for i in os.listdir('.'):
-          if os.path.isfile(os.path.join('.', i)) and i.startswith(inp[:-1]):
-            file_list.append (i)
-        if (not file_list):
-          self.msg_error ("File does not exist.")
-      else:
-        if (not os.path.exists(inp)):
-          self.msg_error ("File does not exist.")
-        else:
-          file_list.append(inp)
+  def delete( self, taskname ):
 
-      for filename in file_list:
-        fin = open(filename, 'rb')
-        files = {'file':fin}
-        try:
-          r = requests.post(url='http://localhost:5020/upload', files=files)
-          print (r.text)
-        except:
-          print ("Failed to upload file.")
-        finally:
-          fin.close()
+    if taskname.split('.')[0] != 'user':
+      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
+    username = taskname.split('.')[1]
 
-    else:
-      print ("Please authenticate yourself.")
+    # TODO:
+    # - Make request here using everything, in order to check policies and delete a task
+    print ("Make request!")
 
-  #
-  # Exiting
-  #
-  def do_exit (self, inp):
-    print ("Bye!")
-    return True
+  def retry( self, taskname ):
 
-  #
-  # Key handlers
-  #
-  def cmdloop(self, intro=None):
-    print(self.intro)
-    while True:
-      try:
-        super(ZeusCLI, self).cmdloop(intro="")
-        break
-      except KeyboardInterrupt:
-        print("^C")
+    if taskname.split('.')[0] != 'user':
+      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
+    username = taskname.split('.')[1]
 
-  def default(self, inp):
-    if inp == 'x' or inp == 'q':
-      return self.do_exit(inp)
-    else:
-      print('Command "{}" not found.'.format(inp))
+    # TODO:
+    # - Make request here using everything, in order to check policies and retry a task
+    print ("Make request!")
 
-  do_EOF = do_exit
-  help_EOF = help_exit
+  def list( self, username ):
 
-ZeusCLI().cmdloop()
+    # TODO:
+    # - Make request here using the username, in order to list all tasks related to him
+    print ("Make request!")
+
+  def kill( self, username, taskname ):
+
+    # TODO:
+    # - Make request here using everything, in order to kill a task
+    print ("Make request!")
+
+parser = argparse.ArgumentParser()
+commands = parser.add_subparsers(dest='mode')
+
+engine = [
+  DatasetParser(commands),
+  TaskParser(commands),
+]
+
+if len(sys.argv)==1:
+  print(parser.print_help())
+  sys.exit(1)
+
+args = parser.parse_args()
+
+for e in engine:
+  e.compile(args)

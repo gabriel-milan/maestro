@@ -1,4 +1,1 @@
-pysftp>=0.2.9
-paramiko>=2.6.0
-requests>=2.22.0
-kubernetes>=10.0.1
+Gaugi>=2.0.0
