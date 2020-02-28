@@ -3,9 +3,54 @@
 import sys
 import argparse
 from Gaugi import Logger
+from Gaugi.messenger.macros import *
+import requests
+from hashlib import sha256
 
-# Overall TODO:
-# * Add parser option for authentication
+#
+# Authentication parser
+#
+class AuthenticationParser (Logger):
+
+  def __init__ (self, args=None):
+    
+    Logger.__init__(self)
+
+    if args:
+
+      # Authenticate
+      parser = argparse.ArgumentParser(description = '', add_help = False)
+      parser.add_argument(
+        '-u', '--username', action='store', dest='username', required = True,
+        help = "Your username"
+      )
+      parser.add_argument(
+        '-p', '--password', action='store', dest='password', required = True,
+        help = "Your password"
+      )
+
+      args.add_parser( 'authenticate', parents=[parser] )
+
+  def compile( self, args ):
+    if args.mode == 'authenticate':
+      self.authenticate(args.username, args.password)
+
+  def hashPw (self, password):
+    m = sha256()
+    m.update(password.encode('utf-8'))
+    return m.hexdigest()
+
+  def authenticate (self, username, password):
+    MSG_INFO (self, "Trying to connect...")
+    data = {
+      'username':username,
+      'password':password
+    }
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
+      MSG_INFO (self, r.text)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
 #
 # Dataset parser
@@ -61,9 +106,14 @@ class DatasetParser(Logger):
 
   def list( self, username ):
 
-    # TODO:
-    # - Make request here using username, in order to list all datasets related
-    print ("Make request!")
+    data = {
+      'username':username,
+    }
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/list-datasets', data=data)
+      print (r.json()['message'])
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
   def delete( self, datasetname ):
 
@@ -230,6 +280,7 @@ commands = parser.add_subparsers(dest='mode')
 engine = [
   DatasetParser(commands),
   TaskParser(commands),
+  AuthenticationParser(commands),
 ]
 
 if len(sys.argv)==1:

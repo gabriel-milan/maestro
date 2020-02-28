@@ -12,7 +12,7 @@ then
   mkdir $BIN_DIR
 fi
 
-cp main.py $SCRIPT_NAME
+cp maestro.py $SCRIPT_NAME
 
 if [[ ":$PATH:" != *":$HOME/.bin:"* ]]
 then
