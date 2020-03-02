@@ -5,7 +5,30 @@ import argparse
 from Gaugi import Logger
 from Gaugi.messenger.macros import *
 import requests
-from hashlib import sha256
+from hashlib import sha256, md5
+import pickle
+import base64
+from pathlib import Path
+
+#
+# Macros
+#
+CREDENTIALS_FILE = '.maestro_credentials'
+
+#
+# Utils
+#
+def getCredentialsData ():
+  home = str(Path.home())
+  try:
+    f = open("{}/{}".format(home, CREDENTIALS_FILE), "r")
+    if f.mode == 'r':
+      content = f.read()
+      f.close()
+      return content
+  except FileNotFoundError:
+    print ("Please authenticate first")
+    return False
 
 #
 # Authentication parser
@@ -36,7 +59,7 @@ class AuthenticationParser (Logger):
       self.authenticate(args.username, args.password)
 
   def hashPw (self, password):
-    m = sha256()
+    m = md5()
     m.update(password.encode('utf-8'))
     return m.hexdigest()
 
@@ -44,11 +67,18 @@ class AuthenticationParser (Logger):
     MSG_INFO (self, "Trying to connect...")
     data = {
       'username':username,
-      'password':password
+      'password':self.hashPw(password)
     }
     try:
       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
       MSG_INFO (self, r.text)
+      if (r.json()['error_code'] == 200):
+        pickled_data = pickle.dumps(data)
+        b64_pickled_data = base64.b64encode(pickled_data)
+        home = str(Path.home())
+        f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
+        f.write(b64_pickled_data)
+        f.close()
     except requests.exceptions.ConnectionError:
       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
@@ -106,8 +136,13 @@ class DatasetParser(Logger):
 
   def list( self, username ):
 
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
     data = {
       'username':username,
+      'credentials':credentials
     }
     try:
       r = requests.post(url='http://146.164.147.170:5020/list-datasets', data=data)
@@ -121,9 +156,21 @@ class DatasetParser(Logger):
       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
     username = datasetname.split('.')[1]
 
-    # TODO:
-    # - Make request here using username and dataset, in order to check if both exist and then delete the dataset
-    print ("Make request!")
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    data = {
+      'username':username,
+      'datasetname':datasetname,
+      'credentials':credentials
+    }
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/delete-dataset', data=data)
+      print (r.text)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
   def download( self, datasetname ):
 
@@ -131,9 +178,22 @@ class DatasetParser(Logger):
       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
     username = datasetname.split('.')[1]
 
-    # TODO:
-    # - Make request here using username and dataset, in order to check if both exist and then download the dataset
-    print ("Make request!")
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    data = {
+      'username':username,
+      'datasetname':datasetname,
+      'credentials':credentials
+    }
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
+      with open('./{}'.format(datasetname), 'wb') as f:
+        f.write(r.content)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
   def upload( self , datasetname, path ):
 
@@ -141,9 +201,26 @@ class DatasetParser(Logger):
       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
     username = datasetname.split('.')[1]
 
-    # TODO:
-    # - Make request here using username and dataset, in order to check if both exist and then upload a new dataset
-    print ("Make request!")
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    data = {
+      'username':username,
+      'datasetname':datasetname,
+      'credentials':credentials
+    }
+
+    fin = open(path, 'rb')
+    files = {'file':fin}
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
+      print (r.text)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    finally:
+      fin.close()
 
 #
 # Task parser
@@ -238,9 +315,33 @@ class TaskParser(Logger):
       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
     username = taskname.split('.')[1]
 
-    # TODO:
-    # - Make request here using everything, in order to check policies and launching a new task
-    print ("Make request!")
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    if dry_run:
+      MSG_WARNING (self, "Please disable dry run.")
+      return
+
+    data = {
+      'username'              : username,
+      'taskname'              : taskname,
+      'configFile'            : configFile,
+      'dataFile'              : dataFile,
+      'containerImage'        : containerImage,
+      'secondaryDS'           : secondaryDS,
+      'execCommand'           : execCommand,
+      'et'                    : et,
+      'eta'                   : eta,
+      'gpu'                   : int(gpu),
+      'credentials'           : credentials
+    }
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/create-task', data=data)
+      print (r.text)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
   def delete( self, taskname ):
 
@@ -248,9 +349,21 @@ class TaskParser(Logger):
       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
     username = taskname.split('.')[1]
 
-    # TODO:
-    # - Make request here using everything, in order to check policies and delete a task
-    print ("Make request!")
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    data = {
+      'username':username,
+      'taskname':taskname,
+      'credentials':credentials
+    }
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/delete-task', data=data)
+      print (r.text)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
   def retry( self, taskname ):
 
@@ -258,21 +371,58 @@ class TaskParser(Logger):
       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
     username = taskname.split('.')[1]
 
-    # TODO:
-    # - Make request here using everything, in order to check policies and retry a task
-    print ("Make request!")
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    data = {
+      'username':username,
+      'taskname':taskname,
+      'credentials':credentials
+    }
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/retry-task', data=data)
+      print (r.text)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
   def list( self, username ):
 
-    # TODO:
-    # - Make request here using the username, in order to list all tasks related to him
-    print ("Make request!")
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    data = {
+      'username':username,
+      'credentials':credentials
+    }
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/list-tasks', data=data)
+      print (r.json()['message'])
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
   def kill( self, username, taskname ):
 
-    # TODO:
-    # - Make request here using everything, in order to kill a task
-    print ("Make request!")
+    if taskname.split('.')[0] != 'user':
+      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
+
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+    data = {
+      'username':username,
+      'taskname':taskname,
+      'credentials':credentials
+    }
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/kill-task', data=data)
+      print (r.text)
+    except requests.exceptions.ConnectionError:
+      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
 parser = argparse.ArgumentParser()
 commands = parser.add_subparsers(dest='mode')
