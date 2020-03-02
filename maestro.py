@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import sys
 import argparse
 from Gaugi import Logger
@@ -190,8 +191,15 @@ class DatasetParser(Logger):
 
     try:
       r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
-      with open('./{}'.format(datasetname), 'wb') as f:
-        f.write(r.content)
+      try:
+        if r.json()['message'] == "Internal Server Error":
+          print (r.text)
+          return
+        error_code = r.json()['error_code']
+        print (r.text)
+      except:
+        with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:
+          f.write(r.content)
     except requests.exceptions.ConnectionError:
       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
 
@@ -211,16 +219,30 @@ class DatasetParser(Logger):
       'credentials':credentials
     }
 
-    fin = open(path, 'rb')
-    files = {'file':fin}
-
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
-      print (r.text)
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
-    finally:
-      fin.close()
+    # Parsing input
+    file_list = []
+    if (os.path.isdir(path)):
+      for i in os.listdir(path):
+        if os.path.isfile(os.path.join(path, i)):
+          file_list.append (os.path.join(path, i))
+      if (not file_list):
+        MSG_ERROR (self, "File does not exist.")
+    else:
+      if (not os.path.exists(path)):
+        MSG_ERROR (self, "File does not exist.")
+      else:
+        file_list.append(path)
+    
+    for filename in file_list:
+      fin = open(filename, 'rb')
+      files = {'file':fin}
+      try:
+        r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
+        print (r.text)
+      except requests.exceptions.ConnectionError:
+        MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+      finally:
+        fin.close()
 
 #
 # Task parser
