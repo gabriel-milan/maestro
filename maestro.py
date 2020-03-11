@@ -318,7 +318,7 @@ class TaskParser(Logger):
       if args.option == 'create':
         self.create(args.taskname, args.dataFile, args.configFile, args.secondaryDS,
                     args.execCommand,args.containerImage,args.et,args.eta,args.gpu,
-                    args.bypass_test_job, args.dry_run)
+                    args.dry_run)
       elif args.option == 'retry':
         self.retry(args.taskname)
       elif args.option == 'delete':
