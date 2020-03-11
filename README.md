@@ -20,6 +20,11 @@ cd maestro/
 source setup.sh
 ```
 
+* Install dependencies
+```
+pip3 install -r requirements.txt
+```
+
 * Run it!
 ```
 maestro --help
