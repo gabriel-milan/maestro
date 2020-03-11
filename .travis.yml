@@ -8,4 +8,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - python3 maestro.py
+  - python3 maestro.py --help
