@@ -1,7 +1,7 @@
 # Maestro
 
 [![Documentation Status](https://readthedocs.org/projects/maestro-lps/badge/?version=latest)](https://maestro-lps.readthedocs.io/en/latest/?badge=latest)
-[![Build Status](https://travis-ci.org/{ORG-or-USERNAME}/{REPO-NAME}.png?branch=master)](https://travis-ci.org/gabriel-milan/maestro)
+[![Build Status](https://travis-ci.org/gabriel-milan/maestro.png?branch=master)](https://travis-ci.org/gabriel-milan/maestro)
 
 ## Getting started
 
