@@ -1,5 +1,7 @@
 # Maestro
 
+[![Documentation Status](https://readthedocs.org/projects/maestro-lps/badge/?version=latest)](https://maestro-lps.readthedocs.io/en/latest/?badge=latest)
+
 ## Getting started
 
 * Clone this repository
