@@ -1,2 +1,4 @@
-Gaugi>=2.0.0
+cython
+Gaugi
 requests
+lps_maestro

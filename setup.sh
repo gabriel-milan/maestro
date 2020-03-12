@@ -5,6 +5,10 @@ BIN_DIR="$HOME/.bin"
 SCRIPT_NAME="$BIN_DIR/maestro"
 HEADER="#!"$(which python3)
 
+echo "Installing dependencies..."
+
+pip3 install -r requirements.txt
+
 echo "Setting up the script..."
 
 if [ ! -d $BIN_DIR ]

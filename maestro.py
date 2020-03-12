@@ -10,6 +10,10 @@ from hashlib import sha256, md5
 import pickle
 import base64
 from pathlib import Path
+from lps_maestro.utils import getCredentialsData
+from lps_maestro.castor import castor
+from lps_maestro.task import task
+from lps_maestro.authenticate import authenticate
 
 #
 # Macros
@@ -37,11 +41,9 @@ def getCredentialsData ():
 class AuthenticationParser (Logger):
 
   def __init__ (self, args=None):
-    
     Logger.__init__(self)
-
+    self.__authenticate = authenticate
     if args:
-
       # Authenticate
       parser = argparse.ArgumentParser(description = '', add_help = False)
       parser.add_argument(
@@ -52,7 +54,6 @@ class AuthenticationParser (Logger):
         '-p', '--password', action='store', dest='password', required = True,
         help = "Your password"
       )
-
       args.add_parser( 'authenticate', parents=[parser] )
 
   def compile( self, args ):
@@ -65,23 +66,7 @@ class AuthenticationParser (Logger):
     return m.hexdigest()
 
   def authenticate (self, username, password):
-    MSG_INFO (self, "Trying to connect...")
-    data = {
-      'username':username,
-      'password':self.hashPw(password)
-    }
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
-      MSG_INFO (self, r.text)
-      if (r.json()['error_code'] == 200):
-        pickled_data = pickle.dumps(data)
-        b64_pickled_data = base64.b64encode(pickled_data)
-        home = str(Path.home())
-        f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
-        f.write(b64_pickled_data)
-        f.close()
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__authenticate.authenticate(username, password)
 
 #
 # Dataset parser
@@ -89,35 +74,29 @@ class AuthenticationParser (Logger):
 class DatasetParser(Logger):
 
   def __init__(self, args=None):
-
     Logger.__init__(self)
+    self.__castor = castor
     if args:
-
       # Upload
       upload_parser = argparse.ArgumentParser(description = 'Dataset upload CLI.' , add_help = False)
       upload_parser.add_argument('-d', '--dataset', action='store', dest='datasetname', required=True,
                                   help = "The dataset name that will be registered on the database (e.g: user.jodafons...)")
       upload_parser.add_argument('-p','--path', action='store', dest='path', required=True,
                                   help = "The path to the dataset file")
-      
       # Download
       download_parser = argparse.ArgumentParser(description = 'Dataset donwload CLI', add_help = False)
       download_parser.add_argument('-d', '--dataset', action='store', dest='datasetname', required=True,
                                    help = "The dataset name to be downloaded")
-
       # Delete                             
       delete_parser = argparse.ArgumentParser(description = 'Dataset delete CLI', add_help = False)
       delete_parser.add_argument('-d', '--dataset', action='store', dest='datasetname', required=True,
                                    help = "The dataset name to be removed")
-
       # List                             
       list_parser = argparse.ArgumentParser(description = 'Dataset listing', add_help = False)
       list_parser.add_argument('-u', '--user', action='store', dest='username', required=True,
                                    help = "List all datasets for a selected user")
-
       parent = argparse.ArgumentParser(description = '',add_help = False)
       subparser = parent.add_subparsers(dest='option')
-
       subparser.add_parser('upload', parents=[upload_parser])
       subparser.add_parser('download', parents=[download_parser])
       subparser.add_parser('delete', parents=[delete_parser])
@@ -133,116 +112,19 @@ class DatasetParser(Logger):
       elif args.option == 'delete':
         self.delete(args.datasetname)
       elif args.option == 'list':
-        self.list(args.username)
+        self.list(args.username,)
 
   def list( self, username ):
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'credentials':credentials
-    }
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/list-datasets', data=data)
-      print (r.json()['message'])
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
-
+    return self.__castor.list (username, cli=True)
+    
   def delete( self, datasetname ):
-
-    if datasetname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
-    username = datasetname.split('.')[1]
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'datasetname':datasetname,
-      'credentials':credentials
-    }
-
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/delete-dataset', data=data)
-      print (r.text)
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__castor.delete (datasetname)
 
   def download( self, datasetname ):
-
-    if datasetname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
-    username = datasetname.split('.')[1]
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'datasetname':datasetname,
-      'credentials':credentials
-    }
-
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
-      try:
-        if r.json()['message'] == "Internal Server Error":
-          print (r.text)
-          return
-        error_code = r.json()['error_code']
-        print (r.text)
-      except:
-        with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:
-          f.write(r.content)
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__castor.download (datasetname)
 
   def upload( self , datasetname, path ):
-
-    if datasetname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
-    username = datasetname.split('.')[1]
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'datasetname':datasetname,
-      'credentials':credentials
-    }
-
-    # Parsing input
-    file_list = []
-    if (os.path.isdir(path)):
-      for i in os.listdir(path):
-        if os.path.isfile(os.path.join(path, i)):
-          file_list.append (os.path.join(path, i))
-      if (not file_list):
-        MSG_ERROR (self, "File does not exist.")
-    else:
-      if (not os.path.exists(path)):
-        MSG_ERROR (self, "File does not exist.")
-      else:
-        file_list.append(path)
-    
-    for filename in file_list:
-      fin = open(filename, 'rb')
-      files = {'file':fin}
-      try:
-        r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
-        print (r.text)
-      except requests.exceptions.ConnectionError:
-        MSG_ERROR (self, "Failed to connect to LPS Cluster.")
-      finally:
-        fin.close()
+    return self.__castor.upload (datasetname, path)
 
 #
 # Task parser
@@ -252,6 +134,7 @@ class TaskParser(Logger):
 
   def __init__(self , args=None):
     Logger.__init__(self)
+    self.__task = task
     if args:
       # Create
       create_parser = argparse.ArgumentParser(description = '', add_help = False)
@@ -332,119 +215,19 @@ class TaskParser(Logger):
                     configFile, secondaryDS,
                     execCommand, containerImage, et=None, eta=None, gpu=False,
                     dry_run=False):
-
-    if taskname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
-    username = taskname.split('.')[1]
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    if dry_run:
-      MSG_WARNING (self, "Please disable dry run.")
-      return
-
-    data = {
-      'username'              : username,
-      'taskname'              : taskname,
-      'configFile'            : configFile,
-      'dataFile'              : dataFile,
-      'containerImage'        : containerImage,
-      'secondaryDS'           : secondaryDS,
-      'execCommand'           : execCommand,
-      'et'                    : et,
-      'eta'                   : eta,
-      'gpu'                   : int(gpu),
-      'credentials'           : credentials
-    }
-
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/create-task', data=data)
-      print (r.text)
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__task.create( taskname, dataFile, configFile, secondaryDS, execCommand, containerImage, et=None, eta=None, gpu=False, dry_run=False)
 
   def delete( self, taskname ):
-
-    if taskname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
-    username = taskname.split('.')[1]
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'taskname':taskname,
-      'credentials':credentials
-    }
-
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/delete-task', data=data)
-      print (r.text)
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__task.delete (taskname)
 
   def retry( self, taskname ):
-
-    if taskname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
-    username = taskname.split('.')[1]
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'taskname':taskname,
-      'credentials':credentials
-    }
-
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/retry-task', data=data)
-      print (r.text)
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__task.retry(taskname)
 
   def list( self, username ):
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'credentials':credentials
-    }
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/list-tasks', data=data)
-      print (r.json()['message'])
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__task.list(username, cli=True)
 
   def kill( self, username, taskname ):
-
-    if taskname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
-
-    credentials = getCredentialsData()
-    if credentials == False:
-      return
-
-    data = {
-      'username':username,
-      'taskname':taskname,
-      'credentials':credentials
-    }
-
-    try:
-      r = requests.post(url='http://146.164.147.170:5020/kill-task', data=data)
-      print (r.text)
-    except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+    return self.__task.kill (username, taskname)
 
 parser = argparse.ArgumentParser()
 commands = parser.add_subparsers(dest='mode')
