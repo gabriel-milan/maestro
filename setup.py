@@ -1,6 +1,16 @@
 from setuptools import setup, find_packages
 from setuptools.extension import Extension
-from Cython.Build import cythonize
+import subprocess
+import sys
+
+def install(package):
+  subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+try:
+  from Cython.Build import cythonize
+except:
+  install('cython')
+  from Cython.Build import cythonize
 
 with open("README.md", "r") as fh:
   long_description = fh.read()
@@ -25,7 +35,6 @@ setup(
   url = 'https://github.com/gabriel-milan/maestro',
   keywords = ['cli', 'cluster', 'command-line interface', 'computer grid', 'lps', 'ufrj'],
   install_requires=[
-    'cython',
     'Gaugi',
     'requests'
   ],

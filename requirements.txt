@@ -1,4 +1,3 @@
-cython
 Gaugi
 requests
 lps_maestro
