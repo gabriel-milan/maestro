@@ -20,7 +20,8 @@
 project = 'Maestro'
 copyright = '2020, Gabriel Gazola Milan <gabriel.milan@lps.ufrj.br>, Joao Victor da Fonseca Pinto <jodafons@lps.ufrj.br>'
 author = 'Gabriel Gazola Milan <gabriel.milan@lps.ufrj.br>, Joao Victor da Fonseca Pinto <jodafons@lps.ufrj.br>'
-
+version = '0.2'
+release = '0.2.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -39,7 +40,7 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'br'
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
