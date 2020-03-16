@@ -19,9 +19,15 @@ class Task (Logger):
   def __init__ (self):
     Logger.__init__(self)
   
-  def create( self, taskname, dataFile,
-                    configFile, secondaryDS,
-                    execCommand, containerImage, et=None, eta=None, gpu=False,
+  def create( self, taskname,
+                    dataFile,
+                    configFile,
+                    execCommand,
+                    containerImage,
+                    secondaryDS=None,
+                    et=None,
+                    eta=None,
+                    gpu=False,
                     dry_run=False):
 
     if taskname.split('.')[0] != 'user':
@@ -42,10 +48,10 @@ class Task (Logger):
       'configFile'            : configFile,
       'dataFile'              : dataFile,
       'containerImage'        : containerImage,
-      'secondaryDS'           : secondaryDS,
+      'secondaryDS'           : secondaryDS if secondaryDS else '',
       'execCommand'           : execCommand,
-      'et'                    : et,
-      'eta'                   : eta,
+      'et'                    : et if et else '',
+      'eta'                   : eta if eta else '',
       'gpu'                   : int(gpu),
       'credentials'           : credentials
     }

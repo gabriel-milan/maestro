@@ -25,7 +25,7 @@ on the `Maestro repository <https://github.com/gabriel-milan/maestro>`
 
 - After that, you can import it on your Python 3.x script:
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
 
 Installation (CLI)
@@ -69,7 +69,7 @@ maestro.authenticate (username, password)
 
 This is the simplest module on Maestro and it's necessary so you can access the other two. By running:
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.authenticate('<your-username>', '<your-password>')
 
@@ -94,28 +94,28 @@ Castor module has four commands:
 maestro.castor.upload (datasetname, path)
 """""""""""""""""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.castor.upload('<your-dataset-name>', '<your-dataset-path>')
 
 maestro.castor.download (datasetname)
 """""""""""""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.castor.download('<your-dataset-name>')
 
 maestro.castor.delete (datasetname)
 """""""""""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.castor.delete('<your-dataset-name>')
 
 maestro.castor.list (username, cli=False)
 """""""""""""""""""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.castor.list('<username>')
 
@@ -134,18 +134,18 @@ Task module has five commands:
 - `list` for listing tasks related to a given username
 - `kill` for stopping execution of tasks
 
-maestro.task.create (taskname, dataFile, configFile, secondaryDS, execCommand, containerImage, et=None, eta=None, gpu=False, dry_run=False)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+maestro.task.create (taskname, dataFile, configFile, execCommand, containerImage, secondaryDS=None, et=None, eta=None, gpu=False, dry_run=False)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.task.create (
       '<taskname>', 
       '<dataFile>', 
       '<configFile>', 
-      '<secondaryDS>', 
       '<execCommand>', 
       '<containerImage>', 
+      secondaryDS=None,
       et=None, 
       eta=None, 
       gpu=False, 
@@ -155,28 +155,28 @@ maestro.task.create (taskname, dataFile, configFile, secondaryDS, execCommand, c
 maestro.task.retry (taskname)
 """""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.task.retry ('<taskname>')
 
 maestro.task.delete (taskname)
 """"""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.task.delete ('<taskname>')
 
 maestro.task.list (username, cli=False)
 """""""""""""""""""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.task.list('<username>')
 
 maestro.task.kill (username, taskname)
 """""""""""""""""""""""""""""""""""""""""""
 
-.. code-block:: python
+.. code-block:: py
    import lps_maestro as maestro
    maestro.task.kill('<username>', '<taskname>')
 

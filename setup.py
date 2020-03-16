@@ -24,7 +24,7 @@ extensions = [
 
 setup(
   name = 'lps-maestro',
-  version = '0.2.0',
+  version = '0.2.1',
   license='GPL-3.0',
   description = 'Command line interface for the LPS Cluster @ UFRJ.',
   long_description = long_description,

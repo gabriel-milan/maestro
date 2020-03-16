@@ -1274,7 +1274,8 @@ int __pyx_module_is_main_lps_maestro__task = 0;
 /* Implementation of 'lps_maestro.task' */
 static const char __pyx_k_[] = ".";
 static const char __pyx_k_r[] = "r";
-static const char __pyx_k__2[] = "*";
+static const char __pyx_k__2[] = "";
+static const char __pyx_k__3[] = "*";
 static const char __pyx_k_df[] = "df";
 static const char __pyx_k_et[] = "et";
 static const char __pyx_k_os[] = "os";
@@ -1382,7 +1383,8 @@ static PyObject *__pyx_n_s_Task_kill;
 static PyObject *__pyx_n_s_Task_list;
 static PyObject *__pyx_n_s_Task_retry;
 static PyObject *__pyx_kp_s_The_task_name_must_start_with_us;
-static PyObject *__pyx_n_s__2;
+static PyObject *__pyx_kp_s__2;
+static PyObject *__pyx_n_s__3;
 static PyObject *__pyx_n_s_all;
 static PyObject *__pyx_n_s_argparse;
 static PyObject *__pyx_n_s_base64;
@@ -1455,25 +1457,25 @@ static PyObject *__pyx_n_s_user;
 static PyObject *__pyx_n_s_username;
 static PyObject *__pyx_kp_s_utf_8;
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_gpu, PyObject *__pyx_v_dry_run); /* proto */
+static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_gpu, PyObject *__pyx_v_dry_run); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_taskname); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_taskname); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_username, PyObject *__pyx_v_cli); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_username, PyObject *__pyx_v_taskname); /* proto */
-static PyObject *__pyx_tuple__3;
-static PyObject *__pyx_tuple__5;
-static PyObject *__pyx_tuple__7;
+static PyObject *__pyx_tuple__4;
+static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__8;
-static PyObject *__pyx_tuple__10;
-static PyObject *__pyx_tuple__12;
-static PyObject *__pyx_tuple__14;
+static PyObject *__pyx_tuple__9;
+static PyObject *__pyx_tuple__11;
+static PyObject *__pyx_tuple__13;
 static PyObject *__pyx_tuple__15;
-static PyObject *__pyx_codeobj__4;
-static PyObject *__pyx_codeobj__6;
-static PyObject *__pyx_codeobj__9;
-static PyObject *__pyx_codeobj__11;
-static PyObject *__pyx_codeobj__13;
-static PyObject *__pyx_codeobj__16;
+static PyObject *__pyx_tuple__16;
+static PyObject *__pyx_codeobj__5;
+static PyObject *__pyx_codeobj__7;
+static PyObject *__pyx_codeobj__10;
+static PyObject *__pyx_codeobj__12;
+static PyObject *__pyx_codeobj__14;
+static PyObject *__pyx_codeobj__17;
 /* Late includes */
 
 /* "lps_maestro/task.py":19
@@ -1511,7 +1513,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task___init__(CYTHON_UNUSED PyObj
  *   def __init__ (self):
  *     Logger.__init__(self)             # <<<<<<<<<<<<<<
  * 
- *   def create( self, taskname, dataFile,
+ *   def create( self, taskname,
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -1561,9 +1563,9 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task___init__(CYTHON_UNUSED PyObj
 /* "lps_maestro/task.py":22
  *     Logger.__init__(self)
  * 
- *   def create( self, taskname, dataFile,             # <<<<<<<<<<<<<<
- *                     configFile, secondaryDS,
- *                     execCommand, containerImage, et=None, eta=None, gpu=False,
+ *   def create( self, taskname,             # <<<<<<<<<<<<<<
+ *                     dataFile,
+ *                     configFile,
  */
 
 /* Python wrapper */
@@ -1574,9 +1576,9 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_3create(PyObject *__pyx_self
   PyObject *__pyx_v_taskname = 0;
   PyObject *__pyx_v_dataFile = 0;
   PyObject *__pyx_v_configFile = 0;
-  PyObject *__pyx_v_secondaryDS = 0;
   PyObject *__pyx_v_execCommand = 0;
   PyObject *__pyx_v_containerImage = 0;
+  PyObject *__pyx_v_secondaryDS = 0;
   PyObject *__pyx_v_et = 0;
   PyObject *__pyx_v_eta = 0;
   PyObject *__pyx_v_gpu = 0;
@@ -1585,23 +1587,48 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_3create(PyObject *__pyx_self
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("create (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_taskname,&__pyx_n_s_dataFile,&__pyx_n_s_configFile,&__pyx_n_s_secondaryDS,&__pyx_n_s_execCommand,&__pyx_n_s_containerImage,&__pyx_n_s_et,&__pyx_n_s_eta,&__pyx_n_s_gpu,&__pyx_n_s_dry_run,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_taskname,&__pyx_n_s_dataFile,&__pyx_n_s_configFile,&__pyx_n_s_execCommand,&__pyx_n_s_containerImage,&__pyx_n_s_secondaryDS,&__pyx_n_s_et,&__pyx_n_s_eta,&__pyx_n_s_gpu,&__pyx_n_s_dry_run,0};
     PyObject* values[11] = {0,0,0,0,0,0,0,0,0,0,0};
 
-    /* "lps_maestro/task.py":24
- *   def create( self, taskname, dataFile,
- *                     configFile, secondaryDS,
- *                     execCommand, containerImage, et=None, eta=None, gpu=False,             # <<<<<<<<<<<<<<
+    /* "lps_maestro/task.py":27
+ *                     execCommand,
+ *                     containerImage,
+ *                     secondaryDS=None,             # <<<<<<<<<<<<<<
+ *                     et=None,
+ *                     eta=None,
+ */
+    values[6] = ((PyObject *)((PyObject *)Py_None));
+
+    /* "lps_maestro/task.py":28
+ *                     containerImage,
+ *                     secondaryDS=None,
+ *                     et=None,             # <<<<<<<<<<<<<<
+ *                     eta=None,
+ *                     gpu=False,
+ */
+    values[7] = ((PyObject *)((PyObject *)Py_None));
+
+    /* "lps_maestro/task.py":29
+ *                     secondaryDS=None,
+ *                     et=None,
+ *                     eta=None,             # <<<<<<<<<<<<<<
+ *                     gpu=False,
+ *                     dry_run=False):
+ */
+    values[8] = ((PyObject *)((PyObject *)Py_None));
+
+    /* "lps_maestro/task.py":30
+ *                     et=None,
+ *                     eta=None,
+ *                     gpu=False,             # <<<<<<<<<<<<<<
  *                     dry_run=False):
  * 
  */
-    values[7] = ((PyObject *)((PyObject *)Py_None));
-    values[8] = ((PyObject *)((PyObject *)Py_None));
     values[9] = ((PyObject *)((PyObject *)Py_False));
 
-    /* "lps_maestro/task.py":25
- *                     configFile, secondaryDS,
- *                     execCommand, containerImage, et=None, eta=None, gpu=False,
+    /* "lps_maestro/task.py":31
+ *                     eta=None,
+ *                     gpu=False,
  *                     dry_run=False):             # <<<<<<<<<<<<<<
  * 
  *     if taskname.split('.')[0] != 'user':
@@ -1645,37 +1672,37 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_3create(PyObject *__pyx_self
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_taskname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 1); __PYX_ERR(0, 22, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 1); __PYX_ERR(0, 22, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_dataFile)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 2); __PYX_ERR(0, 22, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 2); __PYX_ERR(0, 22, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_configFile)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 3); __PYX_ERR(0, 22, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 3); __PYX_ERR(0, 22, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
-        if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_secondaryDS)) != 0)) kw_args--;
+        if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_execCommand)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 4); __PYX_ERR(0, 22, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 4); __PYX_ERR(0, 22, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
-        if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_execCommand)) != 0)) kw_args--;
+        if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_containerImage)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 5); __PYX_ERR(0, 22, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 5); __PYX_ERR(0, 22, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
-        if (likely((values[6] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_containerImage)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 6); __PYX_ERR(0, 22, __pyx_L3_error)
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_secondaryDS);
+          if (value) { values[6] = value; kw_args--; }
         }
         CYTHON_FALLTHROUGH;
         case  7:
@@ -1716,7 +1743,8 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_3create(PyObject *__pyx_self
         case  8: values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
         CYTHON_FALLTHROUGH;
         case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
-        values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
+        CYTHON_FALLTHROUGH;
+        case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
         values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
         values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
         values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
@@ -1730,9 +1758,9 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_3create(PyObject *__pyx_self
     __pyx_v_taskname = values[1];
     __pyx_v_dataFile = values[2];
     __pyx_v_configFile = values[3];
-    __pyx_v_secondaryDS = values[4];
-    __pyx_v_execCommand = values[5];
-    __pyx_v_containerImage = values[6];
+    __pyx_v_execCommand = values[4];
+    __pyx_v_containerImage = values[5];
+    __pyx_v_secondaryDS = values[6];
     __pyx_v_et = values[7];
     __pyx_v_eta = values[8];
     __pyx_v_gpu = values[9];
@@ -1740,20 +1768,20 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_3create(PyObject *__pyx_self
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 22, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 22, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.task.Task.create", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11lps_maestro_4task_4Task_2create(__pyx_self, __pyx_v_self, __pyx_v_taskname, __pyx_v_dataFile, __pyx_v_configFile, __pyx_v_secondaryDS, __pyx_v_execCommand, __pyx_v_containerImage, __pyx_v_et, __pyx_v_eta, __pyx_v_gpu, __pyx_v_dry_run);
+  __pyx_r = __pyx_pf_11lps_maestro_4task_4Task_2create(__pyx_self, __pyx_v_self, __pyx_v_taskname, __pyx_v_dataFile, __pyx_v_configFile, __pyx_v_execCommand, __pyx_v_containerImage, __pyx_v_secondaryDS, __pyx_v_et, __pyx_v_eta, __pyx_v_gpu, __pyx_v_dry_run);
 
   /* "lps_maestro/task.py":22
  *     Logger.__init__(self)
  * 
- *   def create( self, taskname, dataFile,             # <<<<<<<<<<<<<<
- *                     configFile, secondaryDS,
- *                     execCommand, containerImage, et=None, eta=None, gpu=False,
+ *   def create( self, taskname,             # <<<<<<<<<<<<<<
+ *                     dataFile,
+ *                     configFile,
  */
 
   /* function exit code */
@@ -1761,7 +1789,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_3create(PyObject *__pyx_self
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_gpu, PyObject *__pyx_v_dry_run) {
+static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_gpu, PyObject *__pyx_v_dry_run) {
   PyObject *__pyx_v_username = NULL;
   PyObject *__pyx_v_credentials = NULL;
   PyObject *__pyx_v_data = NULL;
@@ -1782,14 +1810,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
   PyObject *__pyx_t_12 = NULL;
   __Pyx_RefNannySetupContext("create", 0);
 
-  /* "lps_maestro/task.py":27
+  /* "lps_maestro/task.py":33
  *                     dry_run=False):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  *     username = taskname.split('.')[1]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -1803,24 +1831,24 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":28
+    /* "lps_maestro/task.py":34
  * 
  *     if taskname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')             # <<<<<<<<<<<<<<
  *     username = taskname.split('.')[1]
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
@@ -1837,7 +1865,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -1845,13 +1873,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 28, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 34, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -1862,14 +1890,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
       __Pyx_INCREF(__pyx_kp_s_The_task_name_must_start_with_us);
       __Pyx_GIVEREF(__pyx_kp_s_The_task_name_must_start_with_us);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_kp_s_The_task_name_must_start_with_us);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "lps_maestro/task.py":27
+    /* "lps_maestro/task.py":33
  *                     dry_run=False):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
@@ -1878,14 +1906,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
  */
   }
 
-  /* "lps_maestro/task.py":29
+  /* "lps_maestro/task.py":35
  *     if taskname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  *     username = taskname.split('.')[1]             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -1899,23 +1927,23 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_username = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":31
+  /* "lps_maestro/task.py":37
  *     username = taskname.split('.')[1]
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -1929,25 +1957,25 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":32
+  /* "lps_maestro/task.py":38
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":33
+    /* "lps_maestro/task.py":39
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -1958,7 +1986,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/task.py":32
+    /* "lps_maestro/task.py":38
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -1967,24 +1995,24 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
  */
   }
 
-  /* "lps_maestro/task.py":35
+  /* "lps_maestro/task.py":41
  *       return
  * 
  *     if dry_run:             # <<<<<<<<<<<<<<
  *       MSG_WARNING (self, "Please disable dry run.")
  *       return
  */
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_dry_run); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_dry_run); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 41, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":36
+    /* "lps_maestro/task.py":42
  * 
  *     if dry_run:
  *       MSG_WARNING (self, "Please disable dry run.")             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_MSG_WARNING); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_MSG_WARNING); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = NULL;
     __pyx_t_5 = 0;
@@ -2001,7 +2029,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_self, __pyx_kp_s_Please_disable_dry_run};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -2009,13 +2037,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_self, __pyx_kp_s_Please_disable_dry_run};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_3 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 42, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -2026,14 +2054,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
       __Pyx_INCREF(__pyx_kp_s_Please_disable_dry_run);
       __Pyx_GIVEREF(__pyx_kp_s_Please_disable_dry_run);
       PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_5, __pyx_kp_s_Please_disable_dry_run);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "lps_maestro/task.py":37
+    /* "lps_maestro/task.py":43
  *     if dry_run:
  *       MSG_WARNING (self, "Please disable dry run.")
  *       return             # <<<<<<<<<<<<<<
@@ -2044,7 +2072,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/task.py":35
+    /* "lps_maestro/task.py":41
  *       return
  * 
  *     if dry_run:             # <<<<<<<<<<<<<<
@@ -2053,113 +2081,140 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
  */
   }
 
-  /* "lps_maestro/task.py":40
+  /* "lps_maestro/task.py":46
  * 
  *     data = {
  *       'username'              : username,             # <<<<<<<<<<<<<<
  *       'taskname'              : taskname,
  *       'configFile'            : configFile,
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":41
+  /* "lps_maestro/task.py":47
  *     data = {
  *       'username'              : username,
  *       'taskname'              : taskname,             # <<<<<<<<<<<<<<
  *       'configFile'            : configFile,
  *       'dataFile'              : dataFile,
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":42
+  /* "lps_maestro/task.py":48
  *       'username'              : username,
  *       'taskname'              : taskname,
  *       'configFile'            : configFile,             # <<<<<<<<<<<<<<
  *       'dataFile'              : dataFile,
  *       'containerImage'        : containerImage,
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_configFile, __pyx_v_configFile) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_configFile, __pyx_v_configFile) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":43
+  /* "lps_maestro/task.py":49
  *       'taskname'              : taskname,
  *       'configFile'            : configFile,
  *       'dataFile'              : dataFile,             # <<<<<<<<<<<<<<
  *       'containerImage'        : containerImage,
- *       'secondaryDS'           : secondaryDS,
+ *       'secondaryDS'           : secondaryDS if secondaryDS else '',
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dataFile, __pyx_v_dataFile) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dataFile, __pyx_v_dataFile) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":44
+  /* "lps_maestro/task.py":50
  *       'configFile'            : configFile,
  *       'dataFile'              : dataFile,
  *       'containerImage'        : containerImage,             # <<<<<<<<<<<<<<
- *       'secondaryDS'           : secondaryDS,
+ *       'secondaryDS'           : secondaryDS if secondaryDS else '',
  *       'execCommand'           : execCommand,
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_containerImage, __pyx_v_containerImage) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_containerImage, __pyx_v_containerImage) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":45
+  /* "lps_maestro/task.py":51
  *       'dataFile'              : dataFile,
  *       'containerImage'        : containerImage,
- *       'secondaryDS'           : secondaryDS,             # <<<<<<<<<<<<<<
+ *       'secondaryDS'           : secondaryDS if secondaryDS else '',             # <<<<<<<<<<<<<<
  *       'execCommand'           : execCommand,
- *       'et'                    : et,
+ *       'et'                    : et if et else '',
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_secondaryDS, __pyx_v_secondaryDS) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_secondaryDS); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 51, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_INCREF(__pyx_v_secondaryDS);
+    __pyx_t_2 = __pyx_v_secondaryDS;
+  } else {
+    __Pyx_INCREF(__pyx_kp_s__2);
+    __pyx_t_2 = __pyx_kp_s__2;
+  }
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_secondaryDS, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lps_maestro/task.py":46
+  /* "lps_maestro/task.py":52
  *       'containerImage'        : containerImage,
- *       'secondaryDS'           : secondaryDS,
+ *       'secondaryDS'           : secondaryDS if secondaryDS else '',
  *       'execCommand'           : execCommand,             # <<<<<<<<<<<<<<
- *       'et'                    : et,
- *       'eta'                   : eta,
+ *       'et'                    : et if et else '',
+ *       'eta'                   : eta if eta else '',
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_execCommand, __pyx_v_execCommand) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_execCommand, __pyx_v_execCommand) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":47
- *       'secondaryDS'           : secondaryDS,
+  /* "lps_maestro/task.py":53
+ *       'secondaryDS'           : secondaryDS if secondaryDS else '',
  *       'execCommand'           : execCommand,
- *       'et'                    : et,             # <<<<<<<<<<<<<<
- *       'eta'                   : eta,
+ *       'et'                    : et if et else '',             # <<<<<<<<<<<<<<
+ *       'eta'                   : eta if eta else '',
  *       'gpu'                   : int(gpu),
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_et, __pyx_v_et) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_et); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 53, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_INCREF(__pyx_v_et);
+    __pyx_t_2 = __pyx_v_et;
+  } else {
+    __Pyx_INCREF(__pyx_kp_s__2);
+    __pyx_t_2 = __pyx_kp_s__2;
+  }
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_et, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lps_maestro/task.py":48
+  /* "lps_maestro/task.py":54
  *       'execCommand'           : execCommand,
- *       'et'                    : et,
- *       'eta'                   : eta,             # <<<<<<<<<<<<<<
+ *       'et'                    : et if et else '',
+ *       'eta'                   : eta if eta else '',             # <<<<<<<<<<<<<<
  *       'gpu'                   : int(gpu),
  *       'credentials'           : credentials
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_eta, __pyx_v_eta) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_eta); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_INCREF(__pyx_v_eta);
+    __pyx_t_2 = __pyx_v_eta;
+  } else {
+    __Pyx_INCREF(__pyx_kp_s__2);
+    __pyx_t_2 = __pyx_kp_s__2;
+  }
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_eta, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lps_maestro/task.py":49
- *       'et'                    : et,
- *       'eta'                   : eta,
+  /* "lps_maestro/task.py":55
+ *       'et'                    : et if et else '',
+ *       'eta'                   : eta if eta else '',
  *       'gpu'                   : int(gpu),             # <<<<<<<<<<<<<<
  *       'credentials'           : credentials
  *     }
  */
-  __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_v_gpu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_v_gpu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_gpu, __pyx_t_2) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_gpu, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lps_maestro/task.py":50
- *       'eta'                   : eta,
+  /* "lps_maestro/task.py":56
+ *       'eta'                   : eta if eta else '',
  *       'gpu'                   : int(gpu),
  *       'credentials'           : credentials             # <<<<<<<<<<<<<<
  *     }
  * 
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":53
+  /* "lps_maestro/task.py":59
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2175,42 +2230,42 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "lps_maestro/task.py":54
+      /* "lps_maestro/task.py":60
  * 
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/create-task', data=data)             # <<<<<<<<<<<<<<
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L6_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 54, __pyx_L6_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L6_error)
+      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_create) < 0) __PYX_ERR(0, 54, __pyx_L6_error)
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 54, __pyx_L6_error)
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L6_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_create) < 0) __PYX_ERR(0, 60, __pyx_L6_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 60, __pyx_L6_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_v_r = __pyx_t_3;
       __pyx_t_3 = 0;
 
-      /* "lps_maestro/task.py":55
+      /* "lps_maestro/task.py":61
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/create-task', data=data)
  *       print (r.text)             # <<<<<<<<<<<<<<
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L6_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(0, 55, __pyx_L6_error)
+      if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(0, 61, __pyx_L6_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "lps_maestro/task.py":53
+      /* "lps_maestro/task.py":59
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2228,7 +2283,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "lps_maestro/task.py":56
+    /* "lps_maestro/task.py":62
  *       r = requests.post(url='http://146.164.147.170:5020/create-task', data=data)
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -2236,12 +2291,12 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_3, &__pyx_t_1, &__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_requests); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 56, __pyx_L8_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_requests); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 62, __pyx_L8_except_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 56, __pyx_L8_except_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 62, __pyx_L8_except_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 56, __pyx_L8_except_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 62, __pyx_L8_except_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __pyx_t_5 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_3, __pyx_t_6);
@@ -2250,19 +2305,19 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     __pyx_t_3 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0;
     if (__pyx_t_5) {
       __Pyx_AddTraceback("lps_maestro.task.Task.create", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 56, __pyx_L8_except_error)
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 62, __pyx_L8_except_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_3);
 
-      /* "lps_maestro/task.py":57
+      /* "lps_maestro/task.py":63
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  *   def delete( self, taskname ):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 57, __pyx_L8_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 63, __pyx_L8_except_error)
       __Pyx_GOTREF(__pyx_t_10);
       __pyx_t_11 = NULL;
       __pyx_t_5 = 0;
@@ -2279,7 +2334,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 57, __pyx_L8_except_error)
+        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 63, __pyx_L8_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
@@ -2287,13 +2342,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 57, __pyx_L8_except_error)
+        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 63, __pyx_L8_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 57, __pyx_L8_except_error)
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 63, __pyx_L8_except_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (__pyx_t_11) {
           __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -2304,7 +2359,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_5, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 57, __pyx_L8_except_error)
+        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 63, __pyx_L8_except_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
@@ -2318,7 +2373,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     goto __pyx_L8_except_error;
     __pyx_L8_except_error:;
 
-    /* "lps_maestro/task.py":53
+    /* "lps_maestro/task.py":59
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2341,9 +2396,9 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
   /* "lps_maestro/task.py":22
  *     Logger.__init__(self)
  * 
- *   def create( self, taskname, dataFile,             # <<<<<<<<<<<<<<
- *                     configFile, secondaryDS,
- *                     execCommand, containerImage, et=None, eta=None, gpu=False,
+ *   def create( self, taskname,             # <<<<<<<<<<<<<<
+ *                     dataFile,
+ *                     configFile,
  */
 
   /* function exit code */
@@ -2369,7 +2424,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "lps_maestro/task.py":59
+/* "lps_maestro/task.py":65
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, taskname ):             # <<<<<<<<<<<<<<
@@ -2409,11 +2464,11 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_5delete(PyObject *__pyx_self
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_taskname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, 1); __PYX_ERR(0, 59, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, 1); __PYX_ERR(0, 65, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "delete") < 0)) __PYX_ERR(0, 59, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "delete") < 0)) __PYX_ERR(0, 65, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2426,7 +2481,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_5delete(PyObject *__pyx_self
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 59, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 65, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.task.Task.delete", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2460,14 +2515,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
   PyObject *__pyx_t_12 = NULL;
   __Pyx_RefNannySetupContext("delete", 0);
 
-  /* "lps_maestro/task.py":61
+  /* "lps_maestro/task.py":67
  *   def delete( self, taskname ):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  *     username = taskname.split('.')[1]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2481,24 +2536,24 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":62
+    /* "lps_maestro/task.py":68
  * 
  *     if taskname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')             # <<<<<<<<<<<<<<
  *     username = taskname.split('.')[1]
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
@@ -2515,7 +2570,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -2523,13 +2578,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 62, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -2540,14 +2595,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
       __Pyx_INCREF(__pyx_kp_s_The_task_name_must_start_with_us);
       __Pyx_GIVEREF(__pyx_kp_s_The_task_name_must_start_with_us);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_kp_s_The_task_name_must_start_with_us);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "lps_maestro/task.py":61
+    /* "lps_maestro/task.py":67
  *   def delete( self, taskname ):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
@@ -2556,14 +2611,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
  */
   }
 
-  /* "lps_maestro/task.py":63
+  /* "lps_maestro/task.py":69
  *     if taskname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  *     username = taskname.split('.')[1]             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2577,23 +2632,23 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_username = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":65
+  /* "lps_maestro/task.py":71
  *     username = taskname.split('.')[1]
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -2607,25 +2662,25 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":66
+  /* "lps_maestro/task.py":72
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":67
+    /* "lps_maestro/task.py":73
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -2636,7 +2691,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/task.py":66
+    /* "lps_maestro/task.py":72
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -2645,38 +2700,38 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
  */
   }
 
-  /* "lps_maestro/task.py":70
+  /* "lps_maestro/task.py":76
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'taskname':taskname,
  *       'credentials':credentials
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 76, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":71
+  /* "lps_maestro/task.py":77
  *     data = {
  *       'username':username,
  *       'taskname':taskname,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 76, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":72
+  /* "lps_maestro/task.py":78
  *       'username':username,
  *       'taskname':taskname,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  * 
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 76, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":75
+  /* "lps_maestro/task.py":81
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2692,42 +2747,42 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "lps_maestro/task.py":76
+      /* "lps_maestro/task.py":82
  * 
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/delete-task', data=data)             # <<<<<<<<<<<<<<
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L5_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L5_error)
+      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_delete) < 0) __PYX_ERR(0, 76, __pyx_L5_error)
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 76, __pyx_L5_error)
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 76, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_delete) < 0) __PYX_ERR(0, 82, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 82, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 82, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_v_r = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "lps_maestro/task.py":77
+      /* "lps_maestro/task.py":83
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/delete-task', data=data)
  *       print (r.text)             # <<<<<<<<<<<<<<
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 77, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 83, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 77, __pyx_L5_error)
+      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 83, __pyx_L5_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "lps_maestro/task.py":75
+      /* "lps_maestro/task.py":81
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2745,7 +2800,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "lps_maestro/task.py":78
+    /* "lps_maestro/task.py":84
  *       r = requests.post(url='http://146.164.147.170:5020/delete-task', data=data)
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -2753,12 +2808,12 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_6, &__pyx_t_1, &__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L7_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 84, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 78, __pyx_L7_except_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 84, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L7_except_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 84, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __pyx_t_5 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_6, __pyx_t_3);
@@ -2767,19 +2822,19 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     __pyx_t_6 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0;
     if (__pyx_t_5) {
       __Pyx_AddTraceback("lps_maestro.task.Task.delete", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_6) < 0) __PYX_ERR(0, 78, __pyx_L7_except_error)
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_6) < 0) __PYX_ERR(0, 84, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_6);
 
-      /* "lps_maestro/task.py":79
+      /* "lps_maestro/task.py":85
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  *   def retry( self, taskname ):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 79, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 85, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_10);
       __pyx_t_11 = NULL;
       __pyx_t_5 = 0;
@@ -2796,7 +2851,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -2804,13 +2859,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 79, __pyx_L7_except_error)
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 85, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (__pyx_t_11) {
           __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -2821,7 +2876,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_5, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
@@ -2835,7 +2890,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     goto __pyx_L7_except_error;
     __pyx_L7_except_error:;
 
-    /* "lps_maestro/task.py":75
+    /* "lps_maestro/task.py":81
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2855,7 +2910,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
     __pyx_L10_try_end:;
   }
 
-  /* "lps_maestro/task.py":59
+  /* "lps_maestro/task.py":65
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, taskname ):             # <<<<<<<<<<<<<<
@@ -2886,7 +2941,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "lps_maestro/task.py":81
+/* "lps_maestro/task.py":87
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def retry( self, taskname ):             # <<<<<<<<<<<<<<
@@ -2926,11 +2981,11 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_7retry(PyObject *__pyx_self,
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_taskname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("retry", 1, 2, 2, 1); __PYX_ERR(0, 81, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("retry", 1, 2, 2, 1); __PYX_ERR(0, 87, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "retry") < 0)) __PYX_ERR(0, 81, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "retry") < 0)) __PYX_ERR(0, 87, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2943,7 +2998,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_7retry(PyObject *__pyx_self,
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("retry", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 81, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("retry", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 87, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.task.Task.retry", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2977,14 +3032,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
   PyObject *__pyx_t_12 = NULL;
   __Pyx_RefNannySetupContext("retry", 0);
 
-  /* "lps_maestro/task.py":83
+  /* "lps_maestro/task.py":89
  *   def retry( self, taskname ):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  *     username = taskname.split('.')[1]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2998,24 +3053,24 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":84
+    /* "lps_maestro/task.py":90
  * 
  *     if taskname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')             # <<<<<<<<<<<<<<
  *     username = taskname.split('.')[1]
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 84, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
@@ -3032,7 +3087,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -3040,13 +3095,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 84, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 90, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -3057,14 +3112,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
       __Pyx_INCREF(__pyx_kp_s_The_task_name_must_start_with_us);
       __Pyx_GIVEREF(__pyx_kp_s_The_task_name_must_start_with_us);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_kp_s_The_task_name_must_start_with_us);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "lps_maestro/task.py":83
+    /* "lps_maestro/task.py":89
  *   def retry( self, taskname ):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
@@ -3073,14 +3128,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "lps_maestro/task.py":85
+  /* "lps_maestro/task.py":91
  *     if taskname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  *     username = taskname.split('.')[1]             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3094,23 +3149,23 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_username = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":87
+  /* "lps_maestro/task.py":93
  *     username = taskname.split('.')[1]
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -3124,25 +3179,25 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":88
+  /* "lps_maestro/task.py":94
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":89
+    /* "lps_maestro/task.py":95
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -3153,7 +3208,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/task.py":88
+    /* "lps_maestro/task.py":94
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -3162,38 +3217,38 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "lps_maestro/task.py":92
+  /* "lps_maestro/task.py":98
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'taskname':taskname,
  *       'credentials':credentials
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":93
+  /* "lps_maestro/task.py":99
  *     data = {
  *       'username':username,
  *       'taskname':taskname,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":94
+  /* "lps_maestro/task.py":100
  *       'username':username,
  *       'taskname':taskname,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  * 
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":97
+  /* "lps_maestro/task.py":103
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -3209,42 +3264,42 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "lps_maestro/task.py":98
+      /* "lps_maestro/task.py":104
  * 
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/retry-task', data=data)             # <<<<<<<<<<<<<<
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L5_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L5_error)
+      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_retry) < 0) __PYX_ERR(0, 98, __pyx_L5_error)
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 98, __pyx_L5_error)
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 98, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_retry) < 0) __PYX_ERR(0, 104, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 104, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 104, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_v_r = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "lps_maestro/task.py":99
+      /* "lps_maestro/task.py":105
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/retry-task', data=data)
  *       print (r.text)             # <<<<<<<<<<<<<<
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 99, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 105, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 99, __pyx_L5_error)
+      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 105, __pyx_L5_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "lps_maestro/task.py":97
+      /* "lps_maestro/task.py":103
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -3262,7 +3317,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "lps_maestro/task.py":100
+    /* "lps_maestro/task.py":106
  *       r = requests.post(url='http://146.164.147.170:5020/retry-task', data=data)
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -3270,12 +3325,12 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_6, &__pyx_t_1, &__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L7_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 100, __pyx_L7_except_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 106, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L7_except_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __pyx_t_5 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_6, __pyx_t_3);
@@ -3284,19 +3339,19 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     __pyx_t_6 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0;
     if (__pyx_t_5) {
       __Pyx_AddTraceback("lps_maestro.task.Task.retry", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_6) < 0) __PYX_ERR(0, 100, __pyx_L7_except_error)
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_6) < 0) __PYX_ERR(0, 106, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_6);
 
-      /* "lps_maestro/task.py":101
+      /* "lps_maestro/task.py":107
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  *   def list( self, username, cli=False ):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 101, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 107, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_10);
       __pyx_t_11 = NULL;
       __pyx_t_5 = 0;
@@ -3313,7 +3368,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -3321,13 +3376,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 101, __pyx_L7_except_error)
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 107, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (__pyx_t_11) {
           __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -3338,7 +3393,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_5, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
@@ -3352,7 +3407,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     goto __pyx_L7_except_error;
     __pyx_L7_except_error:;
 
-    /* "lps_maestro/task.py":97
+    /* "lps_maestro/task.py":103
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -3372,7 +3427,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
     __pyx_L10_try_end:;
   }
 
-  /* "lps_maestro/task.py":81
+  /* "lps_maestro/task.py":87
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def retry( self, taskname ):             # <<<<<<<<<<<<<<
@@ -3403,7 +3458,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "lps_maestro/task.py":103
+/* "lps_maestro/task.py":109
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
@@ -3447,7 +3502,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_9list(PyObject *__pyx_self, 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_username)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, 1); __PYX_ERR(0, 103, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, 1); __PYX_ERR(0, 109, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -3457,7 +3512,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_9list(PyObject *__pyx_self, 
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "list") < 0)) __PYX_ERR(0, 103, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "list") < 0)) __PYX_ERR(0, 109, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3475,7 +3530,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_9list(PyObject *__pyx_self, 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 103, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 109, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.task.Task.list", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3516,14 +3571,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
   int __pyx_t_18;
   __Pyx_RefNannySetupContext("list", 0);
 
-  /* "lps_maestro/task.py":105
+  /* "lps_maestro/task.py":111
  *   def list( self, username, cli=False ):
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -3537,25 +3592,25 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":106
+  /* "lps_maestro/task.py":112
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":107
+    /* "lps_maestro/task.py":113
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -3566,7 +3621,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/task.py":106
+    /* "lps_maestro/task.py":112
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -3575,29 +3630,29 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
  */
   }
 
-  /* "lps_maestro/task.py":110
+  /* "lps_maestro/task.py":116
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":111
+  /* "lps_maestro/task.py":117
  *     data = {
  *       'username':username,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  *     try:
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":113
+  /* "lps_maestro/task.py":119
  *       'credentials':credentials
  *     }
  *     try:             # <<<<<<<<<<<<<<
@@ -3613,47 +3668,47 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
     __Pyx_XGOTREF(__pyx_t_7);
     /*try:*/ {
 
-      /* "lps_maestro/task.py":114
+      /* "lps_maestro/task.py":120
  *     }
  *     try:
  *       if cli:             # <<<<<<<<<<<<<<
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks', data=data)
  *         print (r.json()['message'])
  */
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_cli); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 114, __pyx_L4_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_cli); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 120, __pyx_L4_error)
       if (__pyx_t_4) {
 
-        /* "lps_maestro/task.py":115
+        /* "lps_maestro/task.py":121
  *     try:
  *       if cli:
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks', data=data)             # <<<<<<<<<<<<<<
  *         print (r.json()['message'])
  *       else:
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L4_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L4_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_t) < 0) __PYX_ERR(0, 115, __pyx_L4_error)
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 115, __pyx_L4_error)
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_t) < 0) __PYX_ERR(0, 121, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 121, __pyx_L4_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_r = __pyx_t_3;
         __pyx_t_3 = 0;
 
-        /* "lps_maestro/task.py":116
+        /* "lps_maestro/task.py":122
  *       if cli:
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks', data=data)
  *         print (r.json()['message'])             # <<<<<<<<<<<<<<
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks-py', data=data)
  */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_2 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3667,16 +3722,16 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
         }
         __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 116, __pyx_L4_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_message); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_message); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 116, __pyx_L4_error)
+        if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 122, __pyx_L4_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "lps_maestro/task.py":114
+        /* "lps_maestro/task.py":120
  *     }
  *     try:
  *       if cli:             # <<<<<<<<<<<<<<
@@ -3686,7 +3741,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
         goto __pyx_L10;
       }
 
-      /* "lps_maestro/task.py":118
+      /* "lps_maestro/task.py":124
  *         print (r.json()['message'])
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks-py', data=data)             # <<<<<<<<<<<<<<
@@ -3694,23 +3749,23 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
  *           return r.json()
  */
       /*else*/ {
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L4_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L4_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_t_2) < 0) __PYX_ERR(0, 118, __pyx_L4_error)
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 118, __pyx_L4_error)
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_t_2) < 0) __PYX_ERR(0, 124, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 124, __pyx_L4_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_r = __pyx_t_2;
         __pyx_t_2 = 0;
 
-        /* "lps_maestro/task.py":119
+        /* "lps_maestro/task.py":125
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks-py', data=data)
  *         try:             # <<<<<<<<<<<<<<
@@ -3726,7 +3781,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
           __Pyx_XGOTREF(__pyx_t_10);
           /*try:*/ {
 
-            /* "lps_maestro/task.py":120
+            /* "lps_maestro/task.py":126
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks-py', data=data)
  *         try:
  *           return r.json()             # <<<<<<<<<<<<<<
@@ -3734,7 +3789,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
  *           pickled_response = r.content.decode('utf-8')
  */
             __Pyx_XDECREF(__pyx_r);
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L11_error)
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_1);
             __pyx_t_3 = NULL;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3748,14 +3803,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
             }
             __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
             __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L11_error)
+            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 126, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __pyx_r = __pyx_t_2;
             __pyx_t_2 = 0;
             goto __pyx_L15_try_return;
 
-            /* "lps_maestro/task.py":119
+            /* "lps_maestro/task.py":125
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks-py', data=data)
  *         try:             # <<<<<<<<<<<<<<
@@ -3768,7 +3823,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "lps_maestro/task.py":121
+          /* "lps_maestro/task.py":127
  *         try:
  *           return r.json()
  *         except:             # <<<<<<<<<<<<<<
@@ -3777,21 +3832,21 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
  */
           /*except:*/ {
             __Pyx_AddTraceback("lps_maestro.task.Task.list", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 121, __pyx_L13_except_error)
+            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 127, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_GOTREF(__pyx_t_3);
 
-            /* "lps_maestro/task.py":122
+            /* "lps_maestro/task.py":128
  *           return r.json()
  *         except:
  *           pickled_response = r.content.decode('utf-8')             # <<<<<<<<<<<<<<
  *           df = pickle.loads(decode_base64(pickled_response.encode()))
  *           return df
  */
-            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_content); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 122, __pyx_L13_except_error)
+            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_content); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 128, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_12);
-            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_decode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 122, __pyx_L13_except_error)
+            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_decode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 128, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             __pyx_t_12 = NULL;
@@ -3806,27 +3861,27 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
             }
             __pyx_t_11 = (__pyx_t_12) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_12, __pyx_kp_s_utf_8) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_kp_s_utf_8);
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 122, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 128, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_11);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
             __pyx_v_pickled_response = __pyx_t_11;
             __pyx_t_11 = 0;
 
-            /* "lps_maestro/task.py":123
+            /* "lps_maestro/task.py":129
  *         except:
  *           pickled_response = r.content.decode('utf-8')
  *           df = pickle.loads(decode_base64(pickled_response.encode()))             # <<<<<<<<<<<<<<
  *           return df
  *     except requests.exceptions.ConnectionError:
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_pickle); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 123, __pyx_L13_except_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_pickle); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 129, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_loads); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 123, __pyx_L13_except_error)
+            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_loads); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 129, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_12);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_decode_base64); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 123, __pyx_L13_except_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_decode_base64); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 129, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_pickled_response, __pyx_n_s_encode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 123, __pyx_L13_except_error)
+            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_pickled_response, __pyx_n_s_encode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 129, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_16);
             __pyx_t_17 = NULL;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
@@ -3840,7 +3895,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
             }
             __pyx_t_15 = (__pyx_t_17) ? __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_17) : __Pyx_PyObject_CallNoArg(__pyx_t_16);
             __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-            if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 123, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 129, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_15);
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
             __pyx_t_16 = NULL;
@@ -3856,7 +3911,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
             __pyx_t_13 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_16, __pyx_t_15) : __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_15);
             __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 123, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 129, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             __pyx_t_14 = NULL;
@@ -3872,13 +3927,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
             __pyx_t_11 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_12, __pyx_t_14, __pyx_t_13) : __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_13);
             __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 123, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 129, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_11);
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             __pyx_v_df = __pyx_t_11;
             __pyx_t_11 = 0;
 
-            /* "lps_maestro/task.py":124
+            /* "lps_maestro/task.py":130
  *           pickled_response = r.content.decode('utf-8')
  *           df = pickle.loads(decode_base64(pickled_response.encode()))
  *           return df             # <<<<<<<<<<<<<<
@@ -3895,7 +3950,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
           }
           __pyx_L13_except_error:;
 
-          /* "lps_maestro/task.py":119
+          /* "lps_maestro/task.py":125
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-tasks-py', data=data)
  *         try:             # <<<<<<<<<<<<<<
@@ -3923,7 +3978,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
       }
       __pyx_L10:;
 
-      /* "lps_maestro/task.py":113
+      /* "lps_maestro/task.py":119
  *       'credentials':credentials
  *     }
  *     try:             # <<<<<<<<<<<<<<
@@ -3947,7 +4002,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "lps_maestro/task.py":125
+    /* "lps_maestro/task.py":131
  *           df = pickle.loads(decode_base64(pickled_response.encode()))
  *           return df
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -3955,12 +4010,12 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_3, &__pyx_t_1, &__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_requests); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 125, __pyx_L6_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_requests); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L6_except_error)
     __Pyx_GOTREF(__pyx_t_11);
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 125, __pyx_L6_except_error)
+    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 131, __pyx_L6_except_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 125, __pyx_L6_except_error)
+    __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L6_except_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __pyx_t_18 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_3, __pyx_t_11);
@@ -3969,19 +4024,19 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
     __pyx_t_3 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0;
     if (__pyx_t_18) {
       __Pyx_AddTraceback("lps_maestro.task.Task.list", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 125, __pyx_L6_except_error)
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 131, __pyx_L6_except_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_3);
 
-      /* "lps_maestro/task.py":126
+      /* "lps_maestro/task.py":132
  *           return df
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  *   def kill( self, username, taskname ):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 126, __pyx_L6_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 132, __pyx_L6_except_error)
       __Pyx_GOTREF(__pyx_t_12);
       __pyx_t_13 = NULL;
       __pyx_t_18 = 0;
@@ -3998,7 +4053,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_12)) {
         PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 126, __pyx_L6_except_error)
+        __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 132, __pyx_L6_except_error)
         __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_GOTREF(__pyx_t_11);
       } else
@@ -4006,13 +4061,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
         PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 126, __pyx_L6_except_error)
+        __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 132, __pyx_L6_except_error)
         __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_GOTREF(__pyx_t_11);
       } else
       #endif
       {
-        __pyx_t_14 = PyTuple_New(2+__pyx_t_18); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 126, __pyx_L6_except_error)
+        __pyx_t_14 = PyTuple_New(2+__pyx_t_18); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 132, __pyx_L6_except_error)
         __Pyx_GOTREF(__pyx_t_14);
         if (__pyx_t_13) {
           __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_13); __pyx_t_13 = NULL;
@@ -4023,7 +4078,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_18, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_14, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 126, __pyx_L6_except_error)
+        __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_14, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 132, __pyx_L6_except_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       }
@@ -4037,7 +4092,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
     goto __pyx_L6_except_error;
     __pyx_L6_except_error:;
 
-    /* "lps_maestro/task.py":113
+    /* "lps_maestro/task.py":119
  *       'credentials':credentials
  *     }
  *     try:             # <<<<<<<<<<<<<<
@@ -4063,7 +4118,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
     __pyx_L9_try_end:;
   }
 
-  /* "lps_maestro/task.py":103
+  /* "lps_maestro/task.py":109
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
@@ -4098,7 +4153,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "lps_maestro/task.py":128
+/* "lps_maestro/task.py":134
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def kill( self, username, taskname ):             # <<<<<<<<<<<<<<
@@ -4141,17 +4196,17 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_11kill(PyObject *__pyx_self,
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_username)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("kill", 1, 3, 3, 1); __PYX_ERR(0, 128, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("kill", 1, 3, 3, 1); __PYX_ERR(0, 134, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_taskname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("kill", 1, 3, 3, 2); __PYX_ERR(0, 128, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("kill", 1, 3, 3, 2); __PYX_ERR(0, 134, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "kill") < 0)) __PYX_ERR(0, 128, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "kill") < 0)) __PYX_ERR(0, 134, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -4166,7 +4221,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_11kill(PyObject *__pyx_self,
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("kill", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 128, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("kill", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 134, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.task.Task.kill", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4199,14 +4254,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
   PyObject *__pyx_t_12 = NULL;
   __Pyx_RefNannySetupContext("kill", 0);
 
-  /* "lps_maestro/task.py":130
+  /* "lps_maestro/task.py":136
  *   def kill( self, username, taskname ):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_taskname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -4220,24 +4275,24 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":131
+    /* "lps_maestro/task.py":137
  * 
  *     if taskname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 137, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
@@ -4254,7 +4309,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -4262,13 +4317,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_task_name_must_start_with_us};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 137, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -4279,14 +4334,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
       __Pyx_INCREF(__pyx_kp_s_The_task_name_must_start_with_us);
       __Pyx_GIVEREF(__pyx_kp_s_The_task_name_must_start_with_us);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_kp_s_The_task_name_must_start_with_us);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "lps_maestro/task.py":130
+    /* "lps_maestro/task.py":136
  *   def kill( self, username, taskname ):
  * 
  *     if taskname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
@@ -4295,14 +4350,14 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "lps_maestro/task.py":133
+  /* "lps_maestro/task.py":139
  *       MSG_FATAL( self, 'The task name must start with "user.<username>.taskname."')
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -4316,25 +4371,25 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_credentials = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "lps_maestro/task.py":134
+  /* "lps_maestro/task.py":140
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/task.py":135
+    /* "lps_maestro/task.py":141
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -4345,7 +4400,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/task.py":134
+    /* "lps_maestro/task.py":140
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -4354,38 +4409,38 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "lps_maestro/task.py":138
+  /* "lps_maestro/task.py":144
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'taskname':taskname,
  *       'credentials':credentials
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 144, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":139
+  /* "lps_maestro/task.py":145
  *     data = {
  *       'username':username,
  *       'taskname':taskname,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_taskname, __pyx_v_taskname) < 0) __PYX_ERR(0, 144, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":140
+  /* "lps_maestro/task.py":146
  *       'username':username,
  *       'taskname':taskname,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  * 
  */
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 144, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "lps_maestro/task.py":143
+  /* "lps_maestro/task.py":149
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -4401,42 +4456,42 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "lps_maestro/task.py":144
+      /* "lps_maestro/task.py":150
  * 
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/kill-task', data=data)             # <<<<<<<<<<<<<<
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_requests); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 144, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_requests); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_post); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L5_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_post); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 144, __pyx_L5_error)
+      __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_kill_t) < 0) __PYX_ERR(0, 144, __pyx_L5_error)
-      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 144, __pyx_L5_error)
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 144, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_kill_t) < 0) __PYX_ERR(0, 150, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 150, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 150, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_v_r = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "lps_maestro/task.py":145
+      /* "lps_maestro/task.py":151
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/kill-task', data=data)
  *       print (r.text)             # <<<<<<<<<<<<<<
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 145, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 151, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 145, __pyx_L5_error)
+      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 151, __pyx_L5_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "lps_maestro/task.py":143
+      /* "lps_maestro/task.py":149
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -4454,7 +4509,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "lps_maestro/task.py":146
+    /* "lps_maestro/task.py":152
  *       r = requests.post(url='http://146.164.147.170:5020/kill-task', data=data)
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -4462,12 +4517,12 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_6, &__pyx_t_2, &__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L7_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 146, __pyx_L7_except_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 152, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L7_except_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __pyx_t_5 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_6, __pyx_t_3);
@@ -4476,19 +4531,19 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     __pyx_t_6 = 0; __pyx_t_2 = 0; __pyx_t_1 = 0;
     if (__pyx_t_5) {
       __Pyx_AddTraceback("lps_maestro.task.Task.kill", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_2, &__pyx_t_6) < 0) __PYX_ERR(0, 146, __pyx_L7_except_error)
+      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_2, &__pyx_t_6) < 0) __PYX_ERR(0, 152, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_6);
 
-      /* "lps_maestro/task.py":147
+      /* "lps_maestro/task.py":153
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  * task = Task()
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 147, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 153, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_10);
       __pyx_t_11 = NULL;
       __pyx_t_5 = 0;
@@ -4505,7 +4560,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 147, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -4513,13 +4568,13 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 147, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 147, __pyx_L7_except_error)
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 153, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (__pyx_t_11) {
           __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -4530,7 +4585,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_5, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 147, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
@@ -4544,7 +4599,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     goto __pyx_L7_except_error;
     __pyx_L7_except_error:;
 
-    /* "lps_maestro/task.py":143
+    /* "lps_maestro/task.py":149
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -4564,7 +4619,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObjec
     __pyx_L10_try_end:;
   }
 
-  /* "lps_maestro/task.py":128
+  /* "lps_maestro/task.py":134
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def kill( self, username, taskname ):             # <<<<<<<<<<<<<<
@@ -4786,7 +4841,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Task_list, __pyx_k_Task_list, sizeof(__pyx_k_Task_list), 0, 0, 1, 1},
   {&__pyx_n_s_Task_retry, __pyx_k_Task_retry, sizeof(__pyx_k_Task_retry), 0, 0, 1, 1},
   {&__pyx_kp_s_The_task_name_must_start_with_us, __pyx_k_The_task_name_must_start_with_us, sizeof(__pyx_k_The_task_name_must_start_with_us), 0, 0, 1, 0},
-  {&__pyx_n_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 1},
+  {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
+  {&__pyx_n_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 1},
   {&__pyx_n_s_all, __pyx_k_all, sizeof(__pyx_k_all), 0, 0, 1, 1},
   {&__pyx_n_s_argparse, __pyx_k_argparse, sizeof(__pyx_k_argparse), 0, 0, 1, 1},
   {&__pyx_n_s_base64, __pyx_k_base64, sizeof(__pyx_k_base64), 0, 0, 1, 1},
@@ -4875,76 +4931,76 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     Logger.__init__(self)
  * 
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 19, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_init, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_init, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 19, __pyx_L1_error)
 
   /* "lps_maestro/task.py":22
  *     Logger.__init__(self)
  * 
- *   def create( self, taskname, dataFile,             # <<<<<<<<<<<<<<
- *                     configFile, secondaryDS,
- *                     execCommand, containerImage, et=None, eta=None, gpu=False,
+ *   def create( self, taskname,             # <<<<<<<<<<<<<<
+ *                     dataFile,
+ *                     configFile,
  */
-  __pyx_tuple__5 = PyTuple_Pack(15, __pyx_n_s_self, __pyx_n_s_taskname, __pyx_n_s_dataFile, __pyx_n_s_configFile, __pyx_n_s_secondaryDS, __pyx_n_s_execCommand, __pyx_n_s_containerImage, __pyx_n_s_et, __pyx_n_s_eta, __pyx_n_s_gpu, __pyx_n_s_dry_run, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 22, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(11, 0, 15, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_create, 22, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 22, __pyx_L1_error)
-  __pyx_tuple__7 = PyTuple_Pack(4, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 22, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__6 = PyTuple_Pack(15, __pyx_n_s_self, __pyx_n_s_taskname, __pyx_n_s_dataFile, __pyx_n_s_configFile, __pyx_n_s_execCommand, __pyx_n_s_containerImage, __pyx_n_s_secondaryDS, __pyx_n_s_et, __pyx_n_s_eta, __pyx_n_s_gpu, __pyx_n_s_dry_run, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(11, 0, 15, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_create, 22, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(5, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "lps_maestro/task.py":59
+  /* "lps_maestro/task.py":65
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, taskname ):             # <<<<<<<<<<<<<<
  * 
  *     if taskname.split('.')[0] != 'user':
  */
-  __pyx_tuple__8 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_taskname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 59, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_delete, 59, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_taskname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_delete, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 65, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":81
+  /* "lps_maestro/task.py":87
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def retry( self, taskname ):             # <<<<<<<<<<<<<<
  * 
  *     if taskname.split('.')[0] != 'user':
  */
-  __pyx_tuple__10 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_taskname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 81, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_retry, 81, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_taskname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_retry, 87, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 87, __pyx_L1_error)
 
-  /* "lps_maestro/task.py":103
+  /* "lps_maestro/task.py":109
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_tuple__12 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_cli, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_pickled_response, __pyx_n_s_df); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 103, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_list, 103, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 103, __pyx_L1_error)
-  __pyx_tuple__14 = PyTuple_Pack(1, ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 103, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__13 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_cli, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_pickled_response, __pyx_n_s_df); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_list, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(1, ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "lps_maestro/task.py":128
+  /* "lps_maestro/task.py":134
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def kill( self, username, taskname ):             # <<<<<<<<<<<<<<
  * 
  *     if taskname.split('.')[0] != 'user':
  */
-  __pyx_tuple__15 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_taskname, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 128, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_kill, 128, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_taskname, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_kill, 134, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5302,9 +5358,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__2);
-  __Pyx_GIVEREF(__pyx_n_s__2);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
+  __Pyx_INCREF(__pyx_n_s__3);
+  __Pyx_GIVEREF(__pyx_n_s__3);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__3);
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_Gaugi_messenger_macros, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -5405,9 +5461,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_INCREF(__pyx_n_s__2);
-  __Pyx_GIVEREF(__pyx_n_s__2);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s__2);
+  __Pyx_INCREF(__pyx_n_s__3);
+  __Pyx_GIVEREF(__pyx_n_s__3);
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s__3);
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_lps_maestro_constants, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5440,7 +5496,7 @@ if (!__Pyx_RefNanny) {
  *     Logger.__init__(self)
  * 
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_1__init__, 0, __pyx_n_s_Task___init, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_1__init__, 0, __pyx_n_s_Task___init, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -5448,63 +5504,63 @@ if (!__Pyx_RefNanny) {
   /* "lps_maestro/task.py":22
  *     Logger.__init__(self)
  * 
- *   def create( self, taskname, dataFile,             # <<<<<<<<<<<<<<
- *                     configFile, secondaryDS,
- *                     execCommand, containerImage, et=None, eta=None, gpu=False,
+ *   def create( self, taskname,             # <<<<<<<<<<<<<<
+ *                     dataFile,
+ *                     configFile,
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_3create, 0, __pyx_n_s_Task_create, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_3create, 0, __pyx_n_s_Task_create, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__7);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__8);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_create, __pyx_t_4) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/task.py":59
+  /* "lps_maestro/task.py":65
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, taskname ):             # <<<<<<<<<<<<<<
  * 
  *     if taskname.split('.')[0] != 'user':
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_5delete, 0, __pyx_n_s_Task_delete, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_5delete, 0, __pyx_n_s_Task_delete, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_delete, __pyx_t_4) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_delete, __pyx_t_4) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/task.py":81
+  /* "lps_maestro/task.py":87
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def retry( self, taskname ):             # <<<<<<<<<<<<<<
  * 
  *     if taskname.split('.')[0] != 'user':
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_7retry, 0, __pyx_n_s_Task_retry, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_7retry, 0, __pyx_n_s_Task_retry, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_retry, __pyx_t_4) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_retry, __pyx_t_4) < 0) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/task.py":103
+  /* "lps_maestro/task.py":109
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_9list, 0, __pyx_n_s_Task_list, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_9list, 0, __pyx_n_s_Task_list, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__14);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_list, __pyx_t_4) < 0) __PYX_ERR(0, 103, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__15);
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_list, __pyx_t_4) < 0) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/task.py":128
+  /* "lps_maestro/task.py":134
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def kill( self, username, taskname ):             # <<<<<<<<<<<<<<
  * 
  *     if taskname.split('.')[0] != 'user':
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_11kill, 0, __pyx_n_s_Task_kill, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_4task_4Task_11kill, 0, __pyx_n_s_Task_kill, NULL, __pyx_n_s_lps_maestro_task, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_kill, __pyx_t_4) < 0) __PYX_ERR(0, 128, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_kill, __pyx_t_4) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "lps_maestro/task.py":17
@@ -5522,17 +5578,17 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lps_maestro/task.py":149
+  /* "lps_maestro/task.py":155
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  * task = Task()             # <<<<<<<<<<<<<<
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Task); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Task); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_task, __pyx_t_2) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_task, __pyx_t_2) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "lps_maestro/task.py":1
