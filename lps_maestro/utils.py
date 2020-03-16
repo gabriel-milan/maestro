@@ -9,7 +9,6 @@ import argparse
 from Gaugi import Logger
 from Gaugi.messenger.macros import *
 import requests
-from hashlib import sha256, md5
 import pickle
 import base64
 from pathlib import Path

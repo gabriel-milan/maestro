@@ -1241,7 +1241,8 @@ static const char __pyx_k_[] = "{}/{}";
 static const char __pyx_k_f[] = "f";
 static const char __pyx_k_m[] = "m";
 static const char __pyx_k_r[] = "r";
-static const char __pyx_k__2[] = "*";
+static const char __pyx_k__2[] = "${}${}";
+static const char __pyx_k__3[] = "*";
 static const char __pyx_k_os[] = "os";
 static const char __pyx_k_wb[] = "wb+";
 static const char __pyx_k_all[] = "__all__";
@@ -1265,7 +1266,7 @@ static const char __pyx_k_text[] = "text";
 static const char __pyx_k_Gaugi[] = "Gaugi";
 static const char __pyx_k_class[] = "__class__";
 static const char __pyx_k_close[] = "close";
-static const char __pyx_k_dumps[] = "dumps";
+static const char __pyx_k_token[] = "token";
 static const char __pyx_k_utf_8[] = "utf-8";
 static const char __pyx_k_write[] = "write";
 static const char __pyx_k_Logger[] = "Logger";
@@ -1288,17 +1289,14 @@ static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_requests[] = "requests";
 static const char __pyx_k_username[] = "username";
 static const char __pyx_k_MSG_ERROR[] = "MSG_ERROR";
-static const char __pyx_k_b64encode[] = "b64encode";
 static const char __pyx_k_hexdigest[] = "hexdigest";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_error_code[] = "error_code";
 static const char __pyx_k_exceptions[] = "exceptions";
 static const char __pyx_k_Authenticate[] = "Authenticate";
 static const char __pyx_k_authenticate[] = "authenticate";
-static const char __pyx_k_pickled_data[] = "pickled_data";
 static const char __pyx_k_ConnectionError[] = "ConnectionError";
 static const char __pyx_k_CREDENTIALS_FILE[] = "CREDENTIALS_FILE";
-static const char __pyx_k_b64_pickled_data[] = "b64_pickled_data";
 static const char __pyx_k_Trying_to_connect[] = "Trying to connect...";
 static const char __pyx_k_lps_maestro_utils[] = "lps_maestro.utils";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
@@ -1327,12 +1325,11 @@ static PyObject *__pyx_n_s_MSG_ERROR;
 static PyObject *__pyx_n_s_MSG_INFO;
 static PyObject *__pyx_n_s_Path;
 static PyObject *__pyx_kp_s_Trying_to_connect;
-static PyObject *__pyx_n_s__2;
+static PyObject *__pyx_kp_s__2;
+static PyObject *__pyx_n_s__3;
 static PyObject *__pyx_n_s_all;
 static PyObject *__pyx_n_s_argparse;
 static PyObject *__pyx_n_s_authenticate;
-static PyObject *__pyx_n_s_b64_pickled_data;
-static PyObject *__pyx_n_s_b64encode;
 static PyObject *__pyx_n_s_base64;
 static PyObject *__pyx_n_s_call;
 static PyObject *__pyx_n_s_class;
@@ -1340,7 +1337,6 @@ static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_close;
 static PyObject *__pyx_n_s_data;
 static PyObject *__pyx_n_s_doc;
-static PyObject *__pyx_n_s_dumps;
 static PyObject *__pyx_n_s_encode;
 static PyObject *__pyx_n_s_error_code;
 static PyObject *__pyx_n_s_exceptions;
@@ -1370,7 +1366,6 @@ static PyObject *__pyx_n_s_os;
 static PyObject *__pyx_n_s_password;
 static PyObject *__pyx_n_s_pathlib;
 static PyObject *__pyx_n_s_pickle;
-static PyObject *__pyx_n_s_pickled_data;
 static PyObject *__pyx_n_s_post;
 static PyObject *__pyx_n_s_prepare;
 static PyObject *__pyx_n_s_qualname;
@@ -1381,6 +1376,7 @@ static PyObject *__pyx_n_s_sha256;
 static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_text;
+static PyObject *__pyx_n_s_token;
 static PyObject *__pyx_n_s_update;
 static PyObject *__pyx_n_s_url;
 static PyObject *__pyx_n_s_username;
@@ -1391,12 +1387,12 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate___init__(C
 static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_2hashPw(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_password); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authenticate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_username, PyObject *__pyx_v_password); /* proto */
 static PyObject *__pyx_int_200;
-static PyObject *__pyx_tuple__3;
-static PyObject *__pyx_tuple__5;
-static PyObject *__pyx_tuple__7;
-static PyObject *__pyx_codeobj__4;
-static PyObject *__pyx_codeobj__6;
-static PyObject *__pyx_codeobj__8;
+static PyObject *__pyx_tuple__4;
+static PyObject *__pyx_tuple__6;
+static PyObject *__pyx_tuple__8;
+static PyObject *__pyx_codeobj__5;
+static PyObject *__pyx_codeobj__7;
+static PyObject *__pyx_codeobj__9;
 /* Late includes */
 
 /* "lps_maestro/authenticate.py":20
@@ -1825,8 +1821,6 @@ static PyObject *__pyx_pw_11lps_maestro_12authenticate_12Authenticate_5authentic
 static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authenticate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_username, PyObject *__pyx_v_password) {
   PyObject *__pyx_v_data = NULL;
   PyObject *__pyx_v_r = NULL;
-  PyObject *__pyx_v_pickled_data = NULL;
-  PyObject *__pyx_v_b64_pickled_data = NULL;
   PyObject *__pyx_v_home = NULL;
   PyObject *__pyx_v_f = NULL;
   PyObject *__pyx_r = NULL;
@@ -1843,6 +1837,7 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
   int __pyx_t_10;
   PyObject *__pyx_t_11 = NULL;
   PyObject *__pyx_t_12 = NULL;
+  PyObject *__pyx_t_13 = NULL;
   __Pyx_RefNannySetupContext("authenticate", 0);
 
   /* "lps_maestro/authenticate.py":31
@@ -1905,7 +1900,7 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
  *     MSG_INFO (self, "Trying to connect...")
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
- *       'password':self.hashPw(password)
+ *       'password':password
  *     }
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
@@ -1915,34 +1910,16 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
   /* "lps_maestro/authenticate.py":34
  *     data = {
  *       'username':username,
- *       'password':self.hashPw(password)             # <<<<<<<<<<<<<<
+ *       'password':password             # <<<<<<<<<<<<<<
  *     }
  *     try:
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_hashPw); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_5);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_5, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_3, __pyx_v_password) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_password);
-  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_password, __pyx_t_2) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_password, __pyx_v_password) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
   /* "lps_maestro/authenticate.py":36
- *       'password':self.hashPw(password)
+ *       'password':password
  *     }
  *     try:             # <<<<<<<<<<<<<<
  *       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
@@ -1985,7 +1962,7 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
  *       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
  *       MSG_INFO (self, r.text)             # <<<<<<<<<<<<<<
  *       if (r.json()['error_code'] == 200):
- *         pickled_data = pickle.dumps(data)
+ *         home = str(Path.home())
  */
       __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_INFO); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -2044,8 +2021,8 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
  *       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
  *       MSG_INFO (self, r.text)
  *       if (r.json()['error_code'] == 200):             # <<<<<<<<<<<<<<
- *         pickled_data = pickle.dumps(data)
- *         b64_pickled_data = base64.b64encode(pickled_data)
+ *         home = str(Path.home())
+ *         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
  */
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -2077,73 +2054,13 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
         /* "lps_maestro/authenticate.py":40
  *       MSG_INFO (self, r.text)
  *       if (r.json()['error_code'] == 200):
- *         pickled_data = pickle.dumps(data)             # <<<<<<<<<<<<<<
- *         b64_pickled_data = base64.b64encode(pickled_data)
- *         home = str(Path.home())
- */
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_pickle); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L3_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_dumps); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 40, __pyx_L3_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = NULL;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_9))) {
-          __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_9);
-          if (likely(__pyx_t_1)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
-            __Pyx_INCREF(__pyx_t_1);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_9, function);
-          }
-        }
-        __pyx_t_5 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_1, __pyx_v_data) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_v_data);
-        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 40, __pyx_L3_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_v_pickled_data = __pyx_t_5;
-        __pyx_t_5 = 0;
-
-        /* "lps_maestro/authenticate.py":41
- *       if (r.json()['error_code'] == 200):
- *         pickled_data = pickle.dumps(data)
- *         b64_pickled_data = base64.b64encode(pickled_data)             # <<<<<<<<<<<<<<
- *         home = str(Path.home())
- *         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
- */
-        __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_base64); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 41, __pyx_L3_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_b64encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L3_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = NULL;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_9)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_9);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
-          }
-        }
-        __pyx_t_5 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_9, __pyx_v_pickled_data) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_pickled_data);
-        __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L3_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_v_b64_pickled_data = __pyx_t_5;
-        __pyx_t_5 = 0;
-
-        /* "lps_maestro/authenticate.py":42
- *         pickled_data = pickle.dumps(data)
- *         b64_pickled_data = base64.b64encode(pickled_data)
  *         home = str(Path.home())             # <<<<<<<<<<<<<<
  *         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
- *         f.write(b64_pickled_data)
+ *         f.write("${}${}".format(username, r.json()['token']).encode('utf-8'))
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_home); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_home); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 40, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_1 = NULL;
@@ -2158,25 +2075,25 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
         }
         __pyx_t_5 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_9);
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 42, __pyx_L3_error)
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 40, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __pyx_t_9 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 40, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_v_home = __pyx_t_9;
         __pyx_t_9 = 0;
 
-        /* "lps_maestro/authenticate.py":43
- *         b64_pickled_data = base64.b64encode(pickled_data)
+        /* "lps_maestro/authenticate.py":41
+ *       if (r.json()['error_code'] == 200):
  *         home = str(Path.home())
  *         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")             # <<<<<<<<<<<<<<
- *         f.write(b64_pickled_data)
+ *         f.write("${}${}".format(username, r.json()['token']).encode('utf-8'))
  *         f.close()
  */
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_, __pyx_n_s_format); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_, __pyx_n_s_format); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_CREDENTIALS_FILE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L3_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_CREDENTIALS_FILE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_2 = NULL;
         __pyx_t_4 = 0;
@@ -2193,7 +2110,7 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_home, __pyx_t_1};
-          __pyx_t_9 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 43, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 41, __pyx_L3_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2202,14 +2119,14 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_home, __pyx_t_1};
-          __pyx_t_9 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 43, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 41, __pyx_L3_error)
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         } else
         #endif
         {
-          __pyx_t_3 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L3_error)
+          __pyx_t_3 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_3);
           if (__pyx_t_2) {
             __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -2220,12 +2137,12 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
           __Pyx_GIVEREF(__pyx_t_1);
           PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_4, __pyx_t_1);
           __pyx_t_1 = 0;
-          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_3, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 43, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_3, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 41, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L3_error)
+        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_GIVEREF(__pyx_t_9);
         PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_9);
@@ -2233,46 +2150,134 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
         __Pyx_GIVEREF(__pyx_kp_s_wb);
         PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_kp_s_wb);
         __pyx_t_9 = 0;
-        __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_5, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 43, __pyx_L3_error)
+        __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_5, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 41, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_v_f = __pyx_t_9;
         __pyx_t_9 = 0;
 
-        /* "lps_maestro/authenticate.py":44
+        /* "lps_maestro/authenticate.py":42
  *         home = str(Path.home())
  *         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
- *         f.write(b64_pickled_data)             # <<<<<<<<<<<<<<
+ *         f.write("${}${}".format(username, r.json()['token']).encode('utf-8'))             # <<<<<<<<<<<<<<
  *         f.close()
  *     except requests.exceptions.ConnectionError:
  */
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 44, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 42, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_3 = NULL;
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s__2, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __Pyx_GOTREF(__pyx_t_12);
+        __pyx_t_13 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_12))) {
+          __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_12);
+          if (likely(__pyx_t_13)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
+            __Pyx_INCREF(__pyx_t_13);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_12, function);
+          }
+        }
+        __pyx_t_11 = (__pyx_t_13) ? __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_13) : __Pyx_PyObject_CallNoArg(__pyx_t_12);
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __Pyx_GOTREF(__pyx_t_11);
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __pyx_t_12 = __Pyx_PyObject_Dict_GetItem(__pyx_t_11, __pyx_n_s_token); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __Pyx_GOTREF(__pyx_t_12);
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+        __pyx_t_11 = NULL;
+        __pyx_t_4 = 0;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_11)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_11);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
+            __pyx_t_4 = 1;
+          }
+        }
+        #if CYTHON_FAST_PYCALL
+        if (PyFunction_Check(__pyx_t_2)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_username, __pyx_t_12};
+          __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L3_error)
+          __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        } else
+        #endif
+        #if CYTHON_FAST_PYCCALL
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_username, __pyx_t_12};
+          __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L3_error)
+          __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        } else
+        #endif
+        {
+          __pyx_t_13 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 42, __pyx_L3_error)
+          __Pyx_GOTREF(__pyx_t_13);
+          if (__pyx_t_11) {
+            __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_11); __pyx_t_11 = NULL;
+          }
+          __Pyx_INCREF(__pyx_v_username);
+          __Pyx_GIVEREF(__pyx_v_username);
+          PyTuple_SET_ITEM(__pyx_t_13, 0+__pyx_t_4, __pyx_v_username);
+          __Pyx_GIVEREF(__pyx_t_12);
+          PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_4, __pyx_t_12);
+          __pyx_t_12 = 0;
+          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_13, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L3_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+        }
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_1 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_1)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_1);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
+          }
+        }
+        __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_kp_s_utf_8) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_utf_8);
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 42, __pyx_L3_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_2 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
-          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_5);
-          if (likely(__pyx_t_3)) {
+          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_5);
+          if (likely(__pyx_t_2)) {
             PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-            __Pyx_INCREF(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_2);
             __Pyx_INCREF(function);
             __Pyx_DECREF_SET(__pyx_t_5, function);
           }
         }
-        __pyx_t_9 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_3, __pyx_v_b64_pickled_data) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_b64_pickled_data);
-        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 44, __pyx_L3_error)
+        __pyx_t_9 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
+        __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 42, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "lps_maestro/authenticate.py":45
+        /* "lps_maestro/authenticate.py":43
  *         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
- *         f.write(b64_pickled_data)
+ *         f.write("${}${}".format(username, r.json()['token']).encode('utf-8'))
  *         f.close()             # <<<<<<<<<<<<<<
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 45, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __pyx_t_3 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -2286,7 +2291,7 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
         }
         __pyx_t_9 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 45, __pyx_L3_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 43, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -2295,13 +2300,13 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
  *       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
  *       MSG_INFO (self, r.text)
  *       if (r.json()['error_code'] == 200):             # <<<<<<<<<<<<<<
- *         pickled_data = pickle.dumps(data)
- *         b64_pickled_data = base64.b64encode(pickled_data)
+ *         home = str(Path.home())
+ *         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
  */
       }
 
       /* "lps_maestro/authenticate.py":36
- *       'password':self.hashPw(password)
+ *       'password':password
  *     }
  *     try:             # <<<<<<<<<<<<<<
  *       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
@@ -2314,80 +2319,83 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+    __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "lps_maestro/authenticate.py":46
- *         f.write(b64_pickled_data)
+    /* "lps_maestro/authenticate.py":44
+ *         f.write("${}${}".format(username, r.json()['token']).encode('utf-8'))
  *         f.close()
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_9, &__pyx_t_5, &__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L5_except_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L5_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_requests); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L5_except_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L5_except_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L5_except_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_9, __pyx_t_1);
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L5_except_error)
+    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_4 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_9, __pyx_t_2);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_ErrRestore(__pyx_t_9, __pyx_t_5, __pyx_t_3);
     __pyx_t_9 = 0; __pyx_t_5 = 0; __pyx_t_3 = 0;
     if (__pyx_t_4) {
       __Pyx_AddTraceback("lps_maestro.authenticate.Authenticate.authenticate", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_5, &__pyx_t_9) < 0) __PYX_ERR(0, 46, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_5, &__pyx_t_9) < 0) __PYX_ERR(0, 44, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GOTREF(__pyx_t_9);
 
-      /* "lps_maestro/authenticate.py":47
+      /* "lps_maestro/authenticate.py":45
  *         f.close()
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  * authenticate = Authenticate()
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L5_except_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_11 = NULL;
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L5_except_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_13 = NULL;
       __pyx_t_4 = 0;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_2);
-        if (likely(__pyx_t_11)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-          __Pyx_INCREF(__pyx_t_11);
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_13)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_13);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_2, function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
           __pyx_t_4 = 1;
         }
       }
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L5_except_error)
-        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_GOTREF(__pyx_t_1);
+      if (PyFunction_Check(__pyx_t_1)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L5_except_error)
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L5_except_error)
-        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_GOTREF(__pyx_t_1);
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L5_except_error)
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 47, __pyx_L5_except_error)
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 45, __pyx_L5_except_error)
         __Pyx_GOTREF(__pyx_t_12);
-        if (__pyx_t_11) {
-          __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_11); __pyx_t_11 = NULL;
+        if (__pyx_t_13) {
+          __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_13); __pyx_t_13 = NULL;
         }
         __Pyx_INCREF(__pyx_v_self);
         __Pyx_GIVEREF(__pyx_v_self);
@@ -2395,12 +2403,12 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_4, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L5_except_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_12, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L5_except_error)
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -2410,7 +2418,7 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
     __pyx_L5_except_error:;
 
     /* "lps_maestro/authenticate.py":36
- *       'password':self.hashPw(password)
+ *       'password':password
  *     }
  *     try:             # <<<<<<<<<<<<<<
  *       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
@@ -2448,13 +2456,12 @@ static PyObject *__pyx_pf_11lps_maestro_12authenticate_12Authenticate_4authentic
   __Pyx_XDECREF(__pyx_t_9);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
+  __Pyx_XDECREF(__pyx_t_13);
   __Pyx_AddTraceback("lps_maestro.authenticate.Authenticate.authenticate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_data);
   __Pyx_XDECREF(__pyx_v_r);
-  __Pyx_XDECREF(__pyx_v_pickled_data);
-  __Pyx_XDECREF(__pyx_v_b64_pickled_data);
   __Pyx_XDECREF(__pyx_v_home);
   __Pyx_XDECREF(__pyx_v_f);
   __Pyx_XGIVEREF(__pyx_r);
@@ -2650,12 +2657,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_MSG_INFO, __pyx_k_MSG_INFO, sizeof(__pyx_k_MSG_INFO), 0, 0, 1, 1},
   {&__pyx_n_s_Path, __pyx_k_Path, sizeof(__pyx_k_Path), 0, 0, 1, 1},
   {&__pyx_kp_s_Trying_to_connect, __pyx_k_Trying_to_connect, sizeof(__pyx_k_Trying_to_connect), 0, 0, 1, 0},
-  {&__pyx_n_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 1},
+  {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
+  {&__pyx_n_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 1},
   {&__pyx_n_s_all, __pyx_k_all, sizeof(__pyx_k_all), 0, 0, 1, 1},
   {&__pyx_n_s_argparse, __pyx_k_argparse, sizeof(__pyx_k_argparse), 0, 0, 1, 1},
   {&__pyx_n_s_authenticate, __pyx_k_authenticate, sizeof(__pyx_k_authenticate), 0, 0, 1, 1},
-  {&__pyx_n_s_b64_pickled_data, __pyx_k_b64_pickled_data, sizeof(__pyx_k_b64_pickled_data), 0, 0, 1, 1},
-  {&__pyx_n_s_b64encode, __pyx_k_b64encode, sizeof(__pyx_k_b64encode), 0, 0, 1, 1},
   {&__pyx_n_s_base64, __pyx_k_base64, sizeof(__pyx_k_base64), 0, 0, 1, 1},
   {&__pyx_n_s_call, __pyx_k_call, sizeof(__pyx_k_call), 0, 0, 1, 1},
   {&__pyx_n_s_class, __pyx_k_class, sizeof(__pyx_k_class), 0, 0, 1, 1},
@@ -2663,7 +2669,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_close, __pyx_k_close, sizeof(__pyx_k_close), 0, 0, 1, 1},
   {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
   {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
-  {&__pyx_n_s_dumps, __pyx_k_dumps, sizeof(__pyx_k_dumps), 0, 0, 1, 1},
   {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
   {&__pyx_n_s_error_code, __pyx_k_error_code, sizeof(__pyx_k_error_code), 0, 0, 1, 1},
   {&__pyx_n_s_exceptions, __pyx_k_exceptions, sizeof(__pyx_k_exceptions), 0, 0, 1, 1},
@@ -2693,7 +2698,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_password, __pyx_k_password, sizeof(__pyx_k_password), 0, 0, 1, 1},
   {&__pyx_n_s_pathlib, __pyx_k_pathlib, sizeof(__pyx_k_pathlib), 0, 0, 1, 1},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
-  {&__pyx_n_s_pickled_data, __pyx_k_pickled_data, sizeof(__pyx_k_pickled_data), 0, 0, 1, 1},
   {&__pyx_n_s_post, __pyx_k_post, sizeof(__pyx_k_post), 0, 0, 1, 1},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
   {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
@@ -2704,6 +2708,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
+  {&__pyx_n_s_token, __pyx_k_token, sizeof(__pyx_k_token), 0, 0, 1, 1},
   {&__pyx_n_s_update, __pyx_k_update, sizeof(__pyx_k_update), 0, 0, 1, 1},
   {&__pyx_n_s_url, __pyx_k_url, sizeof(__pyx_k_url), 0, 0, 1, 1},
   {&__pyx_n_s_username, __pyx_k_username, sizeof(__pyx_k_username), 0, 0, 1, 1},
@@ -2713,7 +2718,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 41, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2730,10 +2735,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     Logger.__init__(self)
  *     self.__class__ = type(self.__class__.__name__, (self.__class__,), {})
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_authenticate_py, __pyx_n_s_init, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_authenticate_py, __pyx_n_s_init, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 20, __pyx_L1_error)
 
   /* "lps_maestro/authenticate.py":25
  *     self.__class__.__call__ = self.authenticate
@@ -2742,10 +2747,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     m = md5()
  *     m.update(password.encode('utf-8'))
  */
-  __pyx_tuple__5 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_password, __pyx_n_s_m); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 25, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_authenticate_py, __pyx_n_s_hashPw, 25, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_password, __pyx_n_s_m); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_authenticate_py, __pyx_n_s_hashPw, 25, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 25, __pyx_L1_error)
 
   /* "lps_maestro/authenticate.py":30
  *     return m.hexdigest()
@@ -2754,10 +2759,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     MSG_INFO (self, "Trying to connect...")
  *     data = {
  */
-  __pyx_tuple__7 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_password, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_pickled_data, __pyx_n_s_b64_pickled_data, __pyx_n_s_home, __pyx_n_s_f); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_authenticate_py, __pyx_n_s_authenticate, 30, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_password, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_home, __pyx_n_s_f); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(3, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_authenticate_py, __pyx_n_s_authenticate, 30, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -3116,9 +3121,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__2);
-  __Pyx_GIVEREF(__pyx_n_s__2);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
+  __Pyx_INCREF(__pyx_n_s__3);
+  __Pyx_GIVEREF(__pyx_n_s__3);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__3);
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_Gaugi_messenger_macros, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -3240,9 +3245,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__2);
-  __Pyx_GIVEREF(__pyx_n_s__2);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
+  __Pyx_INCREF(__pyx_n_s__3);
+  __Pyx_GIVEREF(__pyx_n_s__3);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__3);
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_lps_maestro_constants, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -3275,7 +3280,7 @@ if (!__Pyx_RefNanny) {
  *     Logger.__init__(self)
  *     self.__class__ = type(self.__class__.__name__, (self.__class__,), {})
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_12authenticate_12Authenticate_1__init__, 0, __pyx_n_s_Authenticate___init, NULL, __pyx_n_s_lps_maestro_authenticate, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_12authenticate_12Authenticate_1__init__, 0, __pyx_n_s_Authenticate___init, NULL, __pyx_n_s_lps_maestro_authenticate, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3287,7 +3292,7 @@ if (!__Pyx_RefNanny) {
  *     m = md5()
  *     m.update(password.encode('utf-8'))
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_12authenticate_12Authenticate_3hashPw, 0, __pyx_n_s_Authenticate_hashPw, NULL, __pyx_n_s_lps_maestro_authenticate, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_12authenticate_12Authenticate_3hashPw, 0, __pyx_n_s_Authenticate_hashPw, NULL, __pyx_n_s_lps_maestro_authenticate, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_hashPw, __pyx_t_4) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3299,7 +3304,7 @@ if (!__Pyx_RefNanny) {
  *     MSG_INFO (self, "Trying to connect...")
  *     data = {
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_12authenticate_12Authenticate_5authenticate, 0, __pyx_n_s_Authenticate_authenticate, NULL, __pyx_n_s_lps_maestro_authenticate, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_12authenticate_12Authenticate_5authenticate, 0, __pyx_n_s_Authenticate_authenticate, NULL, __pyx_n_s_lps_maestro_authenticate, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_authenticate, __pyx_t_4) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3319,17 +3324,17 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lps_maestro/authenticate.py":49
+  /* "lps_maestro/authenticate.py":47
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  * authenticate = Authenticate()             # <<<<<<<<<<<<<<
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Authenticate); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Authenticate); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_authenticate, __pyx_t_1) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_authenticate, __pyx_t_1) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "lps_maestro/authenticate.py":1

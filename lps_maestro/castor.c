@@ -1339,7 +1339,6 @@ static const char __pyx_k_cli[] = "cli";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_end[] = "end";
 static const char __pyx_k_fin[] = "fin";
-static const char __pyx_k_md5[] = "md5";
 static const char __pyx_k_sys[] = "sys";
 static const char __pyx_k_url[] = "url";
 static const char __pyx_k_zip[] = "{}.zip";
@@ -1383,10 +1382,8 @@ static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_isfile[] = "isfile";
 static const char __pyx_k_module[] = "__module__";
 static const char __pyx_k_pickle[] = "pickle";
-static const char __pyx_k_sha256[] = "sha256";
 static const char __pyx_k_upload[] = "upload";
 static const char __pyx_k_content[] = "content";
-static const char __pyx_k_hashlib[] = "hashlib";
 static const char __pyx_k_listdir[] = "listdir";
 static const char __pyx_k_message[] = "message";
 static const char __pyx_k_pathlib[] = "pathlib";
@@ -1481,7 +1478,6 @@ static PyObject *__pyx_n_s_files;
 static PyObject *__pyx_n_s_fin;
 static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_s_getCredentialsData;
-static PyObject *__pyx_n_s_hashlib;
 static PyObject *__pyx_kp_s_http_146_164_147_170_5020_delete;
 static PyObject *__pyx_kp_s_http_146_164_147_170_5020_downlo;
 static PyObject *__pyx_kp_s_http_146_164_147_170_5020_list_d;
@@ -1502,7 +1498,6 @@ static PyObject *__pyx_kp_s_lps_maestro_castor_py;
 static PyObject *__pyx_n_s_lps_maestro_constants;
 static PyObject *__pyx_n_s_lps_maestro_utils;
 static PyObject *__pyx_n_s_main;
-static PyObject *__pyx_n_s_md5;
 static PyObject *__pyx_n_s_message;
 static PyObject *__pyx_n_s_metaclass;
 static PyObject *__pyx_n_s_module;
@@ -1521,7 +1516,6 @@ static PyObject *__pyx_n_s_r;
 static PyObject *__pyx_n_s_rb;
 static PyObject *__pyx_n_s_requests;
 static PyObject *__pyx_n_s_self;
-static PyObject *__pyx_n_s_sha256;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_s_test;
@@ -1553,7 +1547,7 @@ static PyObject *__pyx_codeobj__13;
 static PyObject *__pyx_codeobj__15;
 /* Late includes */
 
-/* "lps_maestro/castor.py":20
+/* "lps_maestro/castor.py":19
  * class Castor (Logger):
  * 
  *   def __init__(self):             # <<<<<<<<<<<<<<
@@ -1583,16 +1577,16 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor___init__(CYTHON_UNUSED P
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "lps_maestro/castor.py":21
+  /* "lps_maestro/castor.py":20
  * 
  *   def __init__(self):
  *     Logger.__init__(self)             # <<<<<<<<<<<<<<
  * 
  *   def list( self, username, cli=False ):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_init); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_init); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -1607,12 +1601,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor___init__(CYTHON_UNUSED P
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_self) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_self);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":20
+  /* "lps_maestro/castor.py":19
  * class Castor (Logger):
  * 
  *   def __init__(self):             # <<<<<<<<<<<<<<
@@ -1635,7 +1629,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor___init__(CYTHON_UNUSED P
   return __pyx_r;
 }
 
-/* "lps_maestro/castor.py":23
+/* "lps_maestro/castor.py":22
  *     Logger.__init__(self)
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
@@ -1679,7 +1673,7 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_3list(PyObject *__pyx_se
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_username)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, 1); __PYX_ERR(0, 23, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, 1); __PYX_ERR(0, 22, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -1689,7 +1683,7 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_3list(PyObject *__pyx_se
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "list") < 0)) __PYX_ERR(0, 23, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "list") < 0)) __PYX_ERR(0, 22, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1707,7 +1701,7 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_3list(PyObject *__pyx_se
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 23, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("list", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 22, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.castor.Castor.list", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1748,14 +1742,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
   int __pyx_t_18;
   __Pyx_RefNannySetupContext("list", 0);
 
-  /* "lps_maestro/castor.py":25
+  /* "lps_maestro/castor.py":24
  *   def list( self, username, cli=False ):
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -1769,25 +1763,25 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":26
+  /* "lps_maestro/castor.py":25
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":27
+    /* "lps_maestro/castor.py":26
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -1798,7 +1792,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/castor.py":26
+    /* "lps_maestro/castor.py":25
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -1807,29 +1801,29 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
  */
   }
 
-  /* "lps_maestro/castor.py":30
+  /* "lps_maestro/castor.py":29
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":31
+  /* "lps_maestro/castor.py":30
  *     data = {
  *       'username':username,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  *     try:
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":33
+  /* "lps_maestro/castor.py":32
  *       'credentials':credentials
  *     }
  *     try:             # <<<<<<<<<<<<<<
@@ -1845,47 +1839,47 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
     __Pyx_XGOTREF(__pyx_t_7);
     /*try:*/ {
 
-      /* "lps_maestro/castor.py":34
+      /* "lps_maestro/castor.py":33
  *     }
  *     try:
  *       if cli:             # <<<<<<<<<<<<<<
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets', data=data)
  *         print (r.json()['message'])
  */
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_cli); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 34, __pyx_L4_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_cli); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 33, __pyx_L4_error)
       if (__pyx_t_4) {
 
-        /* "lps_maestro/castor.py":35
+        /* "lps_maestro/castor.py":34
  *     try:
  *       if cli:
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets', data=data)             # <<<<<<<<<<<<<<
  *         print (r.json()['message'])
  *       else:
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L4_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L4_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_d) < 0) __PYX_ERR(0, 35, __pyx_L4_error)
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 35, __pyx_L4_error)
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_d) < 0) __PYX_ERR(0, 34, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 34, __pyx_L4_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_r = __pyx_t_3;
         __pyx_t_3 = 0;
 
-        /* "lps_maestro/castor.py":36
+        /* "lps_maestro/castor.py":35
  *       if cli:
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets', data=data)
  *         print (r.json()['message'])             # <<<<<<<<<<<<<<
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets-py', data=data)
  */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_2 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -1899,16 +1893,16 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
         }
         __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L4_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_message); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_s_message); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 36, __pyx_L4_error)
+        if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 35, __pyx_L4_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "lps_maestro/castor.py":34
+        /* "lps_maestro/castor.py":33
  *     }
  *     try:
  *       if cli:             # <<<<<<<<<<<<<<
@@ -1918,7 +1912,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
         goto __pyx_L10;
       }
 
-      /* "lps_maestro/castor.py":38
+      /* "lps_maestro/castor.py":37
  *         print (r.json()['message'])
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets-py', data=data)             # <<<<<<<<<<<<<<
@@ -1926,23 +1920,23 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
  *           return r.json()
  */
       /*else*/ {
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L4_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L4_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 37, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L4_error)
+        __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_d_2) < 0) __PYX_ERR(0, 38, __pyx_L4_error)
-        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 38, __pyx_L4_error)
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_list_d_2) < 0) __PYX_ERR(0, 37, __pyx_L4_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 37, __pyx_L4_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_r = __pyx_t_2;
         __pyx_t_2 = 0;
 
-        /* "lps_maestro/castor.py":39
+        /* "lps_maestro/castor.py":38
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets-py', data=data)
  *         try:             # <<<<<<<<<<<<<<
@@ -1958,7 +1952,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
           __Pyx_XGOTREF(__pyx_t_10);
           /*try:*/ {
 
-            /* "lps_maestro/castor.py":40
+            /* "lps_maestro/castor.py":39
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets-py', data=data)
  *         try:
  *           return r.json()             # <<<<<<<<<<<<<<
@@ -1966,7 +1960,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
  *           pickled_response = r.content.decode('utf-8')
  */
             __Pyx_XDECREF(__pyx_r);
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L11_error)
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_1);
             __pyx_t_3 = NULL;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -1980,14 +1974,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
             }
             __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
             __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L11_error)
+            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __pyx_r = __pyx_t_2;
             __pyx_t_2 = 0;
             goto __pyx_L15_try_return;
 
-            /* "lps_maestro/castor.py":39
+            /* "lps_maestro/castor.py":38
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets-py', data=data)
  *         try:             # <<<<<<<<<<<<<<
@@ -2000,7 +1994,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "lps_maestro/castor.py":41
+          /* "lps_maestro/castor.py":40
  *         try:
  *           return r.json()
  *         except:             # <<<<<<<<<<<<<<
@@ -2009,21 +2003,21 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
  */
           /*except:*/ {
             __Pyx_AddTraceback("lps_maestro.castor.Castor.list", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 41, __pyx_L13_except_error)
+            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 40, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_GOTREF(__pyx_t_3);
 
-            /* "lps_maestro/castor.py":42
+            /* "lps_maestro/castor.py":41
  *           return r.json()
  *         except:
  *           pickled_response = r.content.decode('utf-8')             # <<<<<<<<<<<<<<
  *           df = pickle.loads(decode_base64(pickled_response.encode()))
  *           return df
  */
-            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_content); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 42, __pyx_L13_except_error)
+            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_content); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 41, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_12);
-            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_decode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 42, __pyx_L13_except_error)
+            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_decode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 41, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             __pyx_t_12 = NULL;
@@ -2038,27 +2032,27 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
             }
             __pyx_t_11 = (__pyx_t_12) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_12, __pyx_kp_s_utf_8) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_kp_s_utf_8);
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 42, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 41, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_11);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
             __pyx_v_pickled_response = __pyx_t_11;
             __pyx_t_11 = 0;
 
-            /* "lps_maestro/castor.py":43
+            /* "lps_maestro/castor.py":42
  *         except:
  *           pickled_response = r.content.decode('utf-8')
  *           df = pickle.loads(decode_base64(pickled_response.encode()))             # <<<<<<<<<<<<<<
  *           return df
  *     except requests.exceptions.ConnectionError:
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_pickle); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 43, __pyx_L13_except_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_pickle); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 42, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_loads); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 43, __pyx_L13_except_error)
+            __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_loads); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 42, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_12);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_decode_base64); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 43, __pyx_L13_except_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_decode_base64); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 42, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_pickled_response, __pyx_n_s_encode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 43, __pyx_L13_except_error)
+            __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_pickled_response, __pyx_n_s_encode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 42, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_16);
             __pyx_t_17 = NULL;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
@@ -2072,7 +2066,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
             }
             __pyx_t_15 = (__pyx_t_17) ? __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_17) : __Pyx_PyObject_CallNoArg(__pyx_t_16);
             __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-            if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 43, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 42, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_15);
             __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
             __pyx_t_16 = NULL;
@@ -2088,7 +2082,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
             __pyx_t_13 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_16, __pyx_t_15) : __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_15);
             __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 43, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 42, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             __pyx_t_14 = NULL;
@@ -2104,13 +2098,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
             __pyx_t_11 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_12, __pyx_t_14, __pyx_t_13) : __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_13);
             __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 43, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 42, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_11);
             __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             __pyx_v_df = __pyx_t_11;
             __pyx_t_11 = 0;
 
-            /* "lps_maestro/castor.py":44
+            /* "lps_maestro/castor.py":43
  *           pickled_response = r.content.decode('utf-8')
  *           df = pickle.loads(decode_base64(pickled_response.encode()))
  *           return df             # <<<<<<<<<<<<<<
@@ -2127,7 +2121,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
           }
           __pyx_L13_except_error:;
 
-          /* "lps_maestro/castor.py":39
+          /* "lps_maestro/castor.py":38
  *       else:
  *         r = requests.post(url='http://146.164.147.170:5020/list-datasets-py', data=data)
  *         try:             # <<<<<<<<<<<<<<
@@ -2155,7 +2149,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
       }
       __pyx_L10:;
 
-      /* "lps_maestro/castor.py":33
+      /* "lps_maestro/castor.py":32
  *       'credentials':credentials
  *     }
  *     try:             # <<<<<<<<<<<<<<
@@ -2179,7 +2173,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "lps_maestro/castor.py":45
+    /* "lps_maestro/castor.py":44
  *           df = pickle.loads(decode_base64(pickled_response.encode()))
  *           return df
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -2187,12 +2181,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_3, &__pyx_t_1, &__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_requests); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 45, __pyx_L6_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_requests); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 44, __pyx_L6_except_error)
     __Pyx_GOTREF(__pyx_t_11);
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 45, __pyx_L6_except_error)
+    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 44, __pyx_L6_except_error)
     __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 45, __pyx_L6_except_error)
+    __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 44, __pyx_L6_except_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __pyx_t_18 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_3, __pyx_t_11);
@@ -2201,19 +2195,19 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
     __pyx_t_3 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0;
     if (__pyx_t_18) {
       __Pyx_AddTraceback("lps_maestro.castor.Castor.list", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 45, __pyx_L6_except_error)
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 44, __pyx_L6_except_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_3);
 
-      /* "lps_maestro/castor.py":46
+      /* "lps_maestro/castor.py":45
  *           return df
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  *   def delete( self, datasetname ):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 46, __pyx_L6_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 45, __pyx_L6_except_error)
       __Pyx_GOTREF(__pyx_t_12);
       __pyx_t_13 = NULL;
       __pyx_t_18 = 0;
@@ -2230,7 +2224,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_12)) {
         PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 46, __pyx_L6_except_error)
+        __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 45, __pyx_L6_except_error)
         __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_GOTREF(__pyx_t_11);
       } else
@@ -2238,13 +2232,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
         PyObject *__pyx_temp[3] = {__pyx_t_13, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 46, __pyx_L6_except_error)
+        __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_18, 2+__pyx_t_18); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 45, __pyx_L6_except_error)
         __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_GOTREF(__pyx_t_11);
       } else
       #endif
       {
-        __pyx_t_14 = PyTuple_New(2+__pyx_t_18); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 46, __pyx_L6_except_error)
+        __pyx_t_14 = PyTuple_New(2+__pyx_t_18); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 45, __pyx_L6_except_error)
         __Pyx_GOTREF(__pyx_t_14);
         if (__pyx_t_13) {
           __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_13); __pyx_t_13 = NULL;
@@ -2255,7 +2249,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_18, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_14, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 46, __pyx_L6_except_error)
+        __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_14, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 45, __pyx_L6_except_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       }
@@ -2269,7 +2263,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
     goto __pyx_L6_except_error;
     __pyx_L6_except_error:;
 
-    /* "lps_maestro/castor.py":33
+    /* "lps_maestro/castor.py":32
  *       'credentials':credentials
  *     }
  *     try:             # <<<<<<<<<<<<<<
@@ -2295,7 +2289,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
     __pyx_L9_try_end:;
   }
 
-  /* "lps_maestro/castor.py":23
+  /* "lps_maestro/castor.py":22
  *     Logger.__init__(self)
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
@@ -2330,7 +2324,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_2list(CYTHON_UNUSED PyOb
   return __pyx_r;
 }
 
-/* "lps_maestro/castor.py":48
+/* "lps_maestro/castor.py":47
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, datasetname ):             # <<<<<<<<<<<<<<
@@ -2370,11 +2364,11 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_5delete(PyObject *__pyx_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_datasetname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, 1); __PYX_ERR(0, 48, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, 1); __PYX_ERR(0, 47, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "delete") < 0)) __PYX_ERR(0, 48, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "delete") < 0)) __PYX_ERR(0, 47, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2387,7 +2381,7 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_5delete(PyObject *__pyx_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 48, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("delete", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 47, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.castor.Castor.delete", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2421,14 +2415,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
   PyObject *__pyx_t_12 = NULL;
   __Pyx_RefNannySetupContext("delete", 0);
 
-  /* "lps_maestro/castor.py":50
+  /* "lps_maestro/castor.py":49
  *   def delete( self, datasetname ):
  * 
  *     if datasetname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
  *     username = datasetname.split('.')[1]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2442,24 +2436,24 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":51
+    /* "lps_maestro/castor.py":50
  * 
  *     if datasetname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')             # <<<<<<<<<<<<<<
  *     username = datasetname.split('.')[1]
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
@@ -2476,7 +2470,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_dataset_name_must_start_with};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -2484,13 +2478,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_dataset_name_must_start_with};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 50, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -2501,14 +2495,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
       __Pyx_INCREF(__pyx_kp_s_The_dataset_name_must_start_with);
       __Pyx_GIVEREF(__pyx_kp_s_The_dataset_name_must_start_with);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_kp_s_The_dataset_name_must_start_with);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "lps_maestro/castor.py":50
+    /* "lps_maestro/castor.py":49
  *   def delete( self, datasetname ):
  * 
  *     if datasetname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
@@ -2517,14 +2511,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
  */
   }
 
-  /* "lps_maestro/castor.py":52
+  /* "lps_maestro/castor.py":51
  *     if datasetname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
  *     username = datasetname.split('.')[1]             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2538,23 +2532,23 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_username = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":54
+  /* "lps_maestro/castor.py":53
  *     username = datasetname.split('.')[1]
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -2568,25 +2562,25 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":55
+  /* "lps_maestro/castor.py":54
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":56
+    /* "lps_maestro/castor.py":55
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -2597,7 +2591,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/castor.py":55
+    /* "lps_maestro/castor.py":54
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -2606,38 +2600,38 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
  */
   }
 
-  /* "lps_maestro/castor.py":59
+  /* "lps_maestro/castor.py":58
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'datasetname':datasetname,
  *       'credentials':credentials
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":60
+  /* "lps_maestro/castor.py":59
  *     data = {
  *       'username':username,
  *       'datasetname':datasetname,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_datasetname, __pyx_v_datasetname) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_datasetname, __pyx_v_datasetname) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":61
+  /* "lps_maestro/castor.py":60
  *       'username':username,
  *       'datasetname':datasetname,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  * 
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":64
+  /* "lps_maestro/castor.py":63
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2653,42 +2647,42 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "lps_maestro/castor.py":65
+      /* "lps_maestro/castor.py":64
  * 
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/delete-dataset', data=data)             # <<<<<<<<<<<<<<
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L5_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L5_error)
+      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_delete) < 0) __PYX_ERR(0, 65, __pyx_L5_error)
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 65, __pyx_L5_error)
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 65, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_delete) < 0) __PYX_ERR(0, 64, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 64, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 64, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_v_r = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "lps_maestro/castor.py":66
+      /* "lps_maestro/castor.py":65
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/delete-dataset', data=data)
  *       print (r.text)             # <<<<<<<<<<<<<<
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 66, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 65, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 66, __pyx_L5_error)
+      if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 65, __pyx_L5_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "lps_maestro/castor.py":64
+      /* "lps_maestro/castor.py":63
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2706,7 +2700,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "lps_maestro/castor.py":67
+    /* "lps_maestro/castor.py":66
  *       r = requests.post(url='http://146.164.147.170:5020/delete-dataset', data=data)
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -2714,12 +2708,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_6, &__pyx_t_1, &__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L7_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 67, __pyx_L7_except_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 66, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L7_except_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __pyx_t_5 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_6, __pyx_t_3);
@@ -2728,19 +2722,19 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     __pyx_t_6 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0;
     if (__pyx_t_5) {
       __Pyx_AddTraceback("lps_maestro.castor.Castor.delete", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_6) < 0) __PYX_ERR(0, 67, __pyx_L7_except_error)
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_6) < 0) __PYX_ERR(0, 66, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_6);
 
-      /* "lps_maestro/castor.py":68
+      /* "lps_maestro/castor.py":67
  *       print (r.text)
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  *   def download( self, datasetname ):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 68, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 67, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_10);
       __pyx_t_11 = NULL;
       __pyx_t_5 = 0;
@@ -2757,7 +2751,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -2765,13 +2759,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 68, __pyx_L7_except_error)
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 67, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_12);
         if (__pyx_t_11) {
           __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -2782,7 +2776,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_5, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L7_except_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
@@ -2796,7 +2790,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     goto __pyx_L7_except_error;
     __pyx_L7_except_error:;
 
-    /* "lps_maestro/castor.py":64
+    /* "lps_maestro/castor.py":63
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -2816,7 +2810,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
     __pyx_L10_try_end:;
   }
 
-  /* "lps_maestro/castor.py":48
+  /* "lps_maestro/castor.py":47
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, datasetname ):             # <<<<<<<<<<<<<<
@@ -2847,7 +2841,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_4delete(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "lps_maestro/castor.py":70
+/* "lps_maestro/castor.py":69
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def download( self, datasetname ):             # <<<<<<<<<<<<<<
@@ -2887,11 +2881,11 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_7download(PyObject *__py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_datasetname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("download", 1, 2, 2, 1); __PYX_ERR(0, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("download", 1, 2, 2, 1); __PYX_ERR(0, 69, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "download") < 0)) __PYX_ERR(0, 70, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "download") < 0)) __PYX_ERR(0, 69, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2904,7 +2898,7 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_7download(PyObject *__py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("download", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 70, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("download", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 69, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.castor.Castor.download", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2950,14 +2944,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
   int __pyx_t_22;
   __Pyx_RefNannySetupContext("download", 0);
 
-  /* "lps_maestro/castor.py":72
+  /* "lps_maestro/castor.py":71
  *   def download( self, datasetname ):
  * 
  *     if datasetname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
  *     username = datasetname.split('.')[1]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2971,24 +2965,24 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":73
+    /* "lps_maestro/castor.py":72
  * 
  *     if datasetname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')             # <<<<<<<<<<<<<<
  *     username = datasetname.split('.')[1]
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
@@ -3005,7 +2999,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_dataset_name_must_start_with};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -3013,13 +3007,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_dataset_name_must_start_with};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 72, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -3030,14 +3024,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
       __Pyx_INCREF(__pyx_kp_s_The_dataset_name_must_start_with);
       __Pyx_GIVEREF(__pyx_kp_s_The_dataset_name_must_start_with);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_kp_s_The_dataset_name_must_start_with);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "lps_maestro/castor.py":72
+    /* "lps_maestro/castor.py":71
  *   def download( self, datasetname ):
  * 
  *     if datasetname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
@@ -3046,14 +3040,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
  */
   }
 
-  /* "lps_maestro/castor.py":74
+  /* "lps_maestro/castor.py":73
  *     if datasetname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
  *     username = datasetname.split('.')[1]             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3067,23 +3061,23 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_username = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":76
+  /* "lps_maestro/castor.py":75
  *     username = datasetname.split('.')[1]
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -3097,25 +3091,25 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":77
+  /* "lps_maestro/castor.py":76
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":78
+    /* "lps_maestro/castor.py":77
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -3126,7 +3120,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/castor.py":77
+    /* "lps_maestro/castor.py":76
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -3135,38 +3129,38 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
  */
   }
 
-  /* "lps_maestro/castor.py":81
+  /* "lps_maestro/castor.py":80
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'datasetname':datasetname,
  *       'credentials':credentials
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":82
+  /* "lps_maestro/castor.py":81
  *     data = {
  *       'username':username,
  *       'datasetname':datasetname,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_datasetname, __pyx_v_datasetname) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_datasetname, __pyx_v_datasetname) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":83
+  /* "lps_maestro/castor.py":82
  *       'username':username,
  *       'datasetname':datasetname,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  * 
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":86
+  /* "lps_maestro/castor.py":85
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -3182,30 +3176,30 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "lps_maestro/castor.py":87
+      /* "lps_maestro/castor.py":86
  * 
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)             # <<<<<<<<<<<<<<
  *       try:
  *         if r.json()['message'] == "Internal Server Error":
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L5_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L5_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L5_error)
+      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_downlo) < 0) __PYX_ERR(0, 87, __pyx_L5_error)
-      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 87, __pyx_L5_error)
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 87, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_downlo) < 0) __PYX_ERR(0, 86, __pyx_L5_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 86, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 86, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_v_r = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "lps_maestro/castor.py":88
+      /* "lps_maestro/castor.py":87
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
  *       try:             # <<<<<<<<<<<<<<
@@ -3221,14 +3215,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
         __Pyx_XGOTREF(__pyx_t_12);
         /*try:*/ {
 
-          /* "lps_maestro/castor.py":89
+          /* "lps_maestro/castor.py":88
  *       r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
  *       try:
  *         if r.json()['message'] == "Internal Server Error":             # <<<<<<<<<<<<<<
  *           print (r.text)
  *           return
  */
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L11_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L11_error)
           __Pyx_GOTREF(__pyx_t_1);
           __pyx_t_2 = NULL;
           if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3242,29 +3236,29 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
           }
           __pyx_t_6 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 89, __pyx_L11_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 88, __pyx_L11_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_6, __pyx_n_s_message); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L11_error)
+          __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_t_6, __pyx_n_s_message); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L11_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s_Internal_Server_Error, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 89, __pyx_L11_error)
+          __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s_Internal_Server_Error, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 88, __pyx_L11_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           if (__pyx_t_4) {
 
-            /* "lps_maestro/castor.py":90
+            /* "lps_maestro/castor.py":89
  *       try:
  *         if r.json()['message'] == "Internal Server Error":
  *           print (r.text)             # <<<<<<<<<<<<<<
  *           return
  *         error_code = r.json()['error_code']
  */
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L11_error)
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_1);
-            if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 90, __pyx_L11_error)
+            if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 89, __pyx_L11_error)
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-            /* "lps_maestro/castor.py":91
+            /* "lps_maestro/castor.py":90
  *         if r.json()['message'] == "Internal Server Error":
  *           print (r.text)
  *           return             # <<<<<<<<<<<<<<
@@ -3275,7 +3269,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
             __pyx_r = Py_None; __Pyx_INCREF(Py_None);
             goto __pyx_L15_try_return;
 
-            /* "lps_maestro/castor.py":89
+            /* "lps_maestro/castor.py":88
  *       r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
  *       try:
  *         if r.json()['message'] == "Internal Server Error":             # <<<<<<<<<<<<<<
@@ -3284,14 +3278,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
  */
           }
 
-          /* "lps_maestro/castor.py":92
+          /* "lps_maestro/castor.py":91
  *           print (r.text)
  *           return
  *         error_code = r.json()['error_code']             # <<<<<<<<<<<<<<
  *         print (r.text)
  *       except:
  */
-          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 92, __pyx_L11_error)
+          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 91, __pyx_L11_error)
           __Pyx_GOTREF(__pyx_t_6);
           __pyx_t_2 = NULL;
           if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
@@ -3305,28 +3299,28 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
           }
           __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L11_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L11_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_error_code); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 92, __pyx_L11_error)
+          __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_error_code); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 91, __pyx_L11_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __pyx_v_error_code = __pyx_t_6;
           __pyx_t_6 = 0;
 
-          /* "lps_maestro/castor.py":93
+          /* "lps_maestro/castor.py":92
  *           return
  *         error_code = r.json()['error_code']
  *         print (r.text)             # <<<<<<<<<<<<<<
  *       except:
  *         with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:
  */
-          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 93, __pyx_L11_error)
+          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 92, __pyx_L11_error)
           __Pyx_GOTREF(__pyx_t_6);
-          if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 93, __pyx_L11_error)
+          if (__Pyx_PrintOne(0, __pyx_t_6) < 0) __PYX_ERR(0, 92, __pyx_L11_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "lps_maestro/castor.py":88
+          /* "lps_maestro/castor.py":87
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
  *       try:             # <<<<<<<<<<<<<<
@@ -3344,7 +3338,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "lps_maestro/castor.py":94
+        /* "lps_maestro/castor.py":93
  *         error_code = r.json()['error_code']
  *         print (r.text)
  *       except:             # <<<<<<<<<<<<<<
@@ -3353,12 +3347,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
  */
         /*except:*/ {
           __Pyx_AddTraceback("lps_maestro.castor.Castor.download", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 94, __pyx_L13_except_error)
+          if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 93, __pyx_L13_except_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_GOTREF(__pyx_t_2);
 
-          /* "lps_maestro/castor.py":95
+          /* "lps_maestro/castor.py":94
  *         print (r.text)
  *       except:
  *         with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:             # <<<<<<<<<<<<<<
@@ -3366,9 +3360,9 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
  *     except requests.exceptions.ConnectionError:
  */
           /*with:*/ {
-            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s__2, __pyx_n_s_format); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+            __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s__2, __pyx_n_s_format); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 94, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_zip, __pyx_n_s_format); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+            __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_zip, __pyx_n_s_format); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 94, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_15);
             __pyx_t_16 = NULL;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_15))) {
@@ -3382,7 +3376,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
             }
             __pyx_t_14 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_15, __pyx_t_16, __pyx_v_datasetname) : __Pyx_PyObject_CallOneArg(__pyx_t_15, __pyx_v_datasetname);
             __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-            if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 94, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_14);
             __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
             __pyx_t_15 = NULL;
@@ -3398,10 +3392,10 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
             __pyx_t_3 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_15, __pyx_t_14) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_t_14);
             __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+            __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 94, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_GIVEREF(__pyx_t_3);
             PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_3);
@@ -3409,12 +3403,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
             __Pyx_GIVEREF(__pyx_n_s_wb);
             PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_n_s_wb);
             __pyx_t_3 = 0;
-            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __pyx_t_17 = __Pyx_PyObject_LookupSpecial(__pyx_t_3, __pyx_n_s_exit); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+            __pyx_t_17 = __Pyx_PyObject_LookupSpecial(__pyx_t_3, __pyx_n_s_exit); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 94, __pyx_L13_except_error)
             __Pyx_GOTREF(__pyx_t_17);
-            __pyx_t_14 = __Pyx_PyObject_LookupSpecial(__pyx_t_3, __pyx_n_s_enter); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 95, __pyx_L20_error)
+            __pyx_t_14 = __Pyx_PyObject_LookupSpecial(__pyx_t_3, __pyx_n_s_enter); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 94, __pyx_L20_error)
             __Pyx_GOTREF(__pyx_t_14);
             __pyx_t_15 = NULL;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_14))) {
@@ -3428,7 +3422,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
             }
             __pyx_t_13 = (__pyx_t_15) ? __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_15) : __Pyx_PyObject_CallNoArg(__pyx_t_14);
             __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
-            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L20_error)
+            if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 94, __pyx_L20_error)
             __Pyx_GOTREF(__pyx_t_13);
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             __pyx_t_14 = __pyx_t_13;
@@ -3446,16 +3440,16 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
                   __pyx_v_f = __pyx_t_14;
                   __pyx_t_14 = 0;
 
-                  /* "lps_maestro/castor.py":96
+                  /* "lps_maestro/castor.py":95
  *       except:
  *         with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:
  *           f.write(r.content)             # <<<<<<<<<<<<<<
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-                  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L26_error)
+                  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L26_error)
                   __Pyx_GOTREF(__pyx_t_3);
-                  __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_content); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 96, __pyx_L26_error)
+                  __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_content); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 95, __pyx_L26_error)
                   __Pyx_GOTREF(__pyx_t_13);
                   __pyx_t_15 = NULL;
                   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -3470,12 +3464,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
                   __pyx_t_14 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_15, __pyx_t_13) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_13);
                   __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
                   __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-                  if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 96, __pyx_L26_error)
+                  if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 95, __pyx_L26_error)
                   __Pyx_GOTREF(__pyx_t_14);
                   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-                  /* "lps_maestro/castor.py":95
+                  /* "lps_maestro/castor.py":94
  *         print (r.text)
  *       except:
  *         with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:             # <<<<<<<<<<<<<<
@@ -3495,20 +3489,20 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
                 __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
                 /*except:*/ {
                   __Pyx_AddTraceback("lps_maestro.castor.Castor.download", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                  if (__Pyx_GetException(&__pyx_t_14, &__pyx_t_3, &__pyx_t_13) < 0) __PYX_ERR(0, 95, __pyx_L28_except_error)
+                  if (__Pyx_GetException(&__pyx_t_14, &__pyx_t_3, &__pyx_t_13) < 0) __PYX_ERR(0, 94, __pyx_L28_except_error)
                   __Pyx_GOTREF(__pyx_t_14);
                   __Pyx_GOTREF(__pyx_t_3);
                   __Pyx_GOTREF(__pyx_t_13);
-                  __pyx_t_15 = PyTuple_Pack(3, __pyx_t_14, __pyx_t_3, __pyx_t_13); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 95, __pyx_L28_except_error)
+                  __pyx_t_15 = PyTuple_Pack(3, __pyx_t_14, __pyx_t_3, __pyx_t_13); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 94, __pyx_L28_except_error)
                   __Pyx_GOTREF(__pyx_t_15);
                   __pyx_t_21 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_t_15, NULL);
                   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
                   __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-                  if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 95, __pyx_L28_except_error)
+                  if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 94, __pyx_L28_except_error)
                   __Pyx_GOTREF(__pyx_t_21);
                   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_21);
                   __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-                  if (__pyx_t_4 < 0) __PYX_ERR(0, 95, __pyx_L28_except_error)
+                  if (__pyx_t_4 < 0) __PYX_ERR(0, 94, __pyx_L28_except_error)
                   __pyx_t_22 = ((!(__pyx_t_4 != 0)) != 0);
                   if (__pyx_t_22) {
                     __Pyx_GIVEREF(__pyx_t_14);
@@ -3516,7 +3510,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
                     __Pyx_XGIVEREF(__pyx_t_13);
                     __Pyx_ErrRestoreWithState(__pyx_t_14, __pyx_t_3, __pyx_t_13);
                     __pyx_t_14 = 0; __pyx_t_3 = 0; __pyx_t_13 = 0; 
-                    __PYX_ERR(0, 95, __pyx_L28_except_error)
+                    __PYX_ERR(0, 94, __pyx_L28_except_error)
                   }
                   __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
                   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3542,7 +3536,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
                 if (__pyx_t_17) {
                   __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_tuple__3, NULL);
                   __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                  if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 95, __pyx_L13_except_error)
+                  if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 94, __pyx_L13_except_error)
                   __Pyx_GOTREF(__pyx_t_20);
                   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
                 }
@@ -3563,7 +3557,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
         }
         __pyx_L13_except_error:;
 
-        /* "lps_maestro/castor.py":88
+        /* "lps_maestro/castor.py":87
  *     try:
  *       r = requests.post(url='http://146.164.147.170:5020/download-dataset', data=data)
  *       try:             # <<<<<<<<<<<<<<
@@ -3589,7 +3583,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
         __pyx_L16_try_end:;
       }
 
-      /* "lps_maestro/castor.py":86
+      /* "lps_maestro/castor.py":85
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -3611,7 +3605,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "lps_maestro/castor.py":97
+    /* "lps_maestro/castor.py":96
  *         with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:
  *           f.write(r.content)
  *     except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -3619,12 +3613,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
  * 
  */
     __Pyx_ErrFetch(&__pyx_t_2, &__pyx_t_1, &__pyx_t_6);
-    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_requests); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 97, __pyx_L7_except_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_requests); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 96, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_13);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L7_except_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 97, __pyx_L7_except_error)
+    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 96, __pyx_L7_except_error)
     __Pyx_GOTREF(__pyx_t_13);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_2, __pyx_t_13);
@@ -3633,19 +3627,19 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     __pyx_t_2 = 0; __pyx_t_1 = 0; __pyx_t_6 = 0;
     if (__pyx_t_5) {
       __Pyx_AddTraceback("lps_maestro.castor.Castor.download", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 97, __pyx_L7_except_error)
+      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 96, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_2);
 
-      /* "lps_maestro/castor.py":98
+      /* "lps_maestro/castor.py":97
  *           f.write(r.content)
  *     except requests.exceptions.ConnectionError:
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  * 
  *   def upload( self , datasetname, path ):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_14 = NULL;
       __pyx_t_5 = 0;
@@ -3662,7 +3656,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 98, __pyx_L7_except_error)
+        __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 97, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_GOTREF(__pyx_t_13);
       } else
@@ -3670,13 +3664,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-        __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 98, __pyx_L7_except_error)
+        __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 97, __pyx_L7_except_error)
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_GOTREF(__pyx_t_13);
       } else
       #endif
       {
-        __pyx_t_15 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 98, __pyx_L7_except_error)
+        __pyx_t_15 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 97, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_15);
         if (__pyx_t_14) {
           __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_14); __pyx_t_14 = NULL;
@@ -3687,7 +3681,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
         __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
         PyTuple_SET_ITEM(__pyx_t_15, 1+__pyx_t_5, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_15, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 98, __pyx_L7_except_error)
+        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_15, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 97, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
       }
@@ -3701,7 +3695,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     goto __pyx_L7_except_error;
     __pyx_L7_except_error:;
 
-    /* "lps_maestro/castor.py":86
+    /* "lps_maestro/castor.py":85
  *     }
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -3727,7 +3721,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
     __pyx_L10_try_end:;
   }
 
-  /* "lps_maestro/castor.py":70
+  /* "lps_maestro/castor.py":69
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def download( self, datasetname ):             # <<<<<<<<<<<<<<
@@ -3761,7 +3755,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_6download(CYTHON_UNUSED 
   return __pyx_r;
 }
 
-/* "lps_maestro/castor.py":100
+/* "lps_maestro/castor.py":99
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def upload( self , datasetname, path ):             # <<<<<<<<<<<<<<
@@ -3804,17 +3798,17 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_9upload(PyObject *__pyx_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_datasetname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("upload", 1, 3, 3, 1); __PYX_ERR(0, 100, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("upload", 1, 3, 3, 1); __PYX_ERR(0, 99, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_path)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("upload", 1, 3, 3, 2); __PYX_ERR(0, 100, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("upload", 1, 3, 3, 2); __PYX_ERR(0, 99, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "upload") < 0)) __PYX_ERR(0, 100, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "upload") < 0)) __PYX_ERR(0, 99, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -3829,7 +3823,7 @@ static PyObject *__pyx_pw_11lps_maestro_6castor_6Castor_9upload(PyObject *__pyx_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("upload", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 100, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("upload", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 99, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.castor.Castor.upload", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3878,14 +3872,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
   PyObject *__pyx_t_22 = NULL;
   __Pyx_RefNannySetupContext("upload", 0);
 
-  /* "lps_maestro/castor.py":102
+  /* "lps_maestro/castor.py":101
  *   def upload( self , datasetname, path ):
  * 
  *     if datasetname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
  *     username = datasetname.split('.')[1]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3899,24 +3893,24 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_user, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":103
+    /* "lps_maestro/castor.py":102
  * 
  *     if datasetname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')             # <<<<<<<<<<<<<<
  *     username = datasetname.split('.')[1]
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_FATAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
@@ -3933,7 +3927,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_dataset_name_must_start_with};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -3941,13 +3935,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_self, __pyx_kp_s_The_dataset_name_must_start_with};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -3958,14 +3952,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       __Pyx_INCREF(__pyx_kp_s_The_dataset_name_must_start_with);
       __Pyx_GIVEREF(__pyx_kp_s_The_dataset_name_must_start_with);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_kp_s_The_dataset_name_must_start_with);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "lps_maestro/castor.py":102
+    /* "lps_maestro/castor.py":101
  *   def upload( self , datasetname, path ):
  * 
  *     if datasetname.split('.')[0] != 'user':             # <<<<<<<<<<<<<<
@@ -3974,14 +3968,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  */
   }
 
-  /* "lps_maestro/castor.py":104
+  /* "lps_maestro/castor.py":103
  *     if datasetname.split('.')[0] != 'user':
  *       MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
  *     username = datasetname.split('.')[1]             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_datasetname, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3995,23 +3989,23 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
   }
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_username = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":106
+  /* "lps_maestro/castor.py":105
  *     username = datasetname.split('.')[1]
  * 
  *     credentials = getCredentialsData()             # <<<<<<<<<<<<<<
  *     if credentials == False:
  *       return
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -4025,25 +4019,25 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_credentials = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":107
+  /* "lps_maestro/castor.py":106
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
  *       return
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_credentials, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":108
+    /* "lps_maestro/castor.py":107
  *     credentials = getCredentialsData()
  *     if credentials == False:
  *       return             # <<<<<<<<<<<<<<
@@ -4054,7 +4048,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "lps_maestro/castor.py":107
+    /* "lps_maestro/castor.py":106
  * 
  *     credentials = getCredentialsData()
  *     if credentials == False:             # <<<<<<<<<<<<<<
@@ -4063,62 +4057,62 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  */
   }
 
-  /* "lps_maestro/castor.py":111
+  /* "lps_maestro/castor.py":110
  * 
  *     data = {
  *       'username':username,             # <<<<<<<<<<<<<<
  *       'datasetname':datasetname,
  *       'credentials':credentials
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_username, __pyx_v_username) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":112
+  /* "lps_maestro/castor.py":111
  *     data = {
  *       'username':username,
  *       'datasetname':datasetname,             # <<<<<<<<<<<<<<
  *       'credentials':credentials
  *     }
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_datasetname, __pyx_v_datasetname) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_datasetname, __pyx_v_datasetname) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":113
+  /* "lps_maestro/castor.py":112
  *       'username':username,
  *       'datasetname':datasetname,
  *       'credentials':credentials             # <<<<<<<<<<<<<<
  *     }
  * 
  */
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_credentials, __pyx_v_credentials) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":117
+  /* "lps_maestro/castor.py":116
  * 
  *     # Parsing input
  *     file_list = []             # <<<<<<<<<<<<<<
  *     if (os.path.isdir(path)):
  *       for i in os.listdir(path):
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_file_list = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":118
+  /* "lps_maestro/castor.py":117
  *     # Parsing input
  *     file_list = []
  *     if (os.path.isdir(path)):             # <<<<<<<<<<<<<<
  *       for i in os.listdir(path):
  *         if os.path.isfile(os.path.join(path, i)):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_isdir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_isdir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -4133,23 +4127,23 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_6, __pyx_v_path) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_path);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "lps_maestro/castor.py":119
+    /* "lps_maestro/castor.py":118
  *     file_list = []
  *     if (os.path.isdir(path)):
  *       for i in os.listdir(path):             # <<<<<<<<<<<<<<
  *         if os.path.isfile(os.path.join(path, i)):
  *           file_list.append (os.path.join(path, i))
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_listdir); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_listdir); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -4164,16 +4158,16 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     }
     __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_2, __pyx_v_path) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_path);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
       __pyx_t_6 = __pyx_t_1; __Pyx_INCREF(__pyx_t_6); __pyx_t_7 = 0;
       __pyx_t_8 = NULL;
     } else {
-      __pyx_t_7 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
+      __pyx_t_7 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_8 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 119, __pyx_L1_error)
+      __pyx_t_8 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 118, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     for (;;) {
@@ -4181,17 +4175,17 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         if (likely(PyList_CheckExact(__pyx_t_6))) {
           if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_1); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 119, __pyx_L1_error)
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_1); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 118, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         } else {
           if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_1); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 119, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_1); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 118, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         }
@@ -4201,7 +4195,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 119, __pyx_L1_error)
+            else __PYX_ERR(0, 118, __pyx_L1_error)
           }
           break;
         }
@@ -4210,27 +4204,27 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "lps_maestro/castor.py":120
+      /* "lps_maestro/castor.py":119
  *     if (os.path.isdir(path)):
  *       for i in os.listdir(path):
  *         if os.path.isfile(os.path.join(path, i)):             # <<<<<<<<<<<<<<
  *           file_list.append (os.path.join(path, i))
  *       if (not file_list):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_isfile); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_isfile); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_os); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_os); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_path); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_path); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_join); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_join); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __pyx_t_10 = NULL;
@@ -4248,7 +4242,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_9)) {
         PyObject *__pyx_temp[3] = {__pyx_t_10, __pyx_v_path, __pyx_v_i};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -4256,13 +4250,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_9)) {
         PyObject *__pyx_temp[3] = {__pyx_t_10, __pyx_v_path, __pyx_v_i};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_11 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __pyx_t_11 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 119, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         if (__pyx_t_10) {
           __Pyx_GIVEREF(__pyx_t_10); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_10); __pyx_t_10 = NULL;
@@ -4273,7 +4267,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         __Pyx_INCREF(__pyx_v_i);
         __Pyx_GIVEREF(__pyx_v_i);
         PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_5, __pyx_v_i);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       }
@@ -4291,26 +4285,26 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       __pyx_t_1 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_9, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (__pyx_t_4) {
 
-        /* "lps_maestro/castor.py":121
+        /* "lps_maestro/castor.py":120
  *       for i in os.listdir(path):
  *         if os.path.isfile(os.path.join(path, i)):
  *           file_list.append (os.path.join(path, i))             # <<<<<<<<<<<<<<
  *       if (not file_list):
  *         MSG_ERROR (self, "File does not exist.")
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_join); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_join); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_t_3 = NULL;
@@ -4328,7 +4322,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_2)) {
           PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_path, __pyx_v_i};
-          __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_GOTREF(__pyx_t_1);
         } else
@@ -4336,13 +4330,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
           PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_path, __pyx_v_i};
-          __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_GOTREF(__pyx_t_1);
         } else
         #endif
         {
-          __pyx_t_9 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 121, __pyx_L1_error)
+          __pyx_t_9 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 120, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
           if (__pyx_t_3) {
             __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -4353,15 +4347,15 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
           __Pyx_INCREF(__pyx_v_i);
           __Pyx_GIVEREF(__pyx_v_i);
           PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_5, __pyx_v_i);
-          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
+          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_12 = __Pyx_PyList_Append(__pyx_v_file_list, __pyx_t_1); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 121, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyList_Append(__pyx_v_file_list, __pyx_t_1); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "lps_maestro/castor.py":120
+        /* "lps_maestro/castor.py":119
  *     if (os.path.isdir(path)):
  *       for i in os.listdir(path):
  *         if os.path.isfile(os.path.join(path, i)):             # <<<<<<<<<<<<<<
@@ -4370,7 +4364,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  */
       }
 
-      /* "lps_maestro/castor.py":119
+      /* "lps_maestro/castor.py":118
  *     file_list = []
  *     if (os.path.isdir(path)):
  *       for i in os.listdir(path):             # <<<<<<<<<<<<<<
@@ -4380,7 +4374,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "lps_maestro/castor.py":122
+    /* "lps_maestro/castor.py":121
  *         if os.path.isfile(os.path.join(path, i)):
  *           file_list.append (os.path.join(path, i))
  *       if (not file_list):             # <<<<<<<<<<<<<<
@@ -4391,14 +4385,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     __pyx_t_13 = ((!__pyx_t_4) != 0);
     if (__pyx_t_13) {
 
-      /* "lps_maestro/castor.py":123
+      /* "lps_maestro/castor.py":122
  *           file_list.append (os.path.join(path, i))
  *       if (not file_list):
  *         MSG_ERROR (self, "File does not exist.")             # <<<<<<<<<<<<<<
  *     else:
  *       if (not os.path.exists(path)):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_2 = NULL;
       __pyx_t_5 = 0;
@@ -4415,7 +4409,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_self, __pyx_kp_s_File_does_not_exist};
-        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 123, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 122, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
@@ -4423,13 +4417,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_self, __pyx_kp_s_File_does_not_exist};
-        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 123, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 122, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
       #endif
       {
-        __pyx_t_9 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 123, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 122, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         if (__pyx_t_2) {
           __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -4440,14 +4434,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         __Pyx_INCREF(__pyx_kp_s_File_does_not_exist);
         __Pyx_GIVEREF(__pyx_kp_s_File_does_not_exist);
         PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_5, __pyx_kp_s_File_does_not_exist);
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 123, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 122, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "lps_maestro/castor.py":122
+      /* "lps_maestro/castor.py":121
  *         if os.path.isfile(os.path.join(path, i)):
  *           file_list.append (os.path.join(path, i))
  *       if (not file_list):             # <<<<<<<<<<<<<<
@@ -4456,7 +4450,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  */
     }
 
-    /* "lps_maestro/castor.py":118
+    /* "lps_maestro/castor.py":117
  *     # Parsing input
  *     file_list = []
  *     if (os.path.isdir(path)):             # <<<<<<<<<<<<<<
@@ -4466,7 +4460,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     goto __pyx_L5;
   }
 
-  /* "lps_maestro/castor.py":125
+  /* "lps_maestro/castor.py":124
  *         MSG_ERROR (self, "File does not exist.")
  *     else:
  *       if (not os.path.exists(path)):             # <<<<<<<<<<<<<<
@@ -4474,12 +4468,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  *       else:
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_path); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_path); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_exists); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_exists); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __pyx_t_9 = NULL;
@@ -4494,22 +4488,22 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     }
     __pyx_t_6 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_9, __pyx_v_path) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_path);
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 125, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_4 = ((!__pyx_t_13) != 0);
     if (__pyx_t_4) {
 
-      /* "lps_maestro/castor.py":126
+      /* "lps_maestro/castor.py":125
  *     else:
  *       if (not os.path.exists(path)):
  *         MSG_ERROR (self, "File does not exist.")             # <<<<<<<<<<<<<<
  *       else:
  *         file_list.append(path)
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_9 = NULL;
       __pyx_t_5 = 0;
@@ -4526,7 +4520,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_9, __pyx_v_self, __pyx_kp_s_File_does_not_exist};
-        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 125, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
@@ -4534,13 +4528,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_9, __pyx_v_self, __pyx_kp_s_File_does_not_exist};
-        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 125, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_GOTREF(__pyx_t_6);
       } else
       #endif
       {
-        __pyx_t_2 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         if (__pyx_t_9) {
           __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_9); __pyx_t_9 = NULL;
@@ -4551,14 +4545,14 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         __Pyx_INCREF(__pyx_kp_s_File_does_not_exist);
         __Pyx_GIVEREF(__pyx_kp_s_File_does_not_exist);
         PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_5, __pyx_kp_s_File_does_not_exist);
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 125, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "lps_maestro/castor.py":125
+      /* "lps_maestro/castor.py":124
  *         MSG_ERROR (self, "File does not exist.")
  *     else:
  *       if (not os.path.exists(path)):             # <<<<<<<<<<<<<<
@@ -4568,7 +4562,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       goto __pyx_L10;
     }
 
-    /* "lps_maestro/castor.py":128
+    /* "lps_maestro/castor.py":127
  *         MSG_ERROR (self, "File does not exist.")
  *       else:
  *         file_list.append(path)             # <<<<<<<<<<<<<<
@@ -4576,13 +4570,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  *     for filename in file_list:
  */
     /*else*/ {
-      __pyx_t_12 = __Pyx_PyList_Append(__pyx_v_file_list, __pyx_v_path); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 128, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyList_Append(__pyx_v_file_list, __pyx_v_path); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 127, __pyx_L1_error)
     }
     __pyx_L10:;
   }
   __pyx_L5:;
 
-  /* "lps_maestro/castor.py":130
+  /* "lps_maestro/castor.py":129
  *         file_list.append(path)
  * 
  *     for filename in file_list:             # <<<<<<<<<<<<<<
@@ -4593,22 +4587,22 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
   for (;;) {
     if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_6)) break;
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    __pyx_t_1 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_1); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_1 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_1); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 129, __pyx_L1_error)
     #else
-    __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     #endif
     __Pyx_XDECREF_SET(__pyx_v_filename, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "lps_maestro/castor.py":131
+    /* "lps_maestro/castor.py":130
  * 
  *     for filename in file_list:
  *       fin = open(filename, 'rb')             # <<<<<<<<<<<<<<
  *       files = {'file':fin}
  *       try:
  */
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_filename);
     __Pyx_GIVEREF(__pyx_v_filename);
@@ -4616,26 +4610,26 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
     __Pyx_INCREF(__pyx_n_s_rb);
     __Pyx_GIVEREF(__pyx_n_s_rb);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_rb);
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF_SET(__pyx_v_fin, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "lps_maestro/castor.py":132
+    /* "lps_maestro/castor.py":131
  *     for filename in file_list:
  *       fin = open(filename, 'rb')
  *       files = {'file':fin}             # <<<<<<<<<<<<<<
  *       try:
  *         r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
  */
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_file, __pyx_v_fin) < 0) __PYX_ERR(0, 132, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_file, __pyx_v_fin) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_XDECREF_SET(__pyx_v_files, ((PyObject*)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "lps_maestro/castor.py":133
+    /* "lps_maestro/castor.py":132
  *       fin = open(filename, 'rb')
  *       files = {'file':fin}
  *       try:             # <<<<<<<<<<<<<<
@@ -4652,43 +4646,43 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         __Pyx_XGOTREF(__pyx_t_16);
         /*try:*/ {
 
-          /* "lps_maestro/castor.py":134
+          /* "lps_maestro/castor.py":133
  *       files = {'file':fin}
  *       try:
  *         r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)             # <<<<<<<<<<<<<<
  *         print (r.text)
  *       except requests.exceptions.ConnectionError:
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_requests); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L18_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_requests); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L18_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_post); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L18_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_post); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L18_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L18_error)
+          __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L18_error)
           __Pyx_GOTREF(__pyx_t_2);
-          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_upload) < 0) __PYX_ERR(0, 134, __pyx_L18_error)
-          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 134, __pyx_L18_error)
-          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_files, __pyx_v_files) < 0) __PYX_ERR(0, 134, __pyx_L18_error)
-          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 134, __pyx_L18_error)
+          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_upload) < 0) __PYX_ERR(0, 133, __pyx_L18_error)
+          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 133, __pyx_L18_error)
+          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_files, __pyx_v_files) < 0) __PYX_ERR(0, 133, __pyx_L18_error)
+          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 133, __pyx_L18_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_9);
           __pyx_t_9 = 0;
 
-          /* "lps_maestro/castor.py":135
+          /* "lps_maestro/castor.py":134
  *       try:
  *         r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
  *         print (r.text)             # <<<<<<<<<<<<<<
  *       except requests.exceptions.ConnectionError:
  *         MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  */
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 135, __pyx_L18_error)
+          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 134, __pyx_L18_error)
           __Pyx_GOTREF(__pyx_t_9);
-          if (__Pyx_PrintOne(0, __pyx_t_9) < 0) __PYX_ERR(0, 135, __pyx_L18_error)
+          if (__Pyx_PrintOne(0, __pyx_t_9) < 0) __PYX_ERR(0, 134, __pyx_L18_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "lps_maestro/castor.py":133
+          /* "lps_maestro/castor.py":132
  *       fin = open(filename, 'rb')
  *       files = {'file':fin}
  *       try:             # <<<<<<<<<<<<<<
@@ -4708,7 +4702,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "lps_maestro/castor.py":136
+        /* "lps_maestro/castor.py":135
  *         r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
  *         print (r.text)
  *       except requests.exceptions.ConnectionError:             # <<<<<<<<<<<<<<
@@ -4716,12 +4710,12 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  *       finally:
  */
         __Pyx_ErrFetch(&__pyx_t_9, &__pyx_t_2, &__pyx_t_1);
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L20_except_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_requests); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 136, __pyx_L20_except_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 135, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L20_except_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __pyx_t_5 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_9, __pyx_t_3);
@@ -4730,19 +4724,19 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         __pyx_t_9 = 0; __pyx_t_2 = 0; __pyx_t_1 = 0;
         if (__pyx_t_5) {
           __Pyx_AddTraceback("lps_maestro.castor.Castor.upload", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_2, &__pyx_t_9) < 0) __PYX_ERR(0, 136, __pyx_L20_except_error)
+          if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_2, &__pyx_t_9) < 0) __PYX_ERR(0, 135, __pyx_L20_except_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_GOTREF(__pyx_t_9);
 
-          /* "lps_maestro/castor.py":137
+          /* "lps_maestro/castor.py":136
  *         print (r.text)
  *       except requests.exceptions.ConnectionError:
  *         MSG_ERROR (self, "Failed to connect to LPS Cluster.")             # <<<<<<<<<<<<<<
  *       finally:
  *         fin.close()
  */
-          __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 137, __pyx_L20_except_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_MSG_ERROR); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 136, __pyx_L20_except_error)
           __Pyx_GOTREF(__pyx_t_11);
           __pyx_t_10 = NULL;
           __pyx_t_5 = 0;
@@ -4759,7 +4753,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
           #if CYTHON_FAST_PYCALL
           if (PyFunction_Check(__pyx_t_11)) {
             PyObject *__pyx_temp[3] = {__pyx_t_10, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-            __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L20_except_error)
+            __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L20_except_error)
             __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
             __Pyx_GOTREF(__pyx_t_3);
           } else
@@ -4767,13 +4761,13 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
           #if CYTHON_FAST_PYCCALL
           if (__Pyx_PyFastCFunction_Check(__pyx_t_11)) {
             PyObject *__pyx_temp[3] = {__pyx_t_10, __pyx_v_self, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster};
-            __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L20_except_error)
+            __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L20_except_error)
             __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
             __Pyx_GOTREF(__pyx_t_3);
           } else
           #endif
           {
-            __pyx_t_17 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 137, __pyx_L20_except_error)
+            __pyx_t_17 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 136, __pyx_L20_except_error)
             __Pyx_GOTREF(__pyx_t_17);
             if (__pyx_t_10) {
               __Pyx_GIVEREF(__pyx_t_10); PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_10); __pyx_t_10 = NULL;
@@ -4784,7 +4778,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
             __Pyx_INCREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
             __Pyx_GIVEREF(__pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
             PyTuple_SET_ITEM(__pyx_t_17, 1+__pyx_t_5, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster);
-            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_17, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L20_except_error)
+            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_17, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L20_except_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
           }
@@ -4798,7 +4792,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         goto __pyx_L20_except_error;
         __pyx_L20_except_error:;
 
-        /* "lps_maestro/castor.py":133
+        /* "lps_maestro/castor.py":132
  *       fin = open(filename, 'rb')
  *       files = {'file':fin}
  *       try:             # <<<<<<<<<<<<<<
@@ -4819,7 +4813,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       }
     }
 
-    /* "lps_maestro/castor.py":139
+    /* "lps_maestro/castor.py":138
  *         MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  *       finally:
  *         fin.close()             # <<<<<<<<<<<<<<
@@ -4828,7 +4822,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
  */
     /*finally:*/ {
       /*normal exit:*/{
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_fin, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_fin, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_1 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -4842,7 +4836,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         }
         __pyx_t_9 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L1_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 138, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -4870,7 +4864,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
         __Pyx_XGOTREF(__pyx_t_22);
         __pyx_t_5 = __pyx_lineno; __pyx_t_18 = __pyx_clineno; __pyx_t_19 = __pyx_filename;
         {
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_fin, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L31_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_fin, __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L31_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_t_1 = NULL;
           if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -4884,7 +4878,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
           }
           __pyx_t_9 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L31_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 138, __pyx_L31_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -4918,7 +4912,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
       __pyx_L17:;
     }
 
-    /* "lps_maestro/castor.py":130
+    /* "lps_maestro/castor.py":129
  *         file_list.append(path)
  * 
  *     for filename in file_list:             # <<<<<<<<<<<<<<
@@ -4928,7 +4922,7 @@ static PyObject *__pyx_pf_11lps_maestro_6castor_6Castor_8upload(CYTHON_UNUSED Py
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "lps_maestro/castor.py":100
+  /* "lps_maestro/castor.py":99
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def upload( self , datasetname, path ):             # <<<<<<<<<<<<<<
@@ -5190,7 +5184,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_fin, __pyx_k_fin, sizeof(__pyx_k_fin), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
   {&__pyx_n_s_getCredentialsData, __pyx_k_getCredentialsData, sizeof(__pyx_k_getCredentialsData), 0, 0, 1, 1},
-  {&__pyx_n_s_hashlib, __pyx_k_hashlib, sizeof(__pyx_k_hashlib), 0, 0, 1, 1},
   {&__pyx_kp_s_http_146_164_147_170_5020_delete, __pyx_k_http_146_164_147_170_5020_delete, sizeof(__pyx_k_http_146_164_147_170_5020_delete), 0, 0, 1, 0},
   {&__pyx_kp_s_http_146_164_147_170_5020_downlo, __pyx_k_http_146_164_147_170_5020_downlo, sizeof(__pyx_k_http_146_164_147_170_5020_downlo), 0, 0, 1, 0},
   {&__pyx_kp_s_http_146_164_147_170_5020_list_d, __pyx_k_http_146_164_147_170_5020_list_d, sizeof(__pyx_k_http_146_164_147_170_5020_list_d), 0, 0, 1, 0},
@@ -5211,7 +5204,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_lps_maestro_constants, __pyx_k_lps_maestro_constants, sizeof(__pyx_k_lps_maestro_constants), 0, 0, 1, 1},
   {&__pyx_n_s_lps_maestro_utils, __pyx_k_lps_maestro_utils, sizeof(__pyx_k_lps_maestro_utils), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
-  {&__pyx_n_s_md5, __pyx_k_md5, sizeof(__pyx_k_md5), 0, 0, 1, 1},
   {&__pyx_n_s_message, __pyx_k_message, sizeof(__pyx_k_message), 0, 0, 1, 1},
   {&__pyx_n_s_metaclass, __pyx_k_metaclass, sizeof(__pyx_k_metaclass), 0, 0, 1, 1},
   {&__pyx_n_s_module, __pyx_k_module, sizeof(__pyx_k_module), 0, 0, 1, 1},
@@ -5230,7 +5222,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_rb, __pyx_k_rb, sizeof(__pyx_k_rb), 0, 0, 1, 1},
   {&__pyx_n_s_requests, __pyx_k_requests, sizeof(__pyx_k_requests), 0, 0, 1, 1},
   {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
-  {&__pyx_n_s_sha256, __pyx_k_sha256, sizeof(__pyx_k_sha256), 0, 0, 1, 1},
   {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
   {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
@@ -5246,7 +5237,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 94, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -5256,79 +5247,79 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "lps_maestro/castor.py":95
+  /* "lps_maestro/castor.py":94
  *         print (r.text)
  *       except:
  *         with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:             # <<<<<<<<<<<<<<
  *           f.write(r.content)
  *     except requests.exceptions.ConnectionError:
  */
-  __pyx_tuple__3 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "lps_maestro/castor.py":20
+  /* "lps_maestro/castor.py":19
  * class Castor (Logger):
  * 
  *   def __init__(self):             # <<<<<<<<<<<<<<
  *     Logger.__init__(self)
  * 
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_init, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_init, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 19, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":23
+  /* "lps_maestro/castor.py":22
  *     Logger.__init__(self)
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_tuple__7 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_cli, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_pickled_response, __pyx_n_s_df); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_username, __pyx_n_s_cli, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_pickled_response, __pyx_n_s_df); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_list, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __pyx_tuple__9 = PyTuple_Pack(1, ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_list, 22, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(1, ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "lps_maestro/castor.py":48
+  /* "lps_maestro/castor.py":47
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, datasetname ):             # <<<<<<<<<<<<<<
  * 
  *     if datasetname.split('.')[0] != 'user':
  */
-  __pyx_tuple__10 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_datasetname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_datasetname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_delete, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_delete, 47, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 47, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":70
+  /* "lps_maestro/castor.py":69
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def download( self, datasetname ):             # <<<<<<<<<<<<<<
  * 
  *     if datasetname.split('.')[0] != 'user':
  */
-  __pyx_tuple__12 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_datasetname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_error_code, __pyx_n_s_f); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_datasetname, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_r, __pyx_n_s_error_code, __pyx_n_s_f); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_download, 70, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_download, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 69, __pyx_L1_error)
 
-  /* "lps_maestro/castor.py":100
+  /* "lps_maestro/castor.py":99
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def upload( self , datasetname, path ):             # <<<<<<<<<<<<<<
  * 
  *     if datasetname.split('.')[0] != 'user':
  */
-  __pyx_tuple__14 = PyTuple_Pack(12, __pyx_n_s_self, __pyx_n_s_datasetname, __pyx_n_s_path, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_file_list, __pyx_n_s_i, __pyx_n_s_filename, __pyx_n_s_fin, __pyx_n_s_files, __pyx_n_s_r); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(12, __pyx_n_s_self, __pyx_n_s_datasetname, __pyx_n_s_path, __pyx_n_s_username, __pyx_n_s_credentials, __pyx_n_s_data, __pyx_n_s_file_list, __pyx_n_s_i, __pyx_n_s_filename, __pyx_n_s_fin, __pyx_n_s_files, __pyx_n_s_r); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_upload, 100, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_castor_py, __pyx_n_s_upload, 99, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5682,7 +5673,7 @@ if (!__Pyx_RefNanny) {
  * from Gaugi import Logger
  * from Gaugi.messenger.macros import *             # <<<<<<<<<<<<<<
  * import requests
- * from hashlib import sha256, md5
+ * import pickle
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5699,8 +5690,8 @@ if (!__Pyx_RefNanny) {
  * from Gaugi import Logger
  * from Gaugi.messenger.macros import *
  * import requests             # <<<<<<<<<<<<<<
- * from hashlib import sha256, md5
  * import pickle
+ * import base64
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_requests, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5710,239 +5701,211 @@ if (!__Pyx_RefNanny) {
   /* "lps_maestro/castor.py":11
  * from Gaugi.messenger.macros import *
  * import requests
- * from hashlib import sha256, md5             # <<<<<<<<<<<<<<
- * import pickle
- * import base64
- */
-  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_INCREF(__pyx_n_s_sha256);
-  __Pyx_GIVEREF(__pyx_n_s_sha256);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_sha256);
-  __Pyx_INCREF(__pyx_n_s_md5);
-  __Pyx_GIVEREF(__pyx_n_s_md5);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_md5);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_hashlib, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_sha256); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_sha256, __pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_md5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_md5, __pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "lps_maestro/castor.py":12
- * import requests
- * from hashlib import sha256, md5
  * import pickle             # <<<<<<<<<<<<<<
  * import base64
  * from pathlib import Path
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_pickle, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pickle, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pickle, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pickle, __pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":13
- * from hashlib import sha256, md5
+  /* "lps_maestro/castor.py":12
+ * import requests
  * import pickle
  * import base64             # <<<<<<<<<<<<<<
  * from pathlib import Path
  * from lps_maestro.utils import getCredentialsData, decode_base64
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_base64, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_base64, __pyx_t_2) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_base64, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_base64, __pyx_t_1) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":14
+  /* "lps_maestro/castor.py":13
  * import pickle
  * import base64
  * from pathlib import Path             # <<<<<<<<<<<<<<
  * from lps_maestro.utils import getCredentialsData, decode_base64
  * from lps_maestro.constants import *
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_Path);
   __Pyx_GIVEREF(__pyx_n_s_Path);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_Path);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pathlib, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_Path);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_pathlib, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Path, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Path); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Path, __pyx_t_1) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lps_maestro/castor.py":15
+  /* "lps_maestro/castor.py":14
  * import base64
  * from pathlib import Path
  * from lps_maestro.utils import getCredentialsData, decode_base64             # <<<<<<<<<<<<<<
  * from lps_maestro.constants import *
  * 
  */
-  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_getCredentialsData);
   __Pyx_GIVEREF(__pyx_n_s_getCredentialsData);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_getCredentialsData);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_getCredentialsData);
   __Pyx_INCREF(__pyx_n_s_decode_base64);
   __Pyx_GIVEREF(__pyx_n_s_decode_base64);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_decode_base64);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_lps_maestro_utils, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_decode_base64);
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_lps_maestro_utils, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getCredentialsData, __pyx_t_1) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_decode_base64); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_decode_base64, __pyx_t_1) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_getCredentialsData); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getCredentialsData, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_decode_base64); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_decode_base64, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":16
+  /* "lps_maestro/castor.py":15
  * from pathlib import Path
  * from lps_maestro.utils import getCredentialsData, decode_base64
  * from lps_maestro.constants import *             # <<<<<<<<<<<<<<
  * 
  * class Castor (Logger):
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s__4);
   __Pyx_GIVEREF(__pyx_n_s__4);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__4);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_lps_maestro_constants, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__pyx_import_star(__pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error);
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s__4);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_lps_maestro_constants, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_import_star(__pyx_t_2) < 0) __PYX_ERR(0, 15, __pyx_L1_error);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lps_maestro/castor.py":18
+  /* "lps_maestro/castor.py":17
  * from lps_maestro.constants import *
  * 
  * class Castor (Logger):             # <<<<<<<<<<<<<<
  * 
  *   def __init__(self):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Logger); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_Castor, __pyx_n_s_Castor, (PyObject *) NULL, __pyx_n_s_lps_maestro_castor, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
+  __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_1, __pyx_n_s_Castor, __pyx_n_s_Castor, (PyObject *) NULL, __pyx_n_s_lps_maestro_castor, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "lps_maestro/castor.py":20
+  /* "lps_maestro/castor.py":19
  * class Castor (Logger):
  * 
  *   def __init__(self):             # <<<<<<<<<<<<<<
  *     Logger.__init__(self)
  * 
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_1__init__, 0, __pyx_n_s_Castor___init, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_1__init__, 0, __pyx_n_s_Castor___init, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/castor.py":23
+  /* "lps_maestro/castor.py":22
  *     Logger.__init__(self)
  * 
  *   def list( self, username, cli=False ):             # <<<<<<<<<<<<<<
  * 
  *     credentials = getCredentialsData()
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_3list, 0, __pyx_n_s_Castor_list, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_3list, 0, __pyx_n_s_Castor_list, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__9);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_list, __pyx_t_4) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_list, __pyx_t_4) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/castor.py":48
+  /* "lps_maestro/castor.py":47
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def delete( self, datasetname ):             # <<<<<<<<<<<<<<
  * 
  *     if datasetname.split('.')[0] != 'user':
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_5delete, 0, __pyx_n_s_Castor_delete, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_5delete, 0, __pyx_n_s_Castor_delete, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_delete, __pyx_t_4) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_delete, __pyx_t_4) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/castor.py":70
+  /* "lps_maestro/castor.py":69
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def download( self, datasetname ):             # <<<<<<<<<<<<<<
  * 
  *     if datasetname.split('.')[0] != 'user':
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_7download, 0, __pyx_n_s_Castor_download, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_7download, 0, __pyx_n_s_Castor_download, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_download, __pyx_t_4) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_download, __pyx_t_4) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/castor.py":100
+  /* "lps_maestro/castor.py":99
  *       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
  * 
  *   def upload( self , datasetname, path ):             # <<<<<<<<<<<<<<
  * 
  *     if datasetname.split('.')[0] != 'user':
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_9upload, 0, __pyx_n_s_Castor_upload, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11lps_maestro_6castor_6Castor_9upload, 0, __pyx_n_s_Castor_upload, NULL, __pyx_n_s_lps_maestro_castor, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_upload, __pyx_t_4) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_upload, __pyx_t_4) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "lps_maestro/castor.py":18
+  /* "lps_maestro/castor.py":17
  * from lps_maestro.constants import *
  * 
  * class Castor (Logger):             # <<<<<<<<<<<<<<
  * 
  *   def __init__(self):
  */
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_Castor, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_Castor, __pyx_t_1, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Castor, __pyx_t_4) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Castor, __pyx_t_4) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lps_maestro/castor.py":141
+  /* "lps_maestro/castor.py":140
  *         fin.close()
  * 
  * castor = Castor()             # <<<<<<<<<<<<<<
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Castor); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_Castor); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_castor, __pyx_t_1) < 0) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_castor, __pyx_t_2) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "lps_maestro/castor.py":1
  * __all__ = [             # <<<<<<<<<<<<<<
  *   'castor'
  * ]
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /*--- Wrapped vars code ---*/
 

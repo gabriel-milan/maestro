@@ -6,7 +6,6 @@ import argparse
 from Gaugi import Logger
 from Gaugi.messenger.macros import *
 import requests
-from hashlib import sha256, md5
 import pickle
 import base64
 from pathlib import Path
@@ -59,11 +58,6 @@ class AuthenticationParser (Logger):
   def compile( self, args ):
     if args.mode == 'authenticate':
       self.authenticate(args.username, args.password)
-
-  def hashPw (self, password):
-    m = md5()
-    m.update(password.encode('utf-8'))
-    return m.hexdigest()
 
   def authenticate (self, username, password):
     return self.__authenticate.authenticate(username, password)

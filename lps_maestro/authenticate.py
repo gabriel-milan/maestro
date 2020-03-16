@@ -31,17 +31,15 @@ class Authenticate (Logger):
     MSG_INFO (self, "Trying to connect...")
     data = {
       'username':username,
-      'password':self.hashPw(password)
+      'password':password
     }
     try:
       r = requests.post(url='http://146.164.147.170:5020/authenticate', data=data)
       MSG_INFO (self, r.text)
       if (r.json()['error_code'] == 200):
-        pickled_data = pickle.dumps(data)
-        b64_pickled_data = base64.b64encode(pickled_data)
         home = str(Path.home())
         f = open("{}/{}".format(home, CREDENTIALS_FILE), "wb+")
-        f.write(b64_pickled_data)
+        f.write("${}${}".format(username, r.json()['token']).encode('utf-8'))
         f.close()
     except requests.exceptions.ConnectionError:
       MSG_ERROR (self, "Failed to connect to LPS Cluster.")
