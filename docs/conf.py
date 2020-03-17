@@ -21,7 +21,7 @@ project = 'Maestro'
 copyright = '2020, Gabriel Gazola Milan <gabriel.milan@lps.ufrj.br>, Joao Victor da Fonseca Pinto <jodafons@lps.ufrj.br>'
 author = 'Gabriel Gazola Milan <gabriel.milan@lps.ufrj.br>, Joao Victor da Fonseca Pinto <jodafons@lps.ufrj.br>'
 version = '0.2'
-release = '0.2.0'
+release = '0.2.2'
 
 # -- General configuration ---------------------------------------------------
 
