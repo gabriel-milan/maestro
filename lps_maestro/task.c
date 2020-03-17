@@ -1462,6 +1462,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4delete(CYTHON_UNUSED PyObje
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6retry(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_taskname); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_8list(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_username, PyObject *__pyx_v_cli); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_10kill(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_username, PyObject *__pyx_v_taskname); /* proto */
+static PyObject *__pyx_int_0;
 static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__8;
@@ -2133,7 +2134,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
  *       'containerImage'        : containerImage,
  *       'secondaryDS'           : secondaryDS if secondaryDS else '',             # <<<<<<<<<<<<<<
  *       'execCommand'           : execCommand,
- *       'et'                    : et if et else '',
+ *       'et'                    : et if et else 0,
  */
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_secondaryDS); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 51, __pyx_L1_error)
   if (__pyx_t_4) {
@@ -2150,16 +2151,16 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
  *       'containerImage'        : containerImage,
  *       'secondaryDS'           : secondaryDS if secondaryDS else '',
  *       'execCommand'           : execCommand,             # <<<<<<<<<<<<<<
- *       'et'                    : et if et else '',
- *       'eta'                   : eta if eta else '',
+ *       'et'                    : et if et else 0,
+ *       'eta'                   : eta if eta else 0,
  */
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_execCommand, __pyx_v_execCommand) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
   /* "lps_maestro/task.py":53
  *       'secondaryDS'           : secondaryDS if secondaryDS else '',
  *       'execCommand'           : execCommand,
- *       'et'                    : et if et else '',             # <<<<<<<<<<<<<<
- *       'eta'                   : eta if eta else '',
+ *       'et'                    : et if et else 0,             # <<<<<<<<<<<<<<
+ *       'eta'                   : eta if eta else 0,
  *       'gpu'                   : int(gpu),
  */
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_et); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 53, __pyx_L1_error)
@@ -2167,16 +2168,16 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     __Pyx_INCREF(__pyx_v_et);
     __pyx_t_2 = __pyx_v_et;
   } else {
-    __Pyx_INCREF(__pyx_kp_s__2);
-    __pyx_t_2 = __pyx_kp_s__2;
+    __Pyx_INCREF(__pyx_int_0);
+    __pyx_t_2 = __pyx_int_0;
   }
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_et, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "lps_maestro/task.py":54
  *       'execCommand'           : execCommand,
- *       'et'                    : et if et else '',
- *       'eta'                   : eta if eta else '',             # <<<<<<<<<<<<<<
+ *       'et'                    : et if et else 0,
+ *       'eta'                   : eta if eta else 0,             # <<<<<<<<<<<<<<
  *       'gpu'                   : int(gpu),
  *       'credentials'           : credentials
  */
@@ -2185,15 +2186,15 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
     __Pyx_INCREF(__pyx_v_eta);
     __pyx_t_2 = __pyx_v_eta;
   } else {
-    __Pyx_INCREF(__pyx_kp_s__2);
-    __pyx_t_2 = __pyx_kp_s__2;
+    __Pyx_INCREF(__pyx_int_0);
+    __pyx_t_2 = __pyx_int_0;
   }
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_eta, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "lps_maestro/task.py":55
- *       'et'                    : et if et else '',
- *       'eta'                   : eta if eta else '',
+ *       'et'                    : et if et else 0,
+ *       'eta'                   : eta if eta else 0,
  *       'gpu'                   : int(gpu),             # <<<<<<<<<<<<<<
  *       'credentials'           : credentials
  *     }
@@ -2204,7 +2205,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2create(CYTHON_UNUSED PyObje
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "lps_maestro/task.py":56
- *       'eta'                   : eta if eta else '',
+ *       'eta'                   : eta if eta else 0,
  *       'gpu'                   : int(gpu),
  *       'credentials'           : credentials             # <<<<<<<<<<<<<<
  *     }
@@ -5010,6 +5011,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
+  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;

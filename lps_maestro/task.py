@@ -50,8 +50,8 @@ class Task (Logger):
       'containerImage'        : containerImage,
       'secondaryDS'           : secondaryDS if secondaryDS else '',
       'execCommand'           : execCommand,
-      'et'                    : et if et else '',
-      'eta'                   : eta if eta else '',
+      'et'                    : et if et else 0,
+      'eta'                   : eta if eta else 0,
       'gpu'                   : int(gpu),
       'credentials'           : credentials
     }
