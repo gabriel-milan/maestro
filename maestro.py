@@ -205,11 +205,12 @@ class TaskParser(Logger):
       elif args.option == 'kill':
         self.kill(args.username, 'all' if args.kill_all else args.taskname)
 
+
   def create( self, taskname, dataFile,
                     configFile, secondaryDS,
                     execCommand, containerImage, et=None, eta=None, gpu=False,
                     dry_run=False):
-    return self.__task.create( taskname, dataFile, configFile, secondaryDS, execCommand, containerImage, et=None, eta=None, gpu=False, dry_run=False)
+    return self.__task.create( taskname, dataFile, configFile, execCommand, containerImage, secondaryDS=secondaryDS, et=None, eta=None, gpu=False, dry_run=False)
 
   def delete( self, taskname ):
     return self.__task.delete (taskname)
