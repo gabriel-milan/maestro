@@ -3,8 +3,6 @@
 import os
 import sys
 import argparse
-from Gaugi import Logger
-from Gaugi.messenger.macros import *
 import requests
 import pickle
 import base64
@@ -37,10 +35,9 @@ def getCredentialsData ():
 #
 # Authentication parser
 #
-class AuthenticationParser (Logger):
+class AuthenticationParser ():
 
   def __init__ (self, args=None):
-    Logger.__init__(self)
     self.__authenticate = authenticate
     if args:
       # Authenticate
@@ -65,10 +62,9 @@ class AuthenticationParser (Logger):
 #
 # Dataset parser
 #
-class DatasetParser(Logger):
+class DatasetParser():
 
   def __init__(self, args=None):
-    Logger.__init__(self)
     self.__castor = castor
     if args:
       # Upload
@@ -123,11 +119,10 @@ class DatasetParser(Logger):
 #
 # Task parser
 #
-class TaskParser(Logger):
+class TaskParser():
 
 
   def __init__(self , args=None):
-    Logger.__init__(self)
     self.__task = task
     if args:
       # Create

@@ -6,8 +6,6 @@ __all__ = [
 import os
 import sys
 import argparse
-from Gaugi import Logger
-from Gaugi.messenger.macros import *
 import requests
 import pickle
 import base64

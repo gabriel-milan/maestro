@@ -7,6 +7,7 @@ HEADER="#!"$(which python3)
 
 echo "Installing dependencies..."
 
+pip install -r requirements.txt
 pip3 install -r requirements.txt
 
 echo "Setting up the script..."

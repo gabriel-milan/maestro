@@ -5,8 +5,6 @@ __all__ = [
 import os
 import sys
 import argparse
-from Gaugi import Logger
-from Gaugi.messenger.macros import *
 import requests
 import pickle
 import base64
@@ -14,10 +12,9 @@ from pathlib import Path
 from lps_maestro.utils import getCredentialsData, decode_base64
 from lps_maestro.constants import *
 
-class Castor (Logger):
+class Castor ():
 
   def __init__(self):
-    Logger.__init__(self)
 
   def list( self, username, cli=False ):
 
@@ -42,12 +39,13 @@ class Castor (Logger):
           df = pickle.loads(decode_base64(pickled_response.encode()))
           return df
     except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+      print ("Failed to connect to LPS Cluster.")
 
   def delete( self, datasetname ):
 
     if datasetname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
+      print( 'The dataset name must start with "user.<username>.taskname."')
+      raise BaseException
     username = datasetname.split('.')[1]
 
     credentials = getCredentialsData()
@@ -64,12 +62,12 @@ class Castor (Logger):
       r = requests.post(url='http://146.164.147.170:5020/delete-dataset', data=data)
       print (r.text)
     except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+      print ("Failed to connect to LPS Cluster.")
 
   def download( self, datasetname ):
 
     if datasetname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
+      print ( 'The dataset name must start with "user.<username>.taskname."')
     username = datasetname.split('.')[1]
 
     credentials = getCredentialsData()
@@ -94,12 +92,13 @@ class Castor (Logger):
         with open('./{}'.format('{}.zip'.format(datasetname)), 'wb') as f:
           f.write(r.content)
     except requests.exceptions.ConnectionError:
-      MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+      print ("Failed to connect to LPS Cluster.")
 
   def upload( self , datasetname, path ):
 
     if datasetname.split('.')[0] != 'user':
-      MSG_FATAL( self, 'The dataset name must start with "user.<username>.taskname."')
+      print( 'The dataset name must start with "user.<username>.taskname."')
+      raise BaseException
     username = datasetname.split('.')[1]
 
     credentials = getCredentialsData()
@@ -119,10 +118,10 @@ class Castor (Logger):
         if os.path.isfile(os.path.join(path, i)):
           file_list.append (os.path.join(path, i))
       if (not file_list):
-        MSG_ERROR (self, "File does not exist.")
+        print ("File does not exist.")
     else:
       if (not os.path.exists(path)):
-        MSG_ERROR (self, "File does not exist.")
+        print ("File does not exist.")
       else:
         file_list.append(path)
     
@@ -133,7 +132,7 @@ class Castor (Logger):
         r = requests.post(url='http://146.164.147.170:5020/upload-dataset', data=data, files=files)
         print (r.text)
       except requests.exceptions.ConnectionError:
-        MSG_ERROR (self, "Failed to connect to LPS Cluster.")
+        print ("Failed to connect to LPS Cluster.")
       finally:
         fin.close()
 

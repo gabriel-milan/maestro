@@ -24,7 +24,7 @@ extensions = [
 
 setup(
   name = 'lps-maestro',
-  version = '0.2.2',
+  version = '0.2.3',
   license='GPL-3.0',
   description = 'Command line interface for the LPS Cluster @ UFRJ.',
   long_description = long_description,
@@ -35,7 +35,6 @@ setup(
   url = 'https://github.com/gabriel-milan/maestro',
   keywords = ['cli', 'cluster', 'command-line interface', 'computer grid', 'lps', 'ufrj'],
   install_requires=[
-    'Gaugi',
     'requests'
   ],
   classifiers=[
