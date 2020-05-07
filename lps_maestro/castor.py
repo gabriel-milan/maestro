@@ -14,8 +14,6 @@ from lps_maestro.constants import *
 
 class Castor ():
 
-  def __init__(self):
-
   def list( self, username, cli=False ):
 
     credentials = getCredentialsData()

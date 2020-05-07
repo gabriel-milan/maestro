@@ -13,8 +13,6 @@ from lps_maestro.utils import getCredentialsData, decode_base64
 from lps_maestro.constants import *
 
 class Task ():
-
-  def __init__ (self):
   
   def create( self, taskname,
                     dataFile,
