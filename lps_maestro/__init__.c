@@ -989,19 +989,23 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 /* PyObjectCallOneArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
-/* PyIntBinop.proto */
-#if !CYTHON_COMPILING_IN_PYPY
-static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check);
+/* PyObjectCallNoArg.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
 #else
-#define __Pyx_PyInt_AddObjC(op1, op2, intval, inplace, zerodivision_check)\
-    (inplace ? PyNumber_InPlaceAdd(op1, op2) : PyNumber_Add(op1, op2))
+#define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
 #endif
 
-/* SliceObject.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_GetSlice(
-        PyObject* obj, Py_ssize_t cstart, Py_ssize_t cstop,
-        PyObject** py_start, PyObject** py_stop, PyObject** py_slice,
-        int has_cstart, int has_cstop, int wraparound);
+/* DictGetItem.proto */
+#if PY_MAJOR_VERSION >= 3 && !CYTHON_COMPILING_IN_PYPY
+static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key);
+#define __Pyx_PyObject_Dict_GetItem(obj, name)\
+    (likely(PyDict_CheckExact(obj)) ?\
+     __Pyx_PyDict_GetItem(obj, name) : PyObject_GetItem(obj, name))
+#else
+#define __Pyx_PyDict_GetItem(d, key) PyObject_GetItem(d, key)
+#define __Pyx_PyObject_Dict_GetItem(obj, name)  PyObject_GetItem(obj, name)
+#endif
 
 /* GetItemInt.proto */
 #define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
@@ -1235,128 +1239,105 @@ extern int __pyx_module_is_main_lps_maestro____init__;
 int __pyx_module_is_main_lps_maestro____init__ = 0;
 
 /* Implementation of 'lps_maestro.__init__' */
-static const char __pyx_k_[] = ")";
-static const char __pyx_k_m[] = "-m";
-static const char __pyx_k_n[] = "\\n";
+static const char __pyx_k_[] = "";
+static const char __pyx_k_d[] = "d";
+static const char __pyx_k_r[] = "r";
 static const char __pyx_k_v[] = "v";
-static const char __pyx_k__2[] = " ";
-static const char __pyx_k__3[] = "";
-static const char __pyx_k__5[] = ",";
-static const char __pyx_k__6[] = "{}";
-static const char __pyx_k__7[] = "*";
+static const char __pyx_k__2[] = "*";
 static const char __pyx_k_all[] = "__all__";
 static const char __pyx_k_end[] = "end";
-static const char __pyx_k_pip[] = "pip";
-static const char __pyx_k_run[] = "run";
-static const char __pyx_k_sys[] = "sys";
+static const char __pyx_k_get[] = "get";
 static const char __pyx_k_file[] = "file";
-static const char __pyx_k_find[] = "find";
+static const char __pyx_k_json[] = "json";
+static const char __pyx_k_keys[] = "keys";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
-static const char __pyx_k_show[] = "show";
 static const char __pyx_k_task[] = "task";
 static const char __pyx_k_test[] = "__test__";
-static const char __pyx_k_text[] = "text";
 static const char __pyx_k_check[] = "check";
 static const char __pyx_k_print[] = "print";
-static const char __pyx_k_split[] = "split";
 static const char __pyx_k_utils[] = "utils";
 static const char __pyx_k_castor[] = "castor";
 static const char __pyx_k_extend[] = "extend";
 static const char __pyx_k_format[] = "format";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_name_2[] = "name";
-static const char __pyx_k_random[] = "{}==random";
-static const char __pyx_k_Version[] = "Version:";
-static const char __pyx_k_install[] = "install";
-static const char __pyx_k_replace[] = "replace";
+static const char __pyx_k_version[] = "version";
+static const char __pyx_k_releases[] = "releases";
+static const char __pyx_k_requests[] = "requests";
 static const char __pyx_k_constants[] = "constants";
-static const char __pyx_k_executable[] = "executable";
-static const char __pyx_k_subprocess[] = "subprocess";
 static const char __pyx_k_lps_maestro[] = "lps_maestro";
 static const char __pyx_k_authenticate[] = "authenticate";
-static const char __pyx_k_from_versions[] = "(from versions:";
 static const char __pyx_k_lps_maestro_2[] = "lps-maestro";
-static const char __pyx_k_capture_output[] = "capture_output";
+static const char __pyx_k_pkg_resources[] = "pkg_resources";
 static const char __pyx_k_latest_version[] = "latest_version";
 static const char __pyx_k_current_version[] = "current_version";
+static const char __pyx_k_get_distribution[] = "get_distribution";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_lps_maestro___init[] = "lps_maestro.__init__";
 static const char __pyx_k_Checking_for_updates[] = " - Checking for updates...";
 static const char __pyx_k_Welcome_to_LPS_Maestro[] = " Welcome to LPS Maestro!";
 static const char __pyx_k_lps_maestro___init___py[] = "lps_maestro/__init__.py";
-static const char __pyx_k_This_is_the_latest_version[] = " - This is the latest version ({})";
 static const char __pyx_k_Failed_to_check_for_updates[] = " - Failed to check for updates";
-static const char __pyx_k_Version_is_available_please_upd[] = " => Version {} is available, please update!";
-static PyObject *__pyx_kp_s_;
+static const char __pyx_k_This_is_the_latest_version_avai[] = " - This is the latest version available! (current={}, latest={})";
+static const char __pyx_k_Version_is_available_please_upd[] = " => Version {} is available, please update over your {}!";
+static const char __pyx_k_https_pypi_org_pypi_lps_maestro[] = "https://pypi.org/pypi/lps-maestro/json";
+static PyObject *__pyx_n_s_;
 static PyObject *__pyx_kp_s_Checking_for_updates;
 static PyObject *__pyx_kp_s_Failed_to_check_for_updates;
-static PyObject *__pyx_kp_s_This_is_the_latest_version;
-static PyObject *__pyx_kp_s_Version;
+static PyObject *__pyx_kp_s_This_is_the_latest_version_avai;
 static PyObject *__pyx_kp_s_Version_is_available_please_upd;
 static PyObject *__pyx_kp_s_Welcome_to_LPS_Maestro;
-static PyObject *__pyx_kp_s__2;
-static PyObject *__pyx_kp_s__3;
-static PyObject *__pyx_kp_s__5;
-static PyObject *__pyx_kp_s__6;
-static PyObject *__pyx_n_s__7;
+static PyObject *__pyx_n_s__2;
 static PyObject *__pyx_n_s_all;
 static PyObject *__pyx_n_s_authenticate;
-static PyObject *__pyx_n_s_capture_output;
 static PyObject *__pyx_n_s_castor;
 static PyObject *__pyx_n_s_check;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_constants;
 static PyObject *__pyx_n_s_current_version;
+static PyObject *__pyx_n_s_d;
 static PyObject *__pyx_n_s_end;
-static PyObject *__pyx_n_s_executable;
 static PyObject *__pyx_n_s_extend;
 static PyObject *__pyx_n_s_file;
-static PyObject *__pyx_n_s_find;
 static PyObject *__pyx_n_s_format;
-static PyObject *__pyx_kp_s_from_versions;
+static PyObject *__pyx_n_s_get;
+static PyObject *__pyx_n_s_get_distribution;
+static PyObject *__pyx_kp_s_https_pypi_org_pypi_lps_maestro;
 static PyObject *__pyx_n_s_import;
-static PyObject *__pyx_n_s_install;
+static PyObject *__pyx_n_s_json;
+static PyObject *__pyx_n_s_keys;
 static PyObject *__pyx_n_s_latest_version;
 static PyObject *__pyx_n_s_lps_maestro;
 static PyObject *__pyx_n_u_lps_maestro;
 static PyObject *__pyx_kp_s_lps_maestro_2;
 static PyObject *__pyx_n_s_lps_maestro___init;
 static PyObject *__pyx_kp_s_lps_maestro___init___py;
-static PyObject *__pyx_kp_s_m;
 static PyObject *__pyx_n_s_main;
-static PyObject *__pyx_kp_s_n;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_name_2;
-static PyObject *__pyx_n_s_pip;
+static PyObject *__pyx_n_s_pkg_resources;
 static PyObject *__pyx_n_s_print;
-static PyObject *__pyx_kp_s_random;
-static PyObject *__pyx_n_s_replace;
-static PyObject *__pyx_n_s_run;
-static PyObject *__pyx_n_s_show;
-static PyObject *__pyx_n_s_split;
-static PyObject *__pyx_n_s_subprocess;
-static PyObject *__pyx_n_s_sys;
+static PyObject *__pyx_n_s_r;
+static PyObject *__pyx_n_s_releases;
+static PyObject *__pyx_n_s_requests;
 static PyObject *__pyx_n_s_task;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_text;
 static PyObject *__pyx_n_s_utils;
 static PyObject *__pyx_n_s_v;
-static PyObject *__pyx_pf_11lps_maestro_8__init___check(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_name); /* proto */
-static PyObject *__pyx_int_8;
-static PyObject *__pyx_int_15;
-static PyObject *__pyx_tuple__4;
-static PyObject *__pyx_tuple__8;
-static PyObject *__pyx_tuple__10;
-static PyObject *__pyx_codeobj__9;
+static PyObject *__pyx_n_s_version;
+static PyObject *__pyx_pf_11lps_maestro_8__init___check(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_name); /* proto */
+static PyObject *__pyx_tuple__3;
+static PyObject *__pyx_tuple__5;
+static PyObject *__pyx_codeobj__4;
 /* Late includes */
 
 /* "lps_maestro/__init__.py":28
- * import subprocess
- * import sys
+ * import pkg_resources
+ * import requests
  * def check(name):             # <<<<<<<<<<<<<<
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
+ *     # Getting current version
+ *     current_version = pkg_resources.get_distribution('lps_maestro').version
  */
 
 /* Python wrapper */
@@ -1373,398 +1354,220 @@ static PyObject *__pyx_pw_11lps_maestro_8__init___1check(PyObject *__pyx_self, P
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lps_maestro_8__init___check(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_name) {
-  PyObject *__pyx_v_latest_version = NULL;
+static PyObject *__pyx_pf_11lps_maestro_8__init___check(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_name) {
   PyObject *__pyx_v_current_version = NULL;
+  PyObject *__pyx_v_r = NULL;
+  PyObject *__pyx_v_d = NULL;
+  PyObject *__pyx_v_latest_version = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  int __pyx_t_6;
+  int __pyx_t_4;
   __Pyx_RefNannySetupContext("check", 0);
-
-  /* "lps_maestro/__init__.py":29
- * import sys
- * def check(name):
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))             # <<<<<<<<<<<<<<
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
- *     latest_version = latest_version[:latest_version.find(')')]
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_subprocess); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_run); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_sys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_executable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_random, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-    if (likely(__pyx_t_5)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-      __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_4, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_v_name) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_name);
-  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyList_New(5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyList_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
-  __Pyx_INCREF(__pyx_kp_s_m);
-  __Pyx_GIVEREF(__pyx_kp_s_m);
-  PyList_SET_ITEM(__pyx_t_4, 1, __pyx_kp_s_m);
-  __Pyx_INCREF(__pyx_n_s_pip);
-  __Pyx_GIVEREF(__pyx_n_s_pip);
-  PyList_SET_ITEM(__pyx_t_4, 2, __pyx_n_s_pip);
-  __Pyx_INCREF(__pyx_n_s_install);
-  __Pyx_GIVEREF(__pyx_n_s_install);
-  PyList_SET_ITEM(__pyx_t_4, 3, __pyx_n_s_install);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyList_SET_ITEM(__pyx_t_4, 4, __pyx_t_1);
-  __pyx_t_3 = 0;
-  __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
-  __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_capture_output, Py_True) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_text, Py_True) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_latest_version = __pyx_t_4;
-  __pyx_t_4 = 0;
 
   /* "lps_maestro/__init__.py":30
  * def check(name):
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]             # <<<<<<<<<<<<<<
- *     latest_version = latest_version[:latest_version.find(')')]
- *     latest_version = latest_version.replace(' ','').split(',')[-1]
+ *     # Getting current version
+ *     current_version = pkg_resources.get_distribution('lps_maestro').version             # <<<<<<<<<<<<<<
+ *     # Getting latest version
+ *     r = requests.get('https://pypi.org/pypi/lps-maestro/json')
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_latest_version, __pyx_n_s_find); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pkg_resources); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_distribution); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_1)) {
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  __pyx_t_4 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_kp_s_from_versions) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_s_from_versions);
-  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_n_s_lps_maestro) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_n_s_lps_maestro);
+  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_t_4, __pyx_int_15, 15, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_version); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_latest_version, 0, 0, &__pyx_t_3, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF_SET(__pyx_v_latest_version, __pyx_t_4);
-  __pyx_t_4 = 0;
-
-  /* "lps_maestro/__init__.py":31
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
- *     latest_version = latest_version[:latest_version.find(')')]             # <<<<<<<<<<<<<<
- *     latest_version = latest_version.replace(' ','').split(',')[-1]
- * 
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_latest_version, __pyx_n_s_find); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_1)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  __pyx_t_4 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_kp_s_) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_s_);
-  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_latest_version, 0, 0, NULL, &__pyx_t_4, NULL, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF_SET(__pyx_v_latest_version, __pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_current_version = __pyx_t_3;
   __pyx_t_3 = 0;
 
   /* "lps_maestro/__init__.py":32
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
- *     latest_version = latest_version[:latest_version.find(')')]
- *     latest_version = latest_version.replace(' ','').split(',')[-1]             # <<<<<<<<<<<<<<
- * 
- *     current_version = str(subprocess.run([sys.executable, '-m', 'pip', 'show', '{}'.format(name)], capture_output=True, text=True))
+ *     current_version = pkg_resources.get_distribution('lps_maestro').version
+ *     # Getting latest version
+ *     r = requests.get('https://pypi.org/pypi/lps-maestro/json')             # <<<<<<<<<<<<<<
+ *     d = r.json()
+ *     latest_version = list(d['releases'].keys())[-1]
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_latest_version, __pyx_n_s_replace); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_split); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_4);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
     if (likely(__pyx_t_1)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-      __Pyx_INCREF(__pyx_t_1);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_4, function);
-    }
-  }
-  __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_1, __pyx_kp_s__5) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_kp_s__5);
-  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_3, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF_SET(__pyx_v_latest_version, __pyx_t_4);
-  __pyx_t_4 = 0;
-
-  /* "lps_maestro/__init__.py":34
- *     latest_version = latest_version.replace(' ','').split(',')[-1]
- * 
- *     current_version = str(subprocess.run([sys.executable, '-m', 'pip', 'show', '{}'.format(name)], capture_output=True, text=True))             # <<<<<<<<<<<<<<
- *     current_version = current_version[current_version.find('Version:')+8:]
- *     current_version = current_version[:current_version.find('\\n')].replace(' ','')
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_subprocess); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_run); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_sys); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_executable); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s__6, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_5)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_5, __pyx_v_name) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_name);
-  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_kp_s_https_pypi_org_pypi_lps_maestro) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_https_pypi_org_pypi_lps_maestro);
+  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyList_New(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_v_r = __pyx_t_3;
+  __pyx_t_3 = 0;
+
+  /* "lps_maestro/__init__.py":33
+ *     # Getting latest version
+ *     r = requests.get('https://pypi.org/pypi/lps-maestro/json')
+ *     d = r.json()             # <<<<<<<<<<<<<<
+ *     latest_version = list(d['releases'].keys())[-1]
+ *     if latest_version == current_version:
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_json); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
-  __Pyx_INCREF(__pyx_kp_s_m);
-  __Pyx_GIVEREF(__pyx_kp_s_m);
-  PyList_SET_ITEM(__pyx_t_2, 1, __pyx_kp_s_m);
-  __Pyx_INCREF(__pyx_n_s_pip);
-  __Pyx_GIVEREF(__pyx_n_s_pip);
-  PyList_SET_ITEM(__pyx_t_2, 2, __pyx_n_s_pip);
-  __Pyx_INCREF(__pyx_n_s_show);
-  __Pyx_GIVEREF(__pyx_n_s_show);
-  PyList_SET_ITEM(__pyx_t_2, 3, __pyx_n_s_show);
-  __Pyx_GIVEREF(__pyx_t_4);
-  PyList_SET_ITEM(__pyx_t_2, 4, __pyx_t_4);
-  __pyx_t_1 = 0;
-  __pyx_t_4 = 0;
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
-  __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_1 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_d = __pyx_t_3;
+  __pyx_t_3 = 0;
+
+  /* "lps_maestro/__init__.py":34
+ *     r = requests.get('https://pypi.org/pypi/lps-maestro/json')
+ *     d = r.json()
+ *     latest_version = list(d['releases'].keys())[-1]             # <<<<<<<<<<<<<<
+ *     if latest_version == current_version:
+ *         return True, latest_version, current_version
+ */
+  __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_releases); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_capture_output, Py_True) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_text, Py_True) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_keys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_1, function);
+    }
+  }
+  __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PySequence_List(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_GetItemInt_List(__pyx_t_1, -1L, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_current_version = __pyx_t_2;
-  __pyx_t_2 = 0;
+  __pyx_v_latest_version = __pyx_t_3;
+  __pyx_t_3 = 0;
 
   /* "lps_maestro/__init__.py":35
- * 
- *     current_version = str(subprocess.run([sys.executable, '-m', 'pip', 'show', '{}'.format(name)], capture_output=True, text=True))
- *     current_version = current_version[current_version.find('Version:')+8:]             # <<<<<<<<<<<<<<
- *     current_version = current_version[:current_version.find('\\n')].replace(' ','')
- * 
- */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_version, __pyx_n_s_find); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_4, __pyx_kp_s_Version) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_Version);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_t_2, __pyx_int_8, 8, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_v_current_version, 0, 0, &__pyx_t_1, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF_SET(__pyx_v_current_version, __pyx_t_2);
-  __pyx_t_2 = 0;
-
-  /* "lps_maestro/__init__.py":36
- *     current_version = str(subprocess.run([sys.executable, '-m', 'pip', 'show', '{}'.format(name)], capture_output=True, text=True))
- *     current_version = current_version[current_version.find('Version:')+8:]
- *     current_version = current_version[:current_version.find('\\n')].replace(' ','')             # <<<<<<<<<<<<<<
- * 
- *     if latest_version == current_version:
- */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_version, __pyx_n_s_find); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_4, __pyx_kp_s_n) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s_n);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_current_version, 0, 0, NULL, &__pyx_t_2, NULL, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_replace); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF_SET(__pyx_v_current_version, __pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "lps_maestro/__init__.py":38
- *     current_version = current_version[:current_version.find('\\n')].replace(' ','')
- * 
+ *     d = r.json()
+ *     latest_version = list(d['releases'].keys())[-1]
  *     if latest_version == current_version:             # <<<<<<<<<<<<<<
- *         return True, latest_version
+ *         return True, latest_version, current_version
  *     else:
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_latest_version, __pyx_v_current_version, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 38, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__pyx_t_6) {
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_latest_version, __pyx_v_current_version, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_4) {
 
-    /* "lps_maestro/__init__.py":39
- * 
+    /* "lps_maestro/__init__.py":36
+ *     latest_version = list(d['releases'].keys())[-1]
  *     if latest_version == current_version:
- *         return True, latest_version             # <<<<<<<<<<<<<<
+ *         return True, latest_version, current_version             # <<<<<<<<<<<<<<
  *     else:
- *         return False, latest_version
+ *         return False, latest_version, current_version
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_INCREF(Py_True);
     __Pyx_GIVEREF(Py_True);
-    PyTuple_SET_ITEM(__pyx_t_1, 0, Py_True);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, Py_True);
     __Pyx_INCREF(__pyx_v_latest_version);
     __Pyx_GIVEREF(__pyx_v_latest_version);
-    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_latest_version);
-    __pyx_r = __pyx_t_1;
-    __pyx_t_1 = 0;
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_latest_version);
+    __Pyx_INCREF(__pyx_v_current_version);
+    __Pyx_GIVEREF(__pyx_v_current_version);
+    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_v_current_version);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "lps_maestro/__init__.py":38
- *     current_version = current_version[:current_version.find('\\n')].replace(' ','')
- * 
+    /* "lps_maestro/__init__.py":35
+ *     d = r.json()
+ *     latest_version = list(d['releases'].keys())[-1]
  *     if latest_version == current_version:             # <<<<<<<<<<<<<<
- *         return True, latest_version
+ *         return True, latest_version, current_version
  *     else:
  */
   }
 
-  /* "lps_maestro/__init__.py":41
- *         return True, latest_version
+  /* "lps_maestro/__init__.py":38
+ *         return True, latest_version, current_version
  *     else:
- *         return False, latest_version             # <<<<<<<<<<<<<<
+ *         return False, latest_version, current_version             # <<<<<<<<<<<<<<
  * 
  * print (" Welcome to LPS Maestro!")
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_INCREF(Py_False);
     __Pyx_GIVEREF(Py_False);
-    PyTuple_SET_ITEM(__pyx_t_1, 0, Py_False);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, Py_False);
     __Pyx_INCREF(__pyx_v_latest_version);
     __Pyx_GIVEREF(__pyx_v_latest_version);
-    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_latest_version);
-    __pyx_r = __pyx_t_1;
-    __pyx_t_1 = 0;
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_latest_version);
+    __Pyx_INCREF(__pyx_v_current_version);
+    __Pyx_GIVEREF(__pyx_v_current_version);
+    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_v_current_version);
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
     goto __pyx_L0;
   }
 
   /* "lps_maestro/__init__.py":28
- * import subprocess
- * import sys
+ * import pkg_resources
+ * import requests
  * def check(name):             # <<<<<<<<<<<<<<
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
+ *     # Getting current version
+ *     current_version = pkg_resources.get_distribution('lps_maestro').version
  */
 
   /* function exit code */
@@ -1772,13 +1575,13 @@ static PyObject *__pyx_pf_11lps_maestro_8__init___check(CYTHON_UNUSED PyObject *
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
   __Pyx_AddTraceback("lps_maestro.__init__.check", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_latest_version);
   __Pyx_XDECREF(__pyx_v_current_version);
+  __Pyx_XDECREF(__pyx_v_r);
+  __Pyx_XDECREF(__pyx_v_d);
+  __Pyx_XDECREF(__pyx_v_latest_version);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -1957,60 +1760,50 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_kp_s_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 1, 0},
+  {&__pyx_n_s_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 1, 1},
   {&__pyx_kp_s_Checking_for_updates, __pyx_k_Checking_for_updates, sizeof(__pyx_k_Checking_for_updates), 0, 0, 1, 0},
   {&__pyx_kp_s_Failed_to_check_for_updates, __pyx_k_Failed_to_check_for_updates, sizeof(__pyx_k_Failed_to_check_for_updates), 0, 0, 1, 0},
-  {&__pyx_kp_s_This_is_the_latest_version, __pyx_k_This_is_the_latest_version, sizeof(__pyx_k_This_is_the_latest_version), 0, 0, 1, 0},
-  {&__pyx_kp_s_Version, __pyx_k_Version, sizeof(__pyx_k_Version), 0, 0, 1, 0},
+  {&__pyx_kp_s_This_is_the_latest_version_avai, __pyx_k_This_is_the_latest_version_avai, sizeof(__pyx_k_This_is_the_latest_version_avai), 0, 0, 1, 0},
   {&__pyx_kp_s_Version_is_available_please_upd, __pyx_k_Version_is_available_please_upd, sizeof(__pyx_k_Version_is_available_please_upd), 0, 0, 1, 0},
   {&__pyx_kp_s_Welcome_to_LPS_Maestro, __pyx_k_Welcome_to_LPS_Maestro, sizeof(__pyx_k_Welcome_to_LPS_Maestro), 0, 0, 1, 0},
-  {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
-  {&__pyx_kp_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 0},
-  {&__pyx_kp_s__5, __pyx_k__5, sizeof(__pyx_k__5), 0, 0, 1, 0},
-  {&__pyx_kp_s__6, __pyx_k__6, sizeof(__pyx_k__6), 0, 0, 1, 0},
-  {&__pyx_n_s__7, __pyx_k__7, sizeof(__pyx_k__7), 0, 0, 1, 1},
+  {&__pyx_n_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 1},
   {&__pyx_n_s_all, __pyx_k_all, sizeof(__pyx_k_all), 0, 0, 1, 1},
   {&__pyx_n_s_authenticate, __pyx_k_authenticate, sizeof(__pyx_k_authenticate), 0, 0, 1, 1},
-  {&__pyx_n_s_capture_output, __pyx_k_capture_output, sizeof(__pyx_k_capture_output), 0, 0, 1, 1},
   {&__pyx_n_s_castor, __pyx_k_castor, sizeof(__pyx_k_castor), 0, 0, 1, 1},
   {&__pyx_n_s_check, __pyx_k_check, sizeof(__pyx_k_check), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_constants, __pyx_k_constants, sizeof(__pyx_k_constants), 0, 0, 1, 1},
   {&__pyx_n_s_current_version, __pyx_k_current_version, sizeof(__pyx_k_current_version), 0, 0, 1, 1},
+  {&__pyx_n_s_d, __pyx_k_d, sizeof(__pyx_k_d), 0, 0, 1, 1},
   {&__pyx_n_s_end, __pyx_k_end, sizeof(__pyx_k_end), 0, 0, 1, 1},
-  {&__pyx_n_s_executable, __pyx_k_executable, sizeof(__pyx_k_executable), 0, 0, 1, 1},
   {&__pyx_n_s_extend, __pyx_k_extend, sizeof(__pyx_k_extend), 0, 0, 1, 1},
   {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
-  {&__pyx_n_s_find, __pyx_k_find, sizeof(__pyx_k_find), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
-  {&__pyx_kp_s_from_versions, __pyx_k_from_versions, sizeof(__pyx_k_from_versions), 0, 0, 1, 0},
+  {&__pyx_n_s_get, __pyx_k_get, sizeof(__pyx_k_get), 0, 0, 1, 1},
+  {&__pyx_n_s_get_distribution, __pyx_k_get_distribution, sizeof(__pyx_k_get_distribution), 0, 0, 1, 1},
+  {&__pyx_kp_s_https_pypi_org_pypi_lps_maestro, __pyx_k_https_pypi_org_pypi_lps_maestro, sizeof(__pyx_k_https_pypi_org_pypi_lps_maestro), 0, 0, 1, 0},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
-  {&__pyx_n_s_install, __pyx_k_install, sizeof(__pyx_k_install), 0, 0, 1, 1},
+  {&__pyx_n_s_json, __pyx_k_json, sizeof(__pyx_k_json), 0, 0, 1, 1},
+  {&__pyx_n_s_keys, __pyx_k_keys, sizeof(__pyx_k_keys), 0, 0, 1, 1},
   {&__pyx_n_s_latest_version, __pyx_k_latest_version, sizeof(__pyx_k_latest_version), 0, 0, 1, 1},
   {&__pyx_n_s_lps_maestro, __pyx_k_lps_maestro, sizeof(__pyx_k_lps_maestro), 0, 0, 1, 1},
   {&__pyx_n_u_lps_maestro, __pyx_k_lps_maestro, sizeof(__pyx_k_lps_maestro), 0, 1, 0, 1},
   {&__pyx_kp_s_lps_maestro_2, __pyx_k_lps_maestro_2, sizeof(__pyx_k_lps_maestro_2), 0, 0, 1, 0},
   {&__pyx_n_s_lps_maestro___init, __pyx_k_lps_maestro___init, sizeof(__pyx_k_lps_maestro___init), 0, 0, 1, 1},
   {&__pyx_kp_s_lps_maestro___init___py, __pyx_k_lps_maestro___init___py, sizeof(__pyx_k_lps_maestro___init___py), 0, 0, 1, 0},
-  {&__pyx_kp_s_m, __pyx_k_m, sizeof(__pyx_k_m), 0, 0, 1, 0},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
-  {&__pyx_kp_s_n, __pyx_k_n, sizeof(__pyx_k_n), 0, 0, 1, 0},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_name_2, __pyx_k_name_2, sizeof(__pyx_k_name_2), 0, 0, 1, 1},
-  {&__pyx_n_s_pip, __pyx_k_pip, sizeof(__pyx_k_pip), 0, 0, 1, 1},
+  {&__pyx_n_s_pkg_resources, __pyx_k_pkg_resources, sizeof(__pyx_k_pkg_resources), 0, 0, 1, 1},
   {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
-  {&__pyx_kp_s_random, __pyx_k_random, sizeof(__pyx_k_random), 0, 0, 1, 0},
-  {&__pyx_n_s_replace, __pyx_k_replace, sizeof(__pyx_k_replace), 0, 0, 1, 1},
-  {&__pyx_n_s_run, __pyx_k_run, sizeof(__pyx_k_run), 0, 0, 1, 1},
-  {&__pyx_n_s_show, __pyx_k_show, sizeof(__pyx_k_show), 0, 0, 1, 1},
-  {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
-  {&__pyx_n_s_subprocess, __pyx_k_subprocess, sizeof(__pyx_k_subprocess), 0, 0, 1, 1},
-  {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
+  {&__pyx_n_s_r, __pyx_k_r, sizeof(__pyx_k_r), 0, 0, 1, 1},
+  {&__pyx_n_s_releases, __pyx_k_releases, sizeof(__pyx_k_releases), 0, 0, 1, 1},
+  {&__pyx_n_s_requests, __pyx_k_requests, sizeof(__pyx_k_requests), 0, 0, 1, 1},
   {&__pyx_n_s_task, __pyx_k_task, sizeof(__pyx_k_task), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
   {&__pyx_n_s_utils, __pyx_k_utils, sizeof(__pyx_k_utils), 0, 0, 1, 1},
   {&__pyx_n_s_v, __pyx_k_v, sizeof(__pyx_k_v), 0, 0, 1, 1},
+  {&__pyx_n_s_version, __pyx_k_version, sizeof(__pyx_k_version), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
@@ -2021,39 +1814,28 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "lps_maestro/__init__.py":32
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
- *     latest_version = latest_version[:latest_version.find(')')]
- *     latest_version = latest_version.replace(' ','').split(',')[-1]             # <<<<<<<<<<<<<<
- * 
- *     current_version = str(subprocess.run([sys.executable, '-m', 'pip', 'show', '{}'.format(name)], capture_output=True, text=True))
- */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_kp_s__2, __pyx_kp_s__3); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 32, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
-
   /* "lps_maestro/__init__.py":28
- * import subprocess
- * import sys
+ * import pkg_resources
+ * import requests
  * def check(name):             # <<<<<<<<<<<<<<
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
+ *     # Getting current version
+ *     current_version = pkg_resources.get_distribution('lps_maestro').version
  */
-  __pyx_tuple__8 = PyTuple_Pack(3, __pyx_n_s_name_2, __pyx_n_s_latest_version, __pyx_n_s_current_version); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 28, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro___init___py, __pyx_n_s_check, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(5, __pyx_n_s_name_2, __pyx_n_s_current_version, __pyx_n_s_r, __pyx_n_s_d, __pyx_n_s_latest_version); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(1, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro___init___py, __pyx_n_s_check, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "lps_maestro/__init__.py":46
+  /* "lps_maestro/__init__.py":43
  * print (" - Checking for updates...")
  * try:
  *     v = check('lps-maestro')             # <<<<<<<<<<<<<<
  *     if (v[0] == True):
- *         print (" - This is the latest version ({})".format(v[1]))
+ *         print (" - This is the latest version available! (current={}, latest={})".format(v[1], v[2]))
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_lps_maestro_2); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 46, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_lps_maestro_2); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2063,8 +1845,6 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
-  __pyx_int_8 = PyInt_FromLong(8); if (unlikely(!__pyx_int_8)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_15 = PyInt_FromLong(15); if (unlikely(!__pyx_int_15)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2233,6 +2013,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_lps_maestro(PyObject *__pyx_pyinit
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
   int __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
   __Pyx_RefNannyDeclarations
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
@@ -2371,7 +2152,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_authenticate);
   __Pyx_GIVEREF(__pyx_n_s_authenticate);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_authenticate);
-  __pyx_t_2 = __Pyx_Import(__pyx_kp_s__3, __pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_, __pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_authenticate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
@@ -2412,9 +2193,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__7);
-  __Pyx_GIVEREF(__pyx_n_s__7);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__7);
+  __Pyx_INCREF(__pyx_n_s__2);
+  __Pyx_GIVEREF(__pyx_n_s__2);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
   __pyx_t_3 = __Pyx_Import(__pyx_n_s_authenticate, __pyx_t_2, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2433,7 +2214,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_castor);
   __Pyx_GIVEREF(__pyx_n_s_castor);
   PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_castor);
-  __pyx_t_2 = __Pyx_Import(__pyx_kp_s__3, __pyx_t_3, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_, __pyx_t_3, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_castor); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
@@ -2474,9 +2255,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__7);
-  __Pyx_GIVEREF(__pyx_n_s__7);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__7);
+  __Pyx_INCREF(__pyx_n_s__2);
+  __Pyx_GIVEREF(__pyx_n_s__2);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_castor, __pyx_t_2, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2495,7 +2276,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_constants);
   __Pyx_GIVEREF(__pyx_n_s_constants);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_constants);
-  __pyx_t_2 = __Pyx_Import(__pyx_kp_s__3, __pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_, __pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_constants); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
@@ -2536,9 +2317,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__7);
-  __Pyx_GIVEREF(__pyx_n_s__7);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__7);
+  __Pyx_INCREF(__pyx_n_s__2);
+  __Pyx_GIVEREF(__pyx_n_s__2);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
   __pyx_t_3 = __Pyx_Import(__pyx_n_s_constants, __pyx_t_2, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2557,7 +2338,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_task);
   __Pyx_GIVEREF(__pyx_n_s_task);
   PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_task);
-  __pyx_t_2 = __Pyx_Import(__pyx_kp_s__3, __pyx_t_3, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_, __pyx_t_3, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_task); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
@@ -2598,9 +2379,9 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__7);
-  __Pyx_GIVEREF(__pyx_n_s__7);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__7);
+  __Pyx_INCREF(__pyx_n_s__2);
+  __Pyx_GIVEREF(__pyx_n_s__2);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_task, __pyx_t_2, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2619,7 +2400,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_utils);
   __Pyx_GIVEREF(__pyx_n_s_utils);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_utils);
-  __pyx_t_2 = __Pyx_Import(__pyx_kp_s__3, __pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_, __pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_utils); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
@@ -2656,13 +2437,13 @@ if (!__Pyx_RefNanny) {
  * __all__.extend(utils.__all__)
  * from .utils import *             # <<<<<<<<<<<<<<
  * 
- * # Extracted from https://stackoverflow.com/questions/58648739/how-to-check-if-python-package-is-latest-version-programmatically
+ * # Checking for new versions
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_n_s__7);
-  __Pyx_GIVEREF(__pyx_n_s__7);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__7);
+  __Pyx_INCREF(__pyx_n_s__2);
+  __Pyx_GIVEREF(__pyx_n_s__2);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s__2);
   __pyx_t_3 = __Pyx_Import(__pyx_n_s_utils, __pyx_t_2, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2671,59 +2452,59 @@ if (!__Pyx_RefNanny) {
 
   /* "lps_maestro/__init__.py":26
  * 
- * # Extracted from https://stackoverflow.com/questions/58648739/how-to-check-if-python-package-is-latest-version-programmatically
- * import subprocess             # <<<<<<<<<<<<<<
- * import sys
+ * # Checking for new versions
+ * import pkg_resources             # <<<<<<<<<<<<<<
+ * import requests
  * def check(name):
  */
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s_subprocess, 0, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_pkg_resources, 0, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_subprocess, __pyx_t_3) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pkg_resources, __pyx_t_3) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "lps_maestro/__init__.py":27
- * # Extracted from https://stackoverflow.com/questions/58648739/how-to-check-if-python-package-is-latest-version-programmatically
- * import subprocess
- * import sys             # <<<<<<<<<<<<<<
+ * # Checking for new versions
+ * import pkg_resources
+ * import requests             # <<<<<<<<<<<<<<
  * def check(name):
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))
+ *     # Getting current version
  */
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s_sys, 0, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_requests, 0, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_sys, __pyx_t_3) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_requests, __pyx_t_3) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "lps_maestro/__init__.py":28
- * import subprocess
- * import sys
+ * import pkg_resources
+ * import requests
  * def check(name):             # <<<<<<<<<<<<<<
- *     latest_version = str(subprocess.run([sys.executable, '-m', 'pip', 'install', '{}==random'.format(name)], capture_output=True, text=True))
- *     latest_version = latest_version[latest_version.find('(from versions:')+15:]
+ *     # Getting current version
+ *     current_version = pkg_resources.get_distribution('lps_maestro').version
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_11lps_maestro_8__init___1check, 0, __pyx_n_s_check, NULL, __pyx_n_s_lps_maestro___init, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_11lps_maestro_8__init___1check, 0, __pyx_n_s_check, NULL, __pyx_n_s_lps_maestro___init, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_check, __pyx_t_3) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "lps_maestro/__init__.py":43
- *         return False, latest_version
+  /* "lps_maestro/__init__.py":40
+ *         return False, latest_version, current_version
  * 
  * print (" Welcome to LPS Maestro!")             # <<<<<<<<<<<<<<
  * print (" - Checking for updates...")
  * try:
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Welcome_to_LPS_Maestro) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_Welcome_to_LPS_Maestro) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
 
-  /* "lps_maestro/__init__.py":44
+  /* "lps_maestro/__init__.py":41
  * 
  * print (" Welcome to LPS Maestro!")
  * print (" - Checking for updates...")             # <<<<<<<<<<<<<<
  * try:
  *     v = check('lps-maestro')
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Checking_for_updates) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_Checking_for_updates) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
-  /* "lps_maestro/__init__.py":45
+  /* "lps_maestro/__init__.py":42
  * print (" Welcome to LPS Maestro!")
  * print (" - Checking for updates...")
  * try:             # <<<<<<<<<<<<<<
@@ -2739,95 +2520,121 @@ if (!__Pyx_RefNanny) {
     __Pyx_XGOTREF(__pyx_t_6);
     /*try:*/ {
 
-      /* "lps_maestro/__init__.py":46
+      /* "lps_maestro/__init__.py":43
  * print (" - Checking for updates...")
  * try:
  *     v = check('lps-maestro')             # <<<<<<<<<<<<<<
  *     if (v[0] == True):
- *         print (" - This is the latest version ({})".format(v[1]))
+ *         print (" - This is the latest version available! (current={}, latest={})".format(v[1], v[2]))
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_check); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 46, __pyx_L2_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_check); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L2_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (PyDict_SetItem(__pyx_d, __pyx_n_s_v, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L2_error)
+      if (PyDict_SetItem(__pyx_d, __pyx_n_s_v, __pyx_t_2) < 0) __PYX_ERR(0, 43, __pyx_L2_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "lps_maestro/__init__.py":47
+      /* "lps_maestro/__init__.py":44
  * try:
  *     v = check('lps-maestro')
  *     if (v[0] == True):             # <<<<<<<<<<<<<<
- *         print (" - This is the latest version ({})".format(v[1]))
+ *         print (" - This is the latest version available! (current={}, latest={})".format(v[1], v[2]))
  *     else:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L2_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_v); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L2_error)
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, Py_True, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L2_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, Py_True, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L2_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 47, __pyx_L2_error)
+      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 44, __pyx_L2_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_7) {
 
-        /* "lps_maestro/__init__.py":48
+        /* "lps_maestro/__init__.py":45
  *     v = check('lps-maestro')
  *     if (v[0] == True):
- *         print (" - This is the latest version ({})".format(v[1]))             # <<<<<<<<<<<<<<
+ *         print (" - This is the latest version available! (current={}, latest={})".format(v[1], v[2]))             # <<<<<<<<<<<<<<
  *     else:
- *         print (" => Version {} is available, please update!".format(v[1]))
+ *         print (" => Version {} is available, please update over your {}!".format(v[1], v[2]))
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_This_is_the_latest_version, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L2_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_This_is_the_latest_version_avai, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L2_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_v); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L2_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_v); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L2_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L2_error)
+        __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L2_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L2_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_v); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L2_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(0, 48, __pyx_L2_error)
+        __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_3, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 45, __pyx_L2_error)
+        __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L2_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_1);
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_8);
+        PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_8);
+        __pyx_t_1 = 0;
+        __pyx_t_8 = 0;
+        __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 45, __pyx_L2_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (__Pyx_PrintOne(0, __pyx_t_8) < 0) __PYX_ERR(0, 45, __pyx_L2_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "lps_maestro/__init__.py":47
+        /* "lps_maestro/__init__.py":44
  * try:
  *     v = check('lps-maestro')
  *     if (v[0] == True):             # <<<<<<<<<<<<<<
- *         print (" - This is the latest version ({})".format(v[1]))
+ *         print (" - This is the latest version available! (current={}, latest={})".format(v[1], v[2]))
  *     else:
  */
         goto __pyx_L8;
       }
 
-      /* "lps_maestro/__init__.py":50
- *         print (" - This is the latest version ({})".format(v[1]))
+      /* "lps_maestro/__init__.py":47
+ *         print (" - This is the latest version available! (current={}, latest={})".format(v[1], v[2]))
  *     else:
- *         print (" => Version {} is available, please update!".format(v[1]))             # <<<<<<<<<<<<<<
+ *         print (" => Version {} is available, please update over your {}!".format(v[1], v[2]))             # <<<<<<<<<<<<<<
  * except:
  *     print (" - Failed to check for updates")
  */
       /*else*/ {
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Version_is_available_please_upd, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L2_error)
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Version_is_available_please_upd, __pyx_n_s_format); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 47, __pyx_L2_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_v); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L2_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_v); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L2_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L2_error)
+        __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L2_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L2_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_v); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L2_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L2_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 50, __pyx_L2_error)
+        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L2_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
+        __Pyx_GIVEREF(__pyx_t_1);
+        PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
+        __pyx_t_2 = 0;
+        __pyx_t_1 = 0;
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L2_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 47, __pyx_L2_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
       __pyx_L8:;
 
-      /* "lps_maestro/__init__.py":45
+      /* "lps_maestro/__init__.py":42
  * print (" Welcome to LPS Maestro!")
  * print (" - Checking for updates...")
  * try:             # <<<<<<<<<<<<<<
@@ -2843,34 +2650,35 @@ if (!__Pyx_RefNanny) {
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "lps_maestro/__init__.py":51
+    /* "lps_maestro/__init__.py":48
  *     else:
- *         print (" => Version {} is available, please update!".format(v[1]))
+ *         print (" => Version {} is available, please update over your {}!".format(v[1], v[2]))
  * except:             # <<<<<<<<<<<<<<
  *     print (" - Failed to check for updates")
  */
     /*except:*/ {
       __Pyx_AddTraceback("lps_maestro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_2, &__pyx_t_3) < 0) __PYX_ERR(0, 51, __pyx_L4_except_error)
+      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_3, &__pyx_t_8) < 0) __PYX_ERR(0, 48, __pyx_L4_except_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_GOTREF(__pyx_t_8);
 
-      /* "lps_maestro/__init__.py":52
- *         print (" => Version {} is available, please update!".format(v[1]))
+      /* "lps_maestro/__init__.py":49
+ *         print (" => Version {} is available, please update over your {}!".format(v[1], v[2]))
  * except:
  *     print (" - Failed to check for updates")             # <<<<<<<<<<<<<<
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Failed_to_check_for_updates) < 0) __PYX_ERR(0, 52, __pyx_L4_except_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Failed_to_check_for_updates) < 0) __PYX_ERR(0, 49, __pyx_L4_except_error)
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       goto __pyx_L3_exception_handled;
     }
     __pyx_L4_except_error:;
 
-    /* "lps_maestro/__init__.py":45
+    /* "lps_maestro/__init__.py":42
  * print (" Welcome to LPS Maestro!")
  * print (" - Checking for updates...")
  * try:             # <<<<<<<<<<<<<<
@@ -2895,10 +2703,10 @@ if (!__Pyx_RefNanny) {
  * 
  * __all__ = []
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_3) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_8) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
   /*--- Wrapped vars code ---*/
 
@@ -2907,6 +2715,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_8);
   if (__pyx_m) {
     if (__pyx_d) {
       __Pyx_AddTraceback("init lps_maestro.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -3284,226 +3093,51 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
 }
 #endif
 
-/* PyIntBinop */
-#if !CYTHON_COMPILING_IN_PYPY
-static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, int inplace, int zerodivision_check) {
-    (void)inplace;
-    (void)zerodivision_check;
-    #if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_CheckExact(op1))) {
-        const long b = intval;
-        long x;
-        long a = PyInt_AS_LONG(op1);
-            x = (long)((unsigned long)a + b);
-            if (likely((x^a) >= 0 || (x^b) >= 0))
-                return PyInt_FromLong(x);
-            return PyLong_Type.tp_as_number->nb_add(op1, op2);
+/* PyObjectCallNoArg */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
+#if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(func)) {
+        return __Pyx_PyFunction_FastCall(func, NULL, 0);
     }
-    #endif
-    #if CYTHON_USE_PYLONG_INTERNALS
-    if (likely(PyLong_CheckExact(op1))) {
-        const long b = intval;
-        long a, x;
-#ifdef HAVE_LONG_LONG
-        const PY_LONG_LONG llb = intval;
-        PY_LONG_LONG lla, llx;
 #endif
-        const digit* digits = ((PyLongObject*)op1)->ob_digit;
-        const Py_ssize_t size = Py_SIZE(op1);
-        if (likely(__Pyx_sst_abs(size) <= 1)) {
-            a = likely(size) ? digits[0] : 0;
-            if (size == -1) a = -a;
-        } else {
-            switch (size) {
-                case -2:
-                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
-                        a = -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
-                        lla = -(PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
+#ifdef __Pyx_CyFunction_USED
+    if (likely(PyCFunction_Check(func) || __Pyx_CyFunction_Check(func)))
+#else
+    if (likely(PyCFunction_Check(func)))
 #endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case 2:
-                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
-                        a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
-                        lla = (PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case -3:
-                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
-                        a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
-                        lla = -(PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case 3:
-                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
-                        a = (long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
-                        lla = (PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case -4:
-                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
-                        a = -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
-                        lla = -(PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case 4:
-                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
-                        a = (long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
-                        lla = (PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                default: return PyLong_Type.tp_as_number->nb_add(op1, op2);
-            }
+    {
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_NOARGS)) {
+            return __Pyx_PyObject_CallMethO(func, NULL);
         }
-                x = a + b;
-            return PyLong_FromLong(x);
-#ifdef HAVE_LONG_LONG
-        long_long:
-                llx = lla + llb;
-            return PyLong_FromLongLong(llx);
-#endif
-        
-        
     }
-    #endif
-    if (PyFloat_CheckExact(op1)) {
-        const long b = intval;
-        double a = PyFloat_AS_DOUBLE(op1);
-            double result;
-            PyFPE_START_PROTECT("add", return NULL)
-            result = ((double)a) + (double)b;
-            PyFPE_END_PROTECT(result)
-            return PyFloat_FromDouble(result);
-    }
-    return (inplace ? PyNumber_InPlaceAdd : PyNumber_Add)(op1, op2);
+    return __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL);
 }
 #endif
 
-/* SliceObject */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_GetSlice(PyObject* obj,
-        Py_ssize_t cstart, Py_ssize_t cstop,
-        PyObject** _py_start, PyObject** _py_stop, PyObject** _py_slice,
-        int has_cstart, int has_cstop, CYTHON_UNUSED int wraparound) {
-#if CYTHON_USE_TYPE_SLOTS
-    PyMappingMethods* mp;
-#if PY_MAJOR_VERSION < 3
-    PySequenceMethods* ms = Py_TYPE(obj)->tp_as_sequence;
-    if (likely(ms && ms->sq_slice)) {
-        if (!has_cstart) {
-            if (_py_start && (*_py_start != Py_None)) {
-                cstart = __Pyx_PyIndex_AsSsize_t(*_py_start);
-                if ((cstart == (Py_ssize_t)-1) && PyErr_Occurred()) goto bad;
-            } else
-                cstart = 0;
-        }
-        if (!has_cstop) {
-            if (_py_stop && (*_py_stop != Py_None)) {
-                cstop = __Pyx_PyIndex_AsSsize_t(*_py_stop);
-                if ((cstop == (Py_ssize_t)-1) && PyErr_Occurred()) goto bad;
-            } else
-                cstop = PY_SSIZE_T_MAX;
-        }
-        if (wraparound && unlikely((cstart < 0) | (cstop < 0)) && likely(ms->sq_length)) {
-            Py_ssize_t l = ms->sq_length(obj);
-            if (likely(l >= 0)) {
-                if (cstop < 0) {
-                    cstop += l;
-                    if (cstop < 0) cstop = 0;
-                }
-                if (cstart < 0) {
-                    cstart += l;
-                    if (cstart < 0) cstart = 0;
+/* DictGetItem */
+#if PY_MAJOR_VERSION >= 3 && !CYTHON_COMPILING_IN_PYPY
+static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key) {
+    PyObject *value;
+    value = PyDict_GetItemWithError(d, key);
+    if (unlikely(!value)) {
+        if (!PyErr_Occurred()) {
+            if (unlikely(PyTuple_Check(key))) {
+                PyObject* args = PyTuple_Pack(1, key);
+                if (likely(args)) {
+                    PyErr_SetObject(PyExc_KeyError, args);
+                    Py_DECREF(args);
                 }
             } else {
-                if (!PyErr_ExceptionMatches(PyExc_OverflowError))
-                    goto bad;
-                PyErr_Clear();
+                PyErr_SetObject(PyExc_KeyError, key);
             }
         }
-        return ms->sq_slice(obj, cstart, cstop);
+        return NULL;
     }
-#endif
-    mp = Py_TYPE(obj)->tp_as_mapping;
-    if (likely(mp && mp->mp_subscript))
-#endif
-    {
-        PyObject* result;
-        PyObject *py_slice, *py_start, *py_stop;
-        if (_py_slice) {
-            py_slice = *_py_slice;
-        } else {
-            PyObject* owned_start = NULL;
-            PyObject* owned_stop = NULL;
-            if (_py_start) {
-                py_start = *_py_start;
-            } else {
-                if (has_cstart) {
-                    owned_start = py_start = PyInt_FromSsize_t(cstart);
-                    if (unlikely(!py_start)) goto bad;
-                } else
-                    py_start = Py_None;
-            }
-            if (_py_stop) {
-                py_stop = *_py_stop;
-            } else {
-                if (has_cstop) {
-                    owned_stop = py_stop = PyInt_FromSsize_t(cstop);
-                    if (unlikely(!py_stop)) {
-                        Py_XDECREF(owned_start);
-                        goto bad;
-                    }
-                } else
-                    py_stop = Py_None;
-            }
-            py_slice = PySlice_New(py_start, py_stop, Py_None);
-            Py_XDECREF(owned_start);
-            Py_XDECREF(owned_stop);
-            if (unlikely(!py_slice)) goto bad;
-        }
-#if CYTHON_USE_TYPE_SLOTS
-        result = mp->mp_subscript(obj, py_slice);
-#else
-        result = PyObject_GetItem(obj, py_slice);
-#endif
-        if (!_py_slice) {
-            Py_DECREF(py_slice);
-        }
-        return result;
-    }
-    PyErr_Format(PyExc_TypeError,
-        "'%.200s' object is unsliceable", Py_TYPE(obj)->tp_name);
-bad:
-    return NULL;
+    Py_INCREF(value);
+    return value;
 }
+#endif
 
 /* GetItemInt */
 static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
