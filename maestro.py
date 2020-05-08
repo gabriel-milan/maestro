@@ -7,6 +7,7 @@ import requests
 import pickle
 import base64
 from pathlib import Path
+import lps_maestro
 from lps_maestro.utils import getCredentialsData
 from lps_maestro.castor import castor
 from lps_maestro.task import task
