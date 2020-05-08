@@ -44,7 +44,7 @@ print (" Welcome to LPS Maestro!")
 print (" - Checking for updates...")
 try:
     v = check('lps-maestro')
-    if (v[0] == False):
+    if (v[0] == True):
         print (" - This is the latest version ({})".format(v[1]))
     else:
         print (" => Version {} is available, please update!".format(v[1]))
