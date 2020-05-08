@@ -2048,7 +2048,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * print (" - Checking for updates...")
  * try:
  *     v = check('lps-maestro')             # <<<<<<<<<<<<<<
- *     if (v[0] == False):
+ *     if (v[0] == True):
  *         print (" - This is the latest version ({})".format(v[1]))
  */
   __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_lps_maestro_2); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 46, __pyx_L1_error)
@@ -2728,7 +2728,7 @@ if (!__Pyx_RefNanny) {
  * print (" - Checking for updates...")
  * try:             # <<<<<<<<<<<<<<
  *     v = check('lps-maestro')
- *     if (v[0] == False):
+ *     if (v[0] == True):
  */
   {
     __Pyx_PyThreadState_declare
@@ -2743,7 +2743,7 @@ if (!__Pyx_RefNanny) {
  * print (" - Checking for updates...")
  * try:
  *     v = check('lps-maestro')             # <<<<<<<<<<<<<<
- *     if (v[0] == False):
+ *     if (v[0] == True):
  *         print (" - This is the latest version ({})".format(v[1]))
  */
       __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_check); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 46, __pyx_L2_error)
@@ -2757,7 +2757,7 @@ if (!__Pyx_RefNanny) {
       /* "lps_maestro/__init__.py":47
  * try:
  *     v = check('lps-maestro')
- *     if (v[0] == False):             # <<<<<<<<<<<<<<
+ *     if (v[0] == True):             # <<<<<<<<<<<<<<
  *         print (" - This is the latest version ({})".format(v[1]))
  *     else:
  */
@@ -2766,7 +2766,7 @@ if (!__Pyx_RefNanny) {
       __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L2_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L2_error)
+      __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, Py_True, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L2_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 47, __pyx_L2_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2774,7 +2774,7 @@ if (!__Pyx_RefNanny) {
 
         /* "lps_maestro/__init__.py":48
  *     v = check('lps-maestro')
- *     if (v[0] == False):
+ *     if (v[0] == True):
  *         print (" - This is the latest version ({})".format(v[1]))             # <<<<<<<<<<<<<<
  *     else:
  *         print (" => Version {} is available, please update!".format(v[1]))
@@ -2796,7 +2796,7 @@ if (!__Pyx_RefNanny) {
         /* "lps_maestro/__init__.py":47
  * try:
  *     v = check('lps-maestro')
- *     if (v[0] == False):             # <<<<<<<<<<<<<<
+ *     if (v[0] == True):             # <<<<<<<<<<<<<<
  *         print (" - This is the latest version ({})".format(v[1]))
  *     else:
  */
@@ -2832,7 +2832,7 @@ if (!__Pyx_RefNanny) {
  * print (" - Checking for updates...")
  * try:             # <<<<<<<<<<<<<<
  *     v = check('lps-maestro')
- *     if (v[0] == False):
+ *     if (v[0] == True):
  */
     }
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -2875,7 +2875,7 @@ if (!__Pyx_RefNanny) {
  * print (" - Checking for updates...")
  * try:             # <<<<<<<<<<<<<<
  *     v = check('lps-maestro')
- *     if (v[0] == False):
+ *     if (v[0] == True):
  */
     __Pyx_XGIVEREF(__pyx_t_4);
     __Pyx_XGIVEREF(__pyx_t_5);
