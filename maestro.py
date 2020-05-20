@@ -140,11 +140,11 @@ class TaskParser():
                           help = "The container image point to docker hub. The image must be public.")
       create_parser.add_argument('-t','--task', action='store', dest='taskname', required=True,
                           help = "The task name to append in the database.")
+      create_parser.add_argument('--queue', action='store', dest='queue', required=True, default='cpu_small',
+                          help = "The desired cluster queue: cpu_small, nvidia or cpu_large")
       create_parser.add_argument('--sd','--secondaryDS', action='store', dest='secondaryDS', required=False,  default="{}",
                           help = "The secondary datasets to append in the --exec command. This should be:" +
                           "--secondaryData='{'REF':'path/to/my/extra/data',...}'")
-      create_parser.add_argument('--gpu', action='store_true', dest='gpu', required=False, default=False,
-                          help = "Send these jobs to GPU slots")
       create_parser.add_argument('--et', action='store', dest='et', required=False,default=None,
                           help = "The ET region (for ringer users)")
       create_parser.add_argument('--eta', action='store', dest='eta', required=False,default=None,
@@ -189,9 +189,11 @@ class TaskParser():
   def compile( self, args ):
     if args.mode == 'task':
       if args.option == 'create':
-        self.create(args.taskname, args.dataFile, args.configFile, args.secondaryDS,
-                    args.execCommand,args.containerImage,args.et,args.eta,args.gpu,
-                    args.dry_run)
+        self.create(
+          args.taskname, args.dataFile, args.configFile, args.execCommand,
+          args.containerImage, args.queue, args.secondaryDS, args.et, 
+          args.eta, args.dry_run
+        )
       elif args.option == 'retry':
         self.retry(args.taskname)
       elif args.option == 'delete':

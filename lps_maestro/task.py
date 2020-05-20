@@ -13,16 +13,15 @@ from lps_maestro.utils import getCredentialsData, decode_base64
 from lps_maestro.constants import *
 
 class Task ():
-  
   def create( self, taskname,
                     dataFile,
                     configFile,
                     execCommand,
                     containerImage,
+                    queue,
                     secondaryDS=None,
                     et=None,
                     eta=None,
-                    gpu=False,
                     dry_run=False):
 
     if taskname.split('.')[0] != 'user':
