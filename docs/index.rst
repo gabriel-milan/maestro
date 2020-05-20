@@ -134,7 +134,7 @@ Task module has five commands:
 - `list` for listing tasks related to a given username
 - `kill` for stopping execution of tasks
 
-maestro.task.create (taskname, dataFile, configFile, execCommand, containerImage, secondaryDS=None, et=None, eta=None, gpu=False, dry_run=False)
+maestro.task.create (taskname, dataFile, configFile, execCommand, containerImage, queue='cpu_small', secondaryDS=None, et=None, eta=None, dry_run=False)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block:: py
@@ -144,11 +144,11 @@ maestro.task.create (taskname, dataFile, configFile, execCommand, containerImage
       '<dataFile>', 
       '<configFile>', 
       '<execCommand>', 
-      '<containerImage>', 
+      '<containerImage>',
+      queue='cpu_small',
       secondaryDS=None,
       et=None, 
       eta=None, 
-      gpu=False, 
       dry_run=False
    )
 
@@ -294,36 +294,36 @@ maestro task create
 .. code-block:: bash
 
    usage: maestro create [-h] -c CONFIGFILE -d DATAFILE --exec EXECCOMMAND
-                        --containerImage CONTAINERIMAGE -t TASKNAME
-                        [--sd SECONDARYDS] [--gpu] [--et ET] [--eta ETA]
+                        --containerImage CONTAINERIMAGE -t TASKNAME --queue
+                        QUEUE [--sd SECONDARYDS] [--et ET] [--eta ETA]
                         [--dry_run]
 
    optional arguments:
-   -h, --help                                      show this help message and exit
+   -h, --help                                   show this help message and exit
 
-   -c CONFIGFILE, --configFile CONFIGFILE          The job config file that will be used to configure the
-                                                   job (sort and init).
+   -c CONFIGFILE, --configFile CONFIGFILE       The job config file that will be used to configure the
+                                                job (sort and init).
 
-   -d DATAFILE, --dataFile DATAFILE                The data/target file used to train the model.
+   -d DATAFILE, --dataFile DATAFILE             The data/target file used to train the model.
 
-   --exec EXECCOMMAND                              The exec command
+   --exec EXECCOMMAND                           The exec command
 
-   --containerImage CONTAINERIMAGE                 The container image point to docker hub. The image
-                                                   must be public.
+   --containerImage CONTAINERIMAGE              The container image point to docker hub. The image
+                                                must be public.
 
-   -t TASKNAME, --task TASKNAME                    The task name to append in the database.
+   -t TASKNAME, --task TASKNAME                 The task name to append in the database.
 
-   --sd SECONDARYDS, --secondaryDS SECONDARYDS     The secondary datasets to append in the --exec
-                                                   command. This should be:--secondaryData='{'REF':'path/
-                                                   to/my/extra/data',...}'
+   --queue QUEUE                                The desired cluster queue: cpu_small, nvidia or cpu_large
 
-   --gpu                                           Send these jobs to GPU slots
+   --sd SECONDARYDS, --secondaryDS SECONDARYDS  The secondary datasets to append in the --exec
+                                                command. This should be:--secondaryData='{'REF':'path/
+                                                to/my/extra/data',...}'
 
-   --et ET                                         The ET region (for ringer users)
-   
-   --eta ETA                                       The ETA region (for ringer users)
-   
-   --dry_run                                       For debugging purposes.
+   --et ET                                      The ET region (for ringer users)
+
+   --eta ETA                                    The ETA region (for ringer users)
+
+   --dry_run                                    For debugging purposes
 
 maestro task retry
 """"""""""""""""""

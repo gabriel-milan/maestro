@@ -18,7 +18,7 @@ class Task ():
                     configFile,
                     execCommand,
                     containerImage,
-                    queue,
+                    queue='cpu_small',
                     secondaryDS=None,
                     et=None,
                     eta=None,

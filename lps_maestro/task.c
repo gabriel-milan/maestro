@@ -1341,6 +1341,7 @@ static const char __pyx_k_taskname[] = "taskname";
 static const char __pyx_k_username[] = "username";
 static const char __pyx_k_Task_kill[] = "Task.kill";
 static const char __pyx_k_Task_list[] = "Task.list";
+static const char __pyx_k_cpu_small[] = "cpu_small";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_Task_retry[] = "Task.retry";
 static const char __pyx_k_configFile[] = "configFile";
@@ -1393,6 +1394,7 @@ static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_configFile;
 static PyObject *__pyx_n_s_containerImage;
 static PyObject *__pyx_n_s_content;
+static PyObject *__pyx_n_s_cpu_small;
 static PyObject *__pyx_n_s_create;
 static PyObject *__pyx_n_s_credentials;
 static PyObject *__pyx_n_s_data;
@@ -1505,10 +1507,11 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_1create(PyObject *__pyx_self
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_taskname,&__pyx_n_s_dataFile,&__pyx_n_s_configFile,&__pyx_n_s_execCommand,&__pyx_n_s_containerImage,&__pyx_n_s_queue,&__pyx_n_s_secondaryDS,&__pyx_n_s_et,&__pyx_n_s_eta,&__pyx_n_s_dry_run,0};
     PyObject* values[11] = {0,0,0,0,0,0,0,0,0,0,0};
+    values[6] = ((PyObject *)((PyObject*)__pyx_n_s_cpu_small));
 
     /* "lps_maestro/task.py":22
  *                     containerImage,
- *                     queue,
+ *                     queue='cpu_small',
  *                     secondaryDS=None,             # <<<<<<<<<<<<<<
  *                     et=None,
  *                     eta=None,
@@ -1516,7 +1519,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_1create(PyObject *__pyx_self
     values[7] = ((PyObject *)((PyObject *)Py_None));
 
     /* "lps_maestro/task.py":23
- *                     queue,
+ *                     queue='cpu_small',
  *                     secondaryDS=None,
  *                     et=None,             # <<<<<<<<<<<<<<
  *                     eta=None,
@@ -1579,37 +1582,37 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_1create(PyObject *__pyx_self
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_taskname)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 1); __PYX_ERR(0, 16, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 1); __PYX_ERR(0, 16, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_dataFile)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 2); __PYX_ERR(0, 16, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 2); __PYX_ERR(0, 16, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_configFile)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 3); __PYX_ERR(0, 16, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 3); __PYX_ERR(0, 16, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_execCommand)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 4); __PYX_ERR(0, 16, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 4); __PYX_ERR(0, 16, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_containerImage)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 5); __PYX_ERR(0, 16, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, 5); __PYX_ERR(0, 16, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
-        if (likely((values[6] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_queue)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, 6); __PYX_ERR(0, 16, __pyx_L3_error)
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_queue);
+          if (value) { values[6] = value; kw_args--; }
         }
         CYTHON_FALLTHROUGH;
         case  7:
@@ -1650,7 +1653,8 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_1create(PyObject *__pyx_self
         case  8: values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
         CYTHON_FALLTHROUGH;
         case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
-        values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
+        CYTHON_FALLTHROUGH;
+        case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
         values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
         values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
         values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
@@ -1674,7 +1678,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_1create(PyObject *__pyx_self
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("create", 0, 7, 11, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 16, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("create", 0, 6, 11, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 16, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("lps_maestro.task.Task.create", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4304,6 +4308,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_configFile, __pyx_k_configFile, sizeof(__pyx_k_configFile), 0, 0, 1, 1},
   {&__pyx_n_s_containerImage, __pyx_k_containerImage, sizeof(__pyx_k_containerImage), 0, 0, 1, 1},
   {&__pyx_n_s_content, __pyx_k_content, sizeof(__pyx_k_content), 0, 0, 1, 1},
+  {&__pyx_n_s_cpu_small, __pyx_k_cpu_small, sizeof(__pyx_k_cpu_small), 0, 0, 1, 1},
   {&__pyx_n_s_create, __pyx_k_create, sizeof(__pyx_k_create), 0, 0, 1, 1},
   {&__pyx_n_s_credentials, __pyx_k_credentials, sizeof(__pyx_k_credentials), 0, 0, 1, 1},
   {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
@@ -4391,7 +4396,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
   __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(11, 0, 15, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lps_maestro_task_py, __pyx_n_s_create, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 16, __pyx_L1_error)
-  __pyx_tuple__6 = PyTuple_Pack(4, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(5, ((PyObject*)__pyx_n_s_cpu_small), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
