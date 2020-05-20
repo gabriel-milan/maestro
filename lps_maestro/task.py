@@ -47,7 +47,7 @@ class Task ():
       'execCommand'           : execCommand,
       'et'                    : et if et else 0,
       'eta'                   : eta if eta else 0,
-      'gpu'                   : int(gpu),
+      'queue'                 : queue,
       'credentials'           : credentials
     }
 

@@ -204,11 +204,17 @@ class TaskParser():
         self.kill(args.username, 'all' if args.kill_all else args.taskname)
 
 
-  def create( self, taskname, dataFile,
-                    configFile, secondaryDS,
-                    execCommand, containerImage, et=None, eta=None, gpu=False,
+  def create( self, taskname,
+                    dataFile,
+                    configFile,
+                    execCommand,
+                    containerImage,
+                    queue='cpu_small',
+                    secondaryDS=None,
+                    et=None,
+                    eta=None,
                     dry_run=False):
-    return self.__task.create( taskname, dataFile, configFile, execCommand, containerImage, secondaryDS=secondaryDS, et=None, eta=None, gpu=False, dry_run=False)
+    return self.__task.create( taskname, dataFile, configFile, execCommand, containerImage, queue='cpu_small', secondaryDS=None, et=None, eta=None, dry_run=False)
 
   def delete( self, taskname ):
     return self.__task.delete (taskname)

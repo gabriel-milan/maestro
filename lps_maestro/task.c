@@ -1296,7 +1296,6 @@ static const char __pyx_k_cli[] = "cli";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_end[] = "end";
 static const char __pyx_k_eta[] = "eta";
-static const char __pyx_k_gpu[] = "gpu";
 static const char __pyx_k_sys[] = "sys";
 static const char __pyx_k_url[] = "url";
 static const char __pyx_k_Path[] = "Path";
@@ -1413,7 +1412,6 @@ static PyObject *__pyx_n_s_exceptions;
 static PyObject *__pyx_n_s_execCommand;
 static PyObject *__pyx_n_s_file;
 static PyObject *__pyx_n_s_getCredentialsData;
-static PyObject *__pyx_n_s_gpu;
 static PyObject *__pyx_kp_s_http_146_164_147_170_5020_create;
 static PyObject *__pyx_kp_s_http_146_164_147_170_5020_delete;
 static PyObject *__pyx_kp_s_http_146_164_147_170_5020_kill_t;
@@ -1458,7 +1456,7 @@ static PyObject *__pyx_n_s_url;
 static PyObject *__pyx_n_s_user;
 static PyObject *__pyx_n_s_username;
 static PyObject *__pyx_kp_s_utf_8;
-static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, CYTHON_UNUSED PyObject *__pyx_v_queue, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_dry_run); /* proto */
+static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, PyObject *__pyx_v_queue, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_dry_run); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_2delete(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_taskname); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_4retry(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_taskname); /* proto */
 static PyObject *__pyx_pf_11lps_maestro_4task_4Task_6list(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_username, PyObject *__pyx_v_cli); /* proto */
@@ -1496,7 +1494,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_1create(PyObject *__pyx_self
   PyObject *__pyx_v_configFile = 0;
   PyObject *__pyx_v_execCommand = 0;
   PyObject *__pyx_v_containerImage = 0;
-  CYTHON_UNUSED PyObject *__pyx_v_queue = 0;
+  PyObject *__pyx_v_queue = 0;
   PyObject *__pyx_v_secondaryDS = 0;
   PyObject *__pyx_v_et = 0;
   PyObject *__pyx_v_eta = 0;
@@ -1699,7 +1697,7 @@ static PyObject *__pyx_pw_11lps_maestro_4task_4Task_1create(PyObject *__pyx_self
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, CYTHON_UNUSED PyObject *__pyx_v_queue, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_dry_run) {
+static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_taskname, PyObject *__pyx_v_dataFile, PyObject *__pyx_v_configFile, PyObject *__pyx_v_execCommand, PyObject *__pyx_v_containerImage, PyObject *__pyx_v_queue, PyObject *__pyx_v_secondaryDS, PyObject *__pyx_v_et, PyObject *__pyx_v_eta, PyObject *__pyx_v_dry_run) {
   PyObject *__pyx_v_username = NULL;
   PyObject *__pyx_v_credentials = NULL;
   PyObject *__pyx_v_data = NULL;
@@ -1984,7 +1982,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
  *       'execCommand'           : execCommand,
  *       'et'                    : et if et else 0,             # <<<<<<<<<<<<<<
  *       'eta'                   : eta if eta else 0,
- *       'gpu'                   : int(gpu),
+ *       'queue'                 : queue,
  */
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_et); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 48, __pyx_L1_error)
   if (__pyx_t_4) {
@@ -2001,7 +1999,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
  *       'execCommand'           : execCommand,
  *       'et'                    : et if et else 0,
  *       'eta'                   : eta if eta else 0,             # <<<<<<<<<<<<<<
- *       'gpu'                   : int(gpu),
+ *       'queue'                 : queue,
  *       'credentials'           : credentials
  */
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_eta); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 49, __pyx_L1_error)
@@ -2018,21 +2016,15 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
   /* "lps_maestro/task.py":50
  *       'et'                    : et if et else 0,
  *       'eta'                   : eta if eta else 0,
- *       'gpu'                   : int(gpu),             # <<<<<<<<<<<<<<
+ *       'queue'                 : queue,             # <<<<<<<<<<<<<<
  *       'credentials'           : credentials
  *     }
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_gpu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyNumber_Int(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_gpu, __pyx_t_3) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_queue, __pyx_v_queue) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
   /* "lps_maestro/task.py":51
  *       'eta'                   : eta if eta else 0,
- *       'gpu'                   : int(gpu),
+ *       'queue'                 : queue,
  *       'credentials'           : credentials             # <<<<<<<<<<<<<<
  *     }
  * 
@@ -2066,19 +2058,19 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
  */
       __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_requests); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L6_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L6_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_url, __pyx_kp_s_http_146_164_147_170_5020_create) < 0) __PYX_ERR(0, 55, __pyx_L6_error)
       if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_v_data) < 0) __PYX_ERR(0, 55, __pyx_L6_error)
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L6_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L6_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_v_r = __pyx_t_2;
-      __pyx_t_2 = 0;
+      __pyx_v_r = __pyx_t_3;
+      __pyx_t_3 = 0;
 
       /* "lps_maestro/task.py":56
  *     try:
@@ -2087,10 +2079,10 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
  *     except requests.exceptions.ConnectionError:
  *       print ("Failed to connect to LPS Cluster.")
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L6_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 56, __pyx_L6_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_r, __pyx_n_s_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L6_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(0, 56, __pyx_L6_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
       /* "lps_maestro/task.py":54
  *     }
@@ -2116,7 +2108,7 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
  *       print ("Failed to connect to LPS Cluster.")
  * 
  */
-    __Pyx_ErrFetch(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3);
+    __Pyx_ErrFetch(&__pyx_t_3, &__pyx_t_1, &__pyx_t_2);
     __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_requests); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 57, __pyx_L8_except_error)
     __Pyx_GOTREF(__pyx_t_8);
     __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 57, __pyx_L8_except_error)
@@ -2125,16 +2117,16 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
     __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_ConnectionError); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 57, __pyx_L8_except_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_10 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_2, __pyx_t_8);
+    __pyx_t_10 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_3, __pyx_t_8);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_ErrRestore(__pyx_t_2, __pyx_t_1, __pyx_t_3);
-    __pyx_t_2 = 0; __pyx_t_1 = 0; __pyx_t_3 = 0;
+    __Pyx_ErrRestore(__pyx_t_3, __pyx_t_1, __pyx_t_2);
+    __pyx_t_3 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0;
     if (__pyx_t_10) {
       __Pyx_AddTraceback("lps_maestro.task.Task.create", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 57, __pyx_L8_except_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GOTREF(__pyx_t_1);
+      if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 57, __pyx_L8_except_error)
       __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GOTREF(__pyx_t_3);
 
       /* "lps_maestro/task.py":58
  *       print (r.text)
@@ -2144,9 +2136,9 @@ static PyObject *__pyx_pf_11lps_maestro_4task_4Task_create(CYTHON_UNUSED PyObjec
  *   def delete( self, taskname ):
  */
       if (__Pyx_PrintOne(0, __pyx_kp_s_Failed_to_connect_to_LPS_Cluster) < 0) __PYX_ERR(0, 58, __pyx_L8_except_error)
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       goto __pyx_L7_exception_handled;
     }
     goto __pyx_L8_except_error;
@@ -4327,7 +4319,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_execCommand, __pyx_k_execCommand, sizeof(__pyx_k_execCommand), 0, 0, 1, 1},
   {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
   {&__pyx_n_s_getCredentialsData, __pyx_k_getCredentialsData, sizeof(__pyx_k_getCredentialsData), 0, 0, 1, 1},
-  {&__pyx_n_s_gpu, __pyx_k_gpu, sizeof(__pyx_k_gpu), 0, 0, 1, 1},
   {&__pyx_kp_s_http_146_164_147_170_5020_create, __pyx_k_http_146_164_147_170_5020_create, sizeof(__pyx_k_http_146_164_147_170_5020_create), 0, 0, 1, 0},
   {&__pyx_kp_s_http_146_164_147_170_5020_delete, __pyx_k_http_146_164_147_170_5020_delete, sizeof(__pyx_k_http_146_164_147_170_5020_delete), 0, 0, 1, 0},
   {&__pyx_kp_s_http_146_164_147_170_5020_kill_t, __pyx_k_http_146_164_147_170_5020_kill_t, sizeof(__pyx_k_http_146_164_147_170_5020_kill_t), 0, 0, 1, 0},
