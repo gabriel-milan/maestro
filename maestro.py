@@ -55,6 +55,7 @@ class AuthenticationParser ():
 
   def compile( self, args ):
     if args.mode == 'authenticate':
+      print(args.password)
       self.authenticate(args.username, args.password)
 
   def authenticate (self, username, password):
