@@ -21,7 +21,7 @@ cd maestro/
 
 * Run the setup script
 ```
-source setup.sh
+source scripts/setup.sh
 ```
 
 * Install dependencies
