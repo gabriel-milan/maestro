@@ -13,6 +13,7 @@ from lps_maestro.utils import getCredentialsData, decode_base64
 from lps_maestro.constants import *
 
 class Task ():
+
   def create( self, taskname,
                     dataFile,
                     configFile,
@@ -22,7 +23,9 @@ class Task ():
                     secondaryDS=None,
                     et=None,
                     eta=None,
-                    dry_run=False):
+                    dry_run=False,
+                    is_dummy_data=False,
+                    is_dummy_config=False):
 
     if taskname.split('.')[0] != 'user':
       print( 'The task name must start with "user.<username>.taskname."')
@@ -48,7 +51,9 @@ class Task ():
       'et'                    : et if et else 0,
       'eta'                   : eta if eta else 0,
       'queue'                 : queue,
-      'credentials'           : credentials
+      'credentials'           : credentials,
+      'is_dummy_data'         : is_dummy_data,
+      'is_dummy_config'       : is_dummy_config,
     }
 
     try:
@@ -128,7 +133,7 @@ class Task ():
     except requests.exceptions.ConnectionError:
       print ("Failed to connect to LPS Cluster.")
 
-  def kill( self, username, taskname ):
+  def kill( self, taskname ):
 
     if taskname.split('.')[0] != 'user':
       print( 'The task name must start with "user.<username>.taskname."')
@@ -137,6 +142,8 @@ class Task ():
     credentials = getCredentialsData()
     if credentials == False:
       return
+
+    username = taskname.split('.')[1]
 
     data = {
       'username':username,

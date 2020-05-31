@@ -151,6 +151,12 @@ class TaskParser():
                           help = "The ETA region (for ringer users)")
       create_parser.add_argument('--dry_run', action='store_true', dest='dry_run', required=False, default=False,
                           help = "Use this as debugger.")
+      create_parser.add_argument('--is_dummy_data', action='store_true', dest='is_dummy_data', required=False, default=False,
+                          help = "Not use the data (%DATA).")
+      create_parser.add_argument('--is_dummy_config', action='store_true', dest='is_dummy_config', required=False, default=False,
+                          help = "Not use the data (%IN).")
+
+
 
       # Retry
       retry_parser = argparse.ArgumentParser(description = '', add_help = False)
@@ -169,12 +175,8 @@ class TaskParser():
 
       # Kill
       kill_parser = argparse.ArgumentParser(description = '', add_help = False)
-      kill_parser.add_argument('-u','--user', action='store', dest='username', required=True,
-                    help = "The username.")
       kill_parser.add_argument('-t','--task', action='store', dest='taskname', required=False,
                     help = "The name of the task you want to kill")
-      kill_parser.add_argument('-a','--all', action='store_true', dest='kill_all', required=False, default=False,
-                    help = "Remove all tasks from given username")
 
       parent = argparse.ArgumentParser(description = '', add_help = False)
       subparser = parent.add_subparsers(dest='option')
@@ -188,45 +190,33 @@ class TaskParser():
 
   def compile( self, args ):
     if args.mode == 'task':
+
       if args.option == 'create':
-        self.create(
-          args.taskname, args.dataFile, args.configFile, args.execCommand,
-          args.containerImage, args.queue, args.secondaryDS, args.et, 
-          args.eta, args.dry_run
+        return self.__task.create(
+          args.taskname, 
+          args.dataFile, 
+          args.configFile, 
+          args.execCommand,
+          args.containerImage, 
+          queue=args.queue, 
+          secondaryDS=args.secondaryDS, 
+          et=args.et, 
+          eta=args.eta, 
+          dry_run=args.dry_run, 
+          is_dummy_data=args.is_dummy_data, 
+          is_dummy_config=args.is_dummy_config,
         )
       elif args.option == 'retry':
-        self.retry(args.taskname)
+        return self.__task.retry(args.taskname)
       elif args.option == 'delete':
-        self.delete(args.taskname)
+        return self.__task.delete(args.taskname)
       elif args.option == 'list':
-        self.list(args.username)
+        return self.__task.list(args.username, cli=True)
       elif args.option == 'kill':
-        self.kill(args.username, 'all' if args.kill_all else args.taskname)
+        return self.__task.kill(args.taskname)
 
 
-  def create( self, taskname,
-                    dataFile,
-                    configFile,
-                    execCommand,
-                    containerImage,
-                    queue='cpu_small',
-                    secondaryDS=None,
-                    et=None,
-                    eta=None,
-                    dry_run=False):
-    return self.__task.create( taskname, dataFile, configFile, execCommand, containerImage, queue='cpu_small', secondaryDS=None, et=None, eta=None, dry_run=False)
 
-  def delete( self, taskname ):
-    return self.__task.delete (taskname)
-
-  def retry( self, taskname ):
-    return self.__task.retry(taskname)
-
-  def list( self, username ):
-    return self.__task.list(username, cli=True)
-
-  def kill( self, username, taskname ):
-    return self.__task.kill (username, taskname)
 
 parser = argparse.ArgumentParser()
 commands = parser.add_subparsers(dest='mode')
