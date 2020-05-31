@@ -179,6 +179,15 @@ class TaskParser():
       kill_parser.add_argument('-t','--task', action='store', dest='taskname', required=False,
                     help = "The name of the task you want to kill")
 
+      queue_parser = argparse.ArgumentParser(description = '', add_help = False)
+      queue_parser.add_argument('-n','--name', action='store', dest='queuename', required=True,
+                    help = "The queue name")
+
+
+
+
+
+
       parent = argparse.ArgumentParser(description = '', add_help = False)
       subparser = parent.add_subparsers(dest='option')
 
@@ -187,6 +196,7 @@ class TaskParser():
       subparser.add_parser('delete', parents=[delete_parser])
       subparser.add_parser('list', parents=[list_parser])
       subparser.add_parser('kill', parents=[kill_parser])
+      subparser.add_parser('queue', parents=[queue_parser])
       args.add_parser( 'task', parents=[parent] )
 
   def compile( self, args ):
@@ -215,6 +225,9 @@ class TaskParser():
         return self.__task.list(args.username, cli=True)
       elif args.option == 'kill':
         return self.__task.kill(args.taskname)
+      elif args.option == 'queue':
+        return self.__task.queue(args.queuename)
+
 
 
 

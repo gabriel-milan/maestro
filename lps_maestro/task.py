@@ -157,4 +157,32 @@ class Task ():
     except requests.exceptions.ConnectionError:
       print ("Failed to connect to LPS Cluster.")
 
+
+
+  def queue( self, name ):
+
+    credentials = getCredentialsData()
+    if credentials == False:
+      return
+
+
+    data = {
+      'name':name,
+      'credentials':credentials
+    }
+
+    try:
+      r = requests.post(url='http://146.164.147.170:5020/queue', data=data)
+      print (r.json()['message'])
+    except requests.exceptions.ConnectionError:
+      print ("Failed to connect to LPS Cluster.")
+
+
+
+
+
+
+
+
+
 task = Task()
